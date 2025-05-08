@@ -11,7 +11,7 @@ function About() {
       <div className="about-mission">
         <h2 className="about-mission-heading">Our Mission</h2>
         <p className="about-mission-text">
-          Our mission is to empower learners around the world with the knowledge and skills they need to achieve their goals. We believe in accessible, affordable, and effective education for everyone.
+          Our mission is to empower learners around world with the knowledge and skills they need to achieve their goals. We believe in accessible, affordable, and effective education for everyone.
         </p>
       </div>
     </div>
