@@ -32,8 +32,11 @@ function Contact() {
                 <input type="email" placeholder="E-Mail Id" className="form-control" />
                 <select className="form-control">
                   <option value="" disabled selected>Select Course</option>
-                  <option value="course1">Course 1</option>
-                  <option value="course2">Course 2</option>
+                  <option value="course1">Artifical Intelligent</option>
+                  <option value="course2">Data Science</option>
+                  <option value="course2">Networking</option>
+                  <option value="course2">Cyber Security</option>
+                  <option value="course2">Software Development & Soft skills</option>
                   {/* Add more course options as needed */}
                 </select>
                 <select className="form-control">
