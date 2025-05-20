@@ -1,0 +1,138 @@
+/* About.css */
+
+/* General styles */
+.about-page-container {
+    background-color: none; /* A very light, subtle background for the whole page */
+    color: #343a40; /* Default text color for better contrast on light backgrounds */
+}
+
+.text-orange {
+    color: #ff5722 !important; /* Your specific orange color */
+}
+
+.robot-text {
+    font-family: 'Roboto', sans-serif; /* Example for a custom font */
+}
+
+.larger-text {
+    font-size: 1.1rem; /* Slightly larger text for readability */
+    line-height: 1.7; /* Improved line height */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #212529; /* Darker color for headings for emphasis */
+}
+
+/* Introduction Section - Image Float */
+.float-right-wrap {
+    float: right; /* Floats the image to the right */
+    margin-left: 2rem; /* Adds more space to the left of the image */
+    margin-bottom: 1.5rem; /* Adds space below the image */
+}
+
+/* Clearfix for floated elements */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Why 7 Days, 11 Hours Section */
+.why-7-11-section {
+    background-color: #212529; /* Dark background for this specific section */
+    color: #ffffff;
+}
+
+/* Our Instructors Section */
+.OurInstructors {
+    background-color: #000509e4; /* Dark background for this specific section */
+    color: #ffffff;
+}
+
+/* Approach Cards */
+.approach-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #e9ecef; /* Lighter border for a softer look */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+.approach-card:hover {
+    transform: translateY(-8px); /* More pronounced lift effect on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Subtler, wider shadow on hover */
+}
+
+.approach-card .icon-wrapper {
+    margin-bottom: 1.5rem; /* More space below the icon */
+}
+
+.approach-card .animate-icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.approach-card:hover .animate-icon {
+    transform: scale(1.15); /* Slightly enlarge icon on hover */
+}
+
+/* Values List Styling */
+.values-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 0.5rem; /* Indent list items slightly */
+}
+
+.values-list li .svg-inline--fa {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    margin-right: 0.75rem; /* Space between icon and text */
+}
+
+/* Mission & Vision Cards */
+.mission-vision-card {
+    background: linear-gradient(135deg, #343a40 0%, #495057 100%); /* Dark gradient */
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 0.5rem; /* More internal padding */
+}
+
+/* Call to Action Section */
+.call-to-action-section {
+    background-color: #ff5722; /* Retain orange background for a strong call to action */
+    color: #ffffff;
+}
+
+.custom-btn-light-outline-orange {
+    color: #ff5722;
+    background-color: #ffffff;
+    border-color: #ff5722;
+    font-weight: bold;
+    padding: 0.85rem 2.5rem; /* Slightly larger button */
+    border-radius: 50px; /* Pill-shaped button */
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase; /* Uppercase text for button */
+    letter-spacing: 0.05em; /* Slightly increased letter spacing */
+}
+
+.custom-btn-light-outline-orange:hover {
+    background-color: #ff5722;
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-3px); /* More noticeable lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+/* Horizontal Rule for separation */
+.border-orange {
+    border-top: 3px solid #ff5722 !important; /* Thick orange line */
+    opacity: 1; /* Ensure it's fully visible */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .float-right-wrap {
+        float: none; /* Remove float on small screens */
+        margin: 0 auto 1.5rem auto; /* Center image and add bottom margin */
+        display: block; /* Make it a block element to center */
+    }
+}
