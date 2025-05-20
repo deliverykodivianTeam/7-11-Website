@@ -4,28 +4,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  padding: 0; /* Remove padding from here, container class handles it */
 }
 
 .contact-page-content {
-  display: flex;
-  justify-content: center;
+  display: flex; /* Keep for the flex layout, will be adjusted by Bootstrap */
+  justify-content: center; /* Keep for centering within the row */
   gap: 30px;
-  max-width: 1200px;
-  width: 95%;
+  max-width: 1200px; /* max-width is handled by container now, but can add for extra restriction */
+  width: 95%; /* Keep for some margin inside the container */
   align-items: flex-start; /* Align items to the start (top) */
+  flex-direction: column;
 }
 
 .contact-left {
-  flex: 1;
+  margin-top: 25px;
   padding: 20px;
+  /* width will be defined by col-md-6 */
 }
 
 .why-contact-heading {
   color: #333;
-  margin-top: 100px;
   margin-bottom: 20px;
-  font-size: 4rem;
+  font-size:4rem; /* Adjust font size for better scaling with Bootstrap */
 }
 
 .contact-reasons {
@@ -34,46 +35,46 @@
 }
 
 .contact-reasons li {
-  margin-bottom: 10px;
+  margin-bottom: 12px; /* Adjust spacing for list items */
   display: flex;
   align-items: center;
+  font-size: 1.2rem;
 }
 
 .contact-reasons li::before {
   content: '\2713';
-  color: green;
+  color:orange;
   margin-right: 10px;
-  font-size: 2em;
+  font-size: 1.5em; /* Adjust icon size */
 }
 
-.contact-reasons li {
-  font-size: 2rem;
-}
 
 .contact-right {
-  flex: 1;
+  margin-top: 0px;
   padding: 20px;
+   /* width will be defined by col-md-6 */
 }
 
 .contact-us-heading {
-  margin-top: 100px;
   color: #333;
   margin-bottom: 20px;
-  font-size: 64px;
+  font-size: 4rem; /* Adjust font size */
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
 }
 
+/* These input styles are now handled by Bootstrap's form-control */
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form input[type="tel"],
 .contact-form select {
-  padding: 10px;
-  border: 1px solid #ccc;
+  /* padding: 10px; */
+  /* border: 1px solid #ccc; */
   border-radius: 5px;
   font-size: 1rem;
   width: 100%;
@@ -83,7 +84,7 @@
 .mobile-input-group {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */ /* Handled by Bootstrap */
   border-radius: 5px;
   overflow: hidden;
   width: 100%;
@@ -91,9 +92,9 @@
 }
 
 .mobile-input-group .country-code {
-  background-color: #f0f0f0;
+  background-color: #e9ecef; /* Bootstrap background color for input group addon */
   padding: 10px;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #ced4da; /* Bootstrap border color */
 }
 
 .mobile-input-group input[type="tel"] {
@@ -122,18 +123,19 @@
 .mock-captcha {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */ /* Handled by Bootstrap */
   border-radius: 5px;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: #f8f9fa; /* Bootstrap background color for form group */
   justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 0;
 }
 
 .captcha-provider {
-  font-size: 0.8em;
-  color: #777;
+  font-size: 0.8rem;
+  color: #6c757d; /* Bootstrap text color */
 }
 
 .captcha-provider a {
@@ -146,7 +148,7 @@
 }
 
 .contact-form button.submit-button {
-  background-color: #007bff;
+  /* background-color: #007bff; */ /* Handled by Bootstrap */
   color: white;
   padding: 12px 20px;
   border: none;
@@ -159,5 +161,27 @@
 }
 
 .contact-form button.submit-button:hover {
-  background-color: #0056b3;
+  background-color: black;
+}
+
+/* Media query for mobile view adjustments - optional, Bootstrap handles most */
+@media (max-width: 768px) {
+    .why-contact-heading{
+        font-size: 2rem;
+    }
+    .contact-us-heading{
+        font-size: 2rem;
+    }
+  .contact-page-content {
+    flex-direction: column; /* Stack the left and right sections vertically on small screens */
+    align-items: center; /* Center the content horizontally on small screens */
+  }
+  .contact-left,
+  .contact-right {
+    width: 100%; /* Make them take up full width on small screens */
+    padding: 15px;
+  }
+  .contact-reasons li {
+    font-size: 1rem;
+  }
 }

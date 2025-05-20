@@ -30,5 +30,16 @@
   }
   
   .transparent-navbar a:hover {
-    color: #ccc;
+    color:orange;
   }
+
+  .company_logo {
+  margin-top: -25px;
+  margin-right: 10px;
+  height: 90px; /* Adjust the height as needed */
+  transition: transform 0.1s ease-in-out;
+}
+
+.company_logo:hover {
+  transform: scale(1.1);
+}
