@@ -1,195 +1,228 @@
+// About.js
 import React from 'react';
-import intro_card from "../assets/intro_card.jpg";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/About.css'; // Keep your custom styles for overrides if needed
-import mission from "../assets/mission.png"; // Assuming you have this image
-import layersIcon from "../assets/layers.png"; // Import the layers icon
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import intro_card from "../assets/intro_card.jpg"; // Ensure this path is correct
+import {
+    faBrain,
+    faHeadset,
+    faCalendarAlt,
+    faLightbulb,
+    faBullseye,
+    faEye,
+    faChalkboardTeacher,
+    faUsersCog,
+    faAward,
+    faHandshake
+} from '@fortawesome/free-solid-svg-icons';
+import '../styles/About.css'; // Ensure this path is correct
 
 function About() {
-  return (
-    <div className="container py-5">
-      <div className="row align-items-center mb-5">
-        <div className="col-md-6">
-          <h1 className="display-4 fw-bold text-warning mb-3">7 Eleven Academy</h1>
-          <p className="lead text-secondary">
-            Welcome to Seven Eleven Training Academy! We believe that true mastery
-            takes dedication, persistence, and the right environment to thrive.
-            That's why we offer a unique training experience that extends across
-            the week—7 days a week, 11 hours a day—designed to equip you with
-            unparalleled skills and expertise.
-          </p>
-        </div>
-        <div className="col-md-6">
-          <img
-            src={intro_card}
-            alt="Construction Animation"
-            className="img-fluid rounded shadow-sm"
-          />
-        </div>
-      </div>
-      <div className="">
-        <div className="card-body p-4 text-center"> {/* Added text-center */}
-          <img
-            src={layersIcon}
-            alt="Layers Icon"
-            className="img-fluid mb-2" // Added mb-2 for spacing
-            style={{ maxWidth: '50px', height: 'auto' }} // Adjust size as needed
-          />
-          <h2 className="h4 fw-bold text-info mb-3">Why 7 Days, 11 Hours?</h2>
-          <p className="text-secondary">
-            The world doesn't slow down, and neither should your growth. By
-            offering training 7 days a week, we ensure that you have the
-            flexibility to learn, practice, and evolve every single day. And with
-            11 hours in a day, you get ample time to engage in immersive,
-            hands-on learning experiences, collaborate with peers, and receive
-            personalized guidance from seasoned instructors.
-          </p>
-        </div>
-      </div>
+    return (
+        <div className="about-page-container py-5">
+            {/* Introduction Section */}
+            <Container className="py-5">
+                <h1 className="text-xl mb-5 text-black robot-text display-4 text-center">About Seven Eleven Training Academy</h1>
 
-      <div className="card bg-light border-0 shadow-sm rounded-4 mb-5">
-        <div className="card-body p-4">
-          <h2 className="h4 fw-bold text-success mb-3">Our Approach</h2>
-          <ul className="list-unstyled">
-            <li className="mb-3">
-              <h3 className="h6 fw-bold text-secondary mb-2">Holistic Learning</h3>
-              <p className="text-secondary">
-                We blend theory and practical application to ensure that every
-                hour spent with us contributes directly to your development. With
-                interactive workshops, real-world simulations, and expert-led
-                sessions, you’ll be ready to tackle challenges head-on.
-              </p>
-            </li>
-            <li className="mb-3">
-              <h3 className="h6 fw-bold text-secondary mb-2">Non-stop Support</h3>
-              <p className="text-secondary">
-                Our trainers are available throughout the week, providing you with
-                ongoing feedback and guidance. Whether it's early in the morning
-                or late in the evening, help is just a message away.
-              </p>
-            </li>
-            <li className="mb-3">
-              <h3 className="h6 fw-bold text-secondary mb-2">Flexible Schedules</h3>
-              <p className="text-secondary">
-                Life is unpredictable, so we give you the flexibility to choose
-                your ideal training times. Whether you’re an early bird or a night
-                owl, there’s a time slot just for you.
-              </p>
-            </li>
-            <li>
-              <h3 className="h6 fw-bold text-secondary mb-2">Innovative Environment</h3>
-              <p className="text-secondary">
-                At Seven Eleven, we don’t just teach—we inspire. Our
-                state-of-the-art facilities, collaborative community, and
-                forward-thinking methodology ensure that you leave not just with
-                knowledge but with the confidence to excel in your field.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
+                <Row className="mb-5 align-items-center bg-white p-4 ">
+                    <Col>
+                        <img
+                            src={intro_card}
+                            alt="Dedication and Mastery in Training"
+                            className="img-fluid rounded shadow-lg border border-warning border-3 float-right-wrap mb-3 ms-4"
+                            style={{ maxWidth: '400px' }}
+                        />
+                        <p className="lead text-black text-start mb-4 text-justify ">
+                            At <span className="text-orange fw-bold">Seven Eleven Training Academy</span>, we're driven by a singular belief: true mastery
+                            is forged through unwavering dedication, persistent effort, and cultivating an environment where potential
+                            can truly flourish. This conviction is the bedrock of our unique training philosophy, which extends across the entire week—<span className="text-orange fw-bold">7 days a week, 11 hours a day</span>. Our meticulously crafted programs are designed not just to
+                            impart knowledge, but to equip you with unparalleled, industry-relevant skills and profound expertise.
+                        </p>
+                        <p className="text-black larger-text text-start text-justify">
+                            We fully recognize that the journey to success is continuous and demanding; hence, our commitment to your growth
+                            is equally relentless. Every aspect of our curriculum is thoughtfully tailored for individuals poised to significantly
+                            advance their capabilities. Whether your ambition lies in the dynamic realms of technology, the strategic landscapes
+                            of business, the disciplined world of fitness, or the creative expressions of the arts, Seven Eleven Training Academy
+                            stands as your steadfast partner. We're committed to delivering rigorous, dynamic, and exceptionally supportive
+                            training experiences that seamlessly integrate with your demanding schedule, empowering you to not just keep pace,
+                            but to consistently stay ahead of the curve.
+                        </p>
+                        <div className="clearfix"></div>
+                    </Col>
+                </Row>
+            </Container>
 
-      <div className="row align-items-center mb-5">
-        <div className="col-md-6">
-          <h2 className="h4 fw-bold text-primary mb-3">Our Mission</h2>
-          <p className="text-secondary">
-            The mission of Seven Eleven Training Academy is to empower individuals
-            with the skills and knowledge necessary for personal and professional
-            development. The academy focuses on delivering high-quality training
-            programs aimed at enhancing capabilities in various fields, fostering
-            lifelong learning, and creating opportunities for career advancement.
-          </p>
-          <h2 className="h4 fw-bold text-info mb-3">Our Vision</h2>
-          <p className="text-secondary">
-            The vision of Seven Eleven Training Academy is to be a leading
-            educational institution that shapes the future of learners by providing
-            innovative and practical training. The academy envisions becoming a
-            globally recognized platform for excellence in skill development,
-            enabling individuals to achieve their full potential and contribute
-            meaningfully to society.
-          </p>
-        </div>
-        <div className="col-md-6">
-          <img
-            src={mission}
-            alt="Mission Image"
-            className="img-fluid"
-          />
-        </div>
-      </div>
+            {/* Why 7 Days, 11 Hours? Section */}
+            <div className="why-7-11-section py-5 text-center text-white shadow-lg">
+                <Container>
+                    <h2 className="mb-4 text-orange robot-text display-5">The Seven Eleven Advantage: Uninterrupted Growth</h2>
+                    <p className="lead text-start larger-text mb-4 text-justify">
+                        The modern world operates at a relentless pace, and your personal and professional growth should never be
+                        constrained by traditional schedules. Our unique <span className="fw-bold">7-days-a-week training model</span>
+                        is meticulously designed to provide you with unparalleled flexibility and continuous access to learning.
+                        This ensures you have the freedom to engage, practice, and evolve every single day, without compromise.
+                    </p>
+                    <p className="larger-text text-start mb-0 text-justify">
+                        Furthermore, our <span className="fw-bold">11-hours-a-day immersive sessions</span> offer far more than just extended
+                        study time. They provide ample opportunity for deep dives into complex subjects, extensive hands-on practical
+                        application, and invaluable real-world simulations. You'll have dedicated time to collaborate organically
+                        with a diverse peer group, engage in robust problem-solving discussions, and receive highly personalized,
+                        constructive guidance directly from our seasoned instructors. This extended, intensive, and supportive
+                        learning environment is engineered to accelerate your skill acquisition, solidify your understanding,
+                        and fast-track your journey to true expertise. We believe that consistent, dedicated exposure is key to mastery, and our 7/11 model is the ultimate
+                        framework for achieving just that.
+                    </p>
+                </Container>
+            </div>
 
-      <div className="card bg-light border-0 shadow-sm rounded-4 mb-5">
-        <div className="card-body p-4">
-          <h2 className="h4 fw-bold text-success mb-3">Our Services</h2>
-          <div className="mb-4">
-            <h3 className="h5 fw-bold text-secondary mb-2">IT Training</h3>
-            <p className="text-secondary">
-              Our comprehensive IT training programs designed to equip individuals
-              and teams with the skills needed to thrive in today’s fast-paced
-              digital environment. Each course is led by industry-certified
-              instructors and includes hands-on labs, real-world projects, and
-              certification exam preparation. Whether you're a beginner looking
-              to enter the IT field or a professional seeking to upskill or get
-              certified, Training Academy provides tailored learning paths to meet
-              your career goals.
-            </p>
-          </div>
-          <div className="mb-4">
-            <h3 className="h5 fw-bold text-secondary mb-2">Certification Training</h3>
-            <p className="text-secondary">
-              Seven Eleven offers a range of industry-recognized certification
-              training programs designed to enhance professional skills, support
-              career advancement, and meet current market demands. Each
-              certification training program is structured to combine theoretical
-              knowledge with hands-on practical experience. Delivered by certified
-              instructors, the programs often include live sessions, self-paced
-              modules, real-world projects, and mock exams to prepare learners
-              for official certification exams.
-            </p>
-          </div>
-          <div className="mb-4">
-            <h3 className="h5 fw-bold text-secondary mb-2">Non IT to IT Training</h3>
-            <p className="text-secondary">
-              Whether you’re looking to switch careers, start fresh in IT, or
-              enhance your digital literacy, Seven Eleven Academy specialize in
-              transforming non-IT professionals into skilled IT industry
-              contributors through our comprehensive "Non-IT to IT Training"
-              program. Designed for individuals from various academic and
-              professional backgrounds—such as commerce, arts, mechanical, civil,
-              or even fresh graduates; this program bridges the gap between
-              non-technical experience and the rapidly evolving tech sector. This
-              initiative ensures that students are not only academically
-              proficient but also industry-ready, aligning their education with
-              practical business needs.
-            </p>
-          </div>
-          <div className="mb-4">
-            <h3 className="h5 fw-bold text-secondary mb-2">Internship</h3>
-            <p className="text-secondary">
-              Excel yourself on an awesome internship training experience that
-              will help you overcome hurdles and achieve success. By following
-              the advice of the industry experts, you may seize this chance to
-              break new ground, develop our talent, and shine with success in
-              your chosen company.
-            </p>
-          </div>
-          <div>
-            <h3 className="h5 fw-bold text-secondary mb-2">Project Support</h3>
-            <p className="text-secondary">
-              Seven Eleven Academy, operating under the umbrella of the SS Group
-              of Companies, is dedicated to providing comprehensive support to its
-              students, particularly in the realm of project-based learning.The
-              institution emphasizes a holistic educational approach, integrating
-              academic excellence with practical experiences to prepare students
-              for real-world challenges. This inclusive approach ensures that
-              students are well-equipped to tackle complex problems and excel in
-              their future academic and professional endeavors.
-            </p>
-          </div>
+            {/* Our Transformative Approach to Learning Section */}
+            <Container className="py-5">
+                <h2 className="text-orange mb-5 text-center robot-text display-5">Our Transformative Approach to Learning</h2>
+                <Row className="mb-5 justify-content-center">
+                    <Col md={6} lg={4} className="mb-4">
+                        <Card className="h-100 shadow-lg border-0 text-center approach-card p-3">
+                            <Card.Body>
+                                <div className="icon-wrapper mb-3">
+                                    <FontAwesomeIcon icon={faBrain} size="4x" className="text-orange animate-icon" />
+                                </div>
+                                <Card.Title className="text-black fw-bold robot-text mb-3">Holistic Learning Ecosystem</Card.Title>
+                                <Card.Text className="text-start text-black larger-text text-justify">
+                                    Our curriculum is a seamless fusion of foundational theory and dynamic practical application. We ensure that every moment
+                                    spent with us directly fuels your comprehensive development. Through highly interactive workshops, cutting-edge
+                                    real-world simulations, and meticulously curated expert-led sessions, you will not only gain knowledge but also
+                                    develop the robust critical thinking and problem-solving skills necessary to confidently tackle any challenge head-on.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col md={6} lg={4} className="mb-4">
+                        <Card className="h-100 shadow-lg border-0 text-center approach-card p-3">
+                            <Card.Body>
+                                <div className="icon-wrapper mb-3">
+                                    <FontAwesomeIcon icon={faHeadset} size="4x" className="text-orange animate-icon" />
+                                </div>
+                                <Card.Title className="text-black fw-bold robot-text mb-3">Unwavering, Non-stop Support</Card.Title>
+                                <Card.Text className="text-start text-black larger-text text-justify">
+                                    Our dedicated team of world-class trainers is available to you throughout the entire week, ensuring continuous
+                                    and personalized support. We provide timely, constructive feedback, immediate clarification on complex topics,
+                                    and strategic guidance to keep you on track. Whether you prefer early morning sessions or late evening inquiries,
+                                    expert help and mentorship are always just a message or click away, ensuring you never feel stuck.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col md={6} lg={4} className="mb-4">
+                        <Card className="h-100 shadow-lg border-0 text-center approach-card p-3">
+                            <Card.Body>
+                                <div className="icon-wrapper mb-3">
+                                    <FontAwesomeIcon icon={faCalendarAlt} size="4x" className="text-orange animate-icon" />
+                                </div>
+                                <Card.Title className="text-black fw-bold robot-text mb-3">Empowering Flexible Schedules</Card.Title>
+                                <Card.Text className="text-start text-black larger-text text-justify">
+                                    We understand that life is dynamic and often unpredictable. That's why we empower you with unparalleled flexibility
+                                    to seamlessly integrate your training into your existing commitments. Our diverse array of time slots allows you
+                                    to choose the ideal learning periods that align perfectly with your personal rhythm. Whether you are an early bird
+                                    who thrives in the dawn hours or a night owl who prefers the quiet of the evening, there is a perfectly suited
+                                    time slot waiting just for you.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                   
+                </Row>
+                </Container>
+
+                {/* Our Instructors/Team */}
+                <Row className="OurInstructors  why-7-11-section py-5 text-center text-white shadow-lg ">
+                    
+                    <Col className="text-center">
+                        <h2 className="text-orange mb-4 robot-text display-5">Meet Our Expert Instructors</h2>
+                              <p className="lead text-start larger-text mb-4 text-justify">
+                            Our strength lies in the caliber of our educators. At Seven Eleven Training Academy, you learn from the best.
+                            Our instructors are not just teachers; they are **industry veterans, thought leaders, and passionate mentors**
+                            with extensive real-world experience. They bring a wealth of practical knowledge and current industry insights
+                            directly into the classroom, ensuring that your learning is always **relevant, practical, and cutting-edge**.
+                        </p>
+                        <p className="larger-text text-start mb-0 text-justify">
+                            They are committed to fostering an engaging, supportive, and challenging learning environment, guiding you
+                            through every step of your journey with personalized attention and expert guidance. Their dedication is
+                            key to unlocking your full potential.
+                        </p>
+                    </Col>
+                </Row>
+
+
+                {/* Our Values */}
+                <Row className="mb-5 p-5 bg-white">
+                    <Col className="text-center">
+                        <h2 className="text-black mb-4 robot-text display-5">Our Core Values</h2>
+                            <p className="lead text-start larger-text mb-4 text-justify">
+                            At Seven Eleven Training Academy, our operations are guided by a set of fundamental values that define
+                            our commitment to our learners and the community:
+                        </p>
+                        <ul className="list-unstyled text-black larger-text text-center values-list">
+                            <li><FontAwesomeIcon icon={faAward} className="me-2 text-orange" /> **Excellence:** We strive for the highest standards in all our programs and services.</li>
+                            <li><FontAwesomeIcon icon={faHandshake} className="me-2 text-orange" /> **Integrity:** We operate with transparency, honesty, and ethical conduct.</li>
+                            <li><FontAwesomeIcon icon={faLightbulb} className="me-2 text-orange" /> **Innovation:** We continuously evolve our methods and curriculum to stay ahead.</li>
+                            <li><FontAwesomeIcon icon={faUsersCog} className="me-2 text-orange" /> **Empowerment:** We equip individuals with the tools and confidence to succeed.</li>
+                            <li><FontAwesomeIcon icon={faCalendarAlt} className="me-2 text-orange" /> **Accessibility:** We make high-quality education attainable for diverse schedules.</li>
+                        </ul>
+                    </Col>
+                </Row>
+
+
+
+                {/* Mission and Vision */}
+                <Row className="mb-5">
+                    <Col md={6} className="mb-4">
+                        <Card className="h-100  bg-gradient-dark text-white mission-vision-card p-4">
+                            <Card.Body className="d-flex flex-column justify-content-center align-items-center text-center">
+                                <FontAwesomeIcon icon={faBullseye} size="4x" className="mb-3 text-orange animate-icon" />
+                                <Card.Title className="text-orange fw-bold robot-text display-6">OUR MISSION</Card.Title>
+                                <Card.Text className="larger-text text-start text-justify">
+                                    The overarching mission of <span className="fw-bold">Seven Eleven Training Academy</span> is to empower individuals with the skills and knowledge necessary for personal and professional development. The academy focuses on delivering high-quality training programs aimed at enhancing capabilities in various fields, fostering lifelong learning, and creating opportunities for career advancement.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col md={6} className="mb-4">
+                        <Card className="h-100 shadow-lg border-0 bg-gradient-dark text-white mission-vision-card p-4">
+                            <Card.Body className="d-flex flex-column justify-content-center align-items-center text-center">
+                                <FontAwesomeIcon icon={faEye} size="4x" className="mb-3 text-orange animate-icon" />
+                                <Card.Title className="text-orange fw-bold robot-text display-6">OUR VISION</Card.Title>
+                                <Card.Text className="larger-text text-start text-justify">
+                                    The visionary aim of <span className="fw-bold">Seven Eleven Training Academy</span> is to be a leading educational institution that shapes the future of learners by providing innovative and practical training. The academy envisions becoming a globally recognized platform for excellence in skill development, enabling individuals to achieve their full potential and contribute meaningfully to society.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+
+                <hr className="my-5 border-orange" />
+
+                {/* Call to Action */}
+                <Row className="mt-5 text-center p-5 bg-orange text-white rounded shadow-lg call-to-action-section">
+                    <Col>
+                        <h2 className="mb-3 robot-text display-5">Your Future Starts Now.</h2>
+                        <p className="lead larger-text mb-4 text-justify">
+                            Are you ready to transcend your current capabilities and truly elevate your skills to an unprecedented level?
+                            Join the distinguished community at **Seven Eleven Training Academy**. Here, innovation meets dedication,
+                            and your ambition finds its ultimate pathway to success. Unlock your full potential with our unparalleled,
+                            intensive training programs designed to empower you for tomorrow's challenges.
+                        </p>
+                        <Button
+                            href="/contact"
+                            variant="light"
+                            size="lg"
+                            className="custom-btn-light-outline-orange shadow-lg"
+                        >
+                            Begin Your Transformation Today!
+                        </Button>
+                    </Col>
+                </Row>
+          
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default About;

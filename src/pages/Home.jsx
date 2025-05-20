@@ -26,12 +26,14 @@ import {
   faUserGraduate,
   faBookOpen,
   faCalendarCheck,
+  faNetworkWired, // Added for Networking
+  faHandsHelping, // Added for Soft Skills
 } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [whatsNewItems] = useState([
-    {
+{
       title: 'New Advanced Cybersecurity Program',
       description:
         "We've launched an in-depth program covering the latest trends and techniques in cybersecurity. Enroll now to secure your future!",
@@ -77,7 +79,44 @@ function Home() {
       date: 'March 1, 2024',
       color: 'secondary',
     },
+    // New items added below, reflecting the updated product offerings and dates
+    {
+      title: 'New Artificial Intelligence Course Launched!',
+      description: 'Explore the foundations and advanced concepts of AI, machine learning, and deep learning.',
+      link: '/course/artificial-intelligence',
+      date: 'May 10, 2025',
+      color: 'primary',
+    },
+    {
+      title: 'Data Science Program Enhanced!',
+      description: 'Dive deeper into data analysis, statistical modeling, and big data technologies.',
+      link: '/course/data-science',
+      date: 'April 25, 2025',
+      color: 'success',
+    },
+    {
+      title: 'Networking & Cyber Security Masterclass',
+      description: 'Secure your future with our comprehensive program on network security and ethical hacking.',
+      link: '/course/networking-cybersecurity',
+      date: 'March 15, 2025',
+      color: 'info',
+    },
+    {
+      title: 'New Software Development Tracks Available!',
+      description: 'Specialized paths in web, mobile, and enterprise software development.',
+      link: '/course/software-development',
+      date: 'February 20, 2025',
+      color: 'warning',
+    },
+    {
+      title: 'Soft Skills Training for Career Success',
+      description: 'Develop essential communication, leadership, and problem-solving skills for the modern workplace.',
+      link: '/course/soft-skills',
+      date: 'January 5, 2025',
+      color: 'secondary',
+    },
   ]);
+
 
   const [slideIndex, setSlideIndex] = useState(0);
   const containerRef = useRef(null);
@@ -155,30 +194,43 @@ function Home() {
             <div className="col">
               <div className="card h-100 border-3 shadow-sm rounded-3">
                 <div className="card-body text-center p-4">
-                  <FontAwesomeIcon icon={faShieldAlt} size="3x" className="text-primary mb-3" /> {/* Changed to text-primary for consistency */}
-                  <h5 className="card-title fw-bold">Cyber Security</h5>
-                  <p className="card-text small text-muted">Become a guardian of the digital realm.</p>
-                  <a href="/course/cyber-security" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a> {/* Changed to btn-outline-primary */}
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card h-100 border-3 shadow-sm rounded-3">
-                <div className="card-body text-center p-4">
-                  <FontAwesomeIcon icon={faDatabase} size="3x" className="text-primary mb-3" /> {/* Changed to text-primary */}
-                  <h5 className="card-title fw-bold">Data Science & Analytics</h5>
+                  <FontAwesomeIcon icon={faDatabase} size="3x" className="text-primary mb-3" />
+                  <h5 className="card-title fw-bold">Data Science</h5>
                   <p className="card-text small text-muted">Transform data into actionable insights.</p>
-                  <a href="/course/data-science" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a> {/* Changed to btn-outline-primary */}
+                  <a href="/course/data-science" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
+            {/* NETWORKING & CYBER SECURITY */}
             <div className="col">
               <div className="card h-100 border-3 shadow-sm rounded-3">
                 <div className="card-body text-center p-4">
-                  <FontAwesomeIcon icon={faCode} size="3x" className="text-primary mb-3" /> {/* Changed to text-primary */}
+                  <FontAwesomeIcon icon={faShieldAlt} size="3x" className="text-primary mb-3" />
+                  <h5 className="card-title fw-bold">Networking & Cyber Security</h5>
+                  <p className="card-text small text-muted">Safeguard digital assets and infrastructure.</p>
+                  <a href="/course/networking-cybersecurity" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                </div>
+              </div>
+            </div>
+            {/* SOFTWARE DEVELOPMENT */}
+            <div className="col">
+              <div className="card h-100 border-3 shadow-sm rounded-3">
+                <div className="card-body text-center p-4">
+                  <FontAwesomeIcon icon={faCode} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Software Development</h5>
-                  <p className="card-text small text-muted">Build innovative solutions with tools.</p>
-                  <a href="/course/software-development" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a> {/* Changed to btn-outline-primary */}
+                  <p className="card-text small text-muted">Build innovative solutions with code.</p>
+                  <a href="/course/software-development" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                </div>
+              </div>
+            </div>
+            {/* SOFT SKILLS TRAINING */}
+            <div className="col">
+              <div className="card h-100 border-3 shadow-sm rounded-3">
+                <div className="card-body text-center p-4">
+                  <FontAwesomeIcon icon={faHandsHelping} size="3x" className="text-primary mb-3" />
+                  <h5 className="card-title fw-bold">Soft Skills Training</h5>
+                  <p className="card-text small text-muted">Enhance communication and professional growth.</p>
+                  <a href="/course/soft-skills" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
@@ -191,11 +243,11 @@ function Home() {
                 <strong className="lead mb-0">1,500+ Students</strong>
               </div>
               <div className="mx-3 my-2 d-flex align-items-center">
-                <FontAwesomeIcon icon={faBookOpen} className="text-primary me-2" size="lg" /> {/* Changed to text-primary */}
+                <FontAwesomeIcon icon={faBookOpen} className="text-primary me-2" size="lg" />
                 <strong className="lead mb-0">4+ Courses</strong>
               </div>
               <div className="mx-3 my-2 d-flex align-items-center">
-                <FontAwesomeIcon icon={faCalendarCheck} className="text-primary me-2" size="lg" /> {/* Changed to text-primary */}
+                <FontAwesomeIcon icon={faCalendarCheck} className="text-primary me-2" size="lg" />
                 <strong className="lead mb-0">Established in 2020</strong>
               </div>
             </div>
@@ -221,9 +273,9 @@ function Home() {
               >
                 <div className="card border-0 shadow-sm rounded-3 h-100 w-100">
                   <div className="card-body p-4">
-                    <h5 className="card-title fw-bold text-primary">{item.title}</h5> {/* Ensured text-primary for orange */}
-                   <p className="card-text text-muted small text-start text-wrap">{item.description}</p>
-                    <a href={item.link} className={`btn btn-sm ms-2 btn-primary rounded-pill`}> {/* Ensured btn-primary */}
+                    <h5 className="card-title fw-bold text-primary">{item.title}</h5>
+                    <p className="card-text text-muted small text-start text-wrap">{item.description}</p>
+                    <a href={item.link} className={`btn btn-sm ms-2 btn-primary rounded-pill`}>
                       Learn More <FontAwesomeIcon icon={faArrowRight} className="ms-3" />
                     </a>
                   </div>
@@ -272,8 +324,8 @@ function Home() {
       <div className="bg-secondary py-5">
         <div className="container mb-3">
           <h2 className="text-light fw-bold mb-5 text-center">
-                <FontAwesomeIcon icon={faLightbulb} className="text-warning me-2" /> 
-                Why Choose Our Academy?
+            <FontAwesomeIcon icon={faLightbulb} className="text-warning me-2" />
+            Why Choose Our Academy?
           </h2>
           <div className="row row-cols-1 row-cols-md-3 g-4">
             <div className="col">
