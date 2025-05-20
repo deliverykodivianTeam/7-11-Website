@@ -397,7 +397,7 @@ function Home() {
 
       {/* Footer */}
       <footer className="py-1 bg-dark text-light text-center">
-        <p className="mb-0 small">&copy; 2025 Your IT Academy. All rights reserved.</p>
+        <p className="mb-0 small">&copy; 2025 Seven Eleven Training Academy. All rights reserved.</p>
       </footer>
     </div>
   );
