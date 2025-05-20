@@ -1,0 +1,146 @@
+/* Footer.css */
+
+.main-footer {
+  background-color: black; /* Dark blue background from the image */
+  color: white; /* White text for better contrast */
+  padding: 20px 20px;
+  font-family: Arial, sans-serif; /* A common sans-serif font */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+  justify-content: space-around; /* Distributes space between columns */
+  max-width: 1200px; /* Max width to keep content contained */
+  margin: 0 auto; /* Center the footer content */
+  gap: 30px; /* Space between columns */
+}
+
+.footer-column {
+  flex: 1; /* Allows columns to grow and shrink */
+  min-width: 220px; /* Minimum width for each column before wrapping */
+  padding: 10px; /* Add some padding inside columns */
+}
+
+.footer-column h3 {
+  color: orange; /* Orange heading color as in the image */
+  font-size: 1.2em; /* Slightly smaller for main headings */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase; /* Match the uppercase headings */
+  letter-spacing: 0.5px;
+}
+
+.footer-column h4 {
+    color: orange;
+  font-size: 1em; /* Slightly smaller for sub-headings */
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold; /* Make sub-headings bold */
+}
+
+.footer-column p,
+.footer-column ul {
+  font-size: 0.85em; /* Smaller for general text and list items */
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: orange; /* Hover effect for links */
+}
+
+/* Mail Us specific styling */
+.mail-us-heading {
+  margin-top: 30px; /* Space above Mail Us heading */
+  margin-bottom: 15px;
+}
+
+.mail-address a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85em; /* Ensure mail address text is also smaller */
+  transition: color 0.3s ease;
+}
+
+.mail-address a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.4em; /* Slightly smaller for social icons */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: orange; /* Icon hover color */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center text within columns */
+  }
+
+  .footer-column {
+    min-width: 90%; /* Take almost full width */
+  }
+
+  .social-icons {
+    justify-content: center; /* Center social icons */
+  }
+
+  /* Further reduce font sizes for very small screens if needed */
+  .footer-column h3 {
+    font-size: 1.1em;
+  }
+  .footer-column p,
+  .footer-column ul,
+  .mail-address a {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-footer {
+    padding: 30px 15px;
+  }
+
+  .footer-column h3 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+
+  .footer-column p,
+  .footer-column ul {
+    font-size: 0.8em;
+  }
+}

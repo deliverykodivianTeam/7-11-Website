@@ -1,32 +1,48 @@
 /* Contact.css */
-.contact-container {
-  width: 100%;
+
+.map-and-address-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0; /* Remove padding from here, container class handles it */
+  flex-direction: column; /* Stack map and address vertically */
+  align-items: center; /* Center horizontally on small screens */
+  text-align: center; /* Center text on small screens */
 }
 
-.contact-page-content {
-  display: flex; /* Keep for the flex layout, will be adjusted by Bootstrap */
-  justify-content: center; /* Keep for centering within the row */
-  gap: 30px;
-  max-width: 1200px; /* max-width is handled by container now, but can add for extra restriction */
-  width: 95%; /* Keep for some margin inside the container */
-  align-items: flex-start; /* Align items to the start (top) */
-  flex-direction: column;
+.map-container {
+  margin-top: 50px;
+  width: 100%; /* Ensure map takes full width of its column */
+  /* Remove explicit height if iframe handles it, or set one if needed */
 }
 
-.contact-left {
-  margin-top: 25px;
-  padding: 20px;
-  /* width will be defined by col-md-6 */
+.map-container iframe {
+  border-radius: 8px; /* Slightly rounded corners for the map as seen in the image */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+.address-details {
+  margin-top: 20px; /* Space between map and address details */
+  width: 100%; /* Ensure address details take full width */
+}
+
+.academy-name {
+  font-size: 2.2rem; /* Larger font for the academy name */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.address-line,
+.address-landmark {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+
+/* Adjust contact form headings and lists */
 .why-contact-heading {
   color: #333;
   margin-bottom: 20px;
-  font-size:4rem; /* Adjust font size for better scaling with Bootstrap */
+  font-size: 2.5rem; /* Adjusted for better responsiveness */
 }
 
 .contact-reasons {
@@ -35,79 +51,44 @@
 }
 
 .contact-reasons li {
-  margin-bottom: 12px; /* Adjust spacing for list items */
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Slightly smaller for tighter integration */
 }
 
 .contact-reasons li::before {
   content: '\2713';
-  color:orange;
+  color: orange;
   margin-right: 10px;
-  font-size: 1.5em; /* Adjust icon size */
+  font-size: 1.2em;
 }
 
-
 .contact-right {
-  margin-top: 0px;
+  margin-top: 0px; /* No top margin needed due to Bootstrap spacing */
   padding: 20px;
-   /* width will be defined by col-md-6 */
+  /* width will be defined by col-md-6 */
 }
 
 .contact-us-heading {
   color: #333;
   margin-bottom: 20px;
-  font-size: 4rem; /* Adjust font size */
+  font-size: 2.5rem; /* Adjusted for consistency */
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 15px; /* Spacing between form elements */
   width: 100%;
 }
 
-/* These input styles are now handled by Bootstrap's form-control */
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form select {
-  /* padding: 10px; */
-  /* border: 1px solid #ccc; */
+/* Input styles are largely handled by Bootstrap's form-control, but you can override */
+.contact-form .form-control {
   border-radius: 5px;
   font-size: 1rem;
-  width: 100%;
   box-sizing: border-box;
-}
-
-.mobile-input-group {
-  display: flex;
-  align-items: center;
-  /* border: 1px solid #ccc; */ /* Handled by Bootstrap */
-  border-radius: 5px;
-  overflow: hidden;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.mobile-input-group .country-code {
-  background-color: #e9ecef; /* Bootstrap background color for input group addon */
-  padding: 10px;
-  border-right: 1px solid #ced4da; /* Bootstrap border color */
-}
-
-.mobile-input-group input[type="tel"] {
-  flex-grow: 1;
-  border: none;
-  padding: 10px;
-  font-size: 1rem;
-  box-sizing: border-box;
-  width: calc(100% - 70px);
-}
-
-.mobile-input-group input[type="tel"]:focus {
-  outline: none;
+  padding: 10px 12px; /* Adjust padding for consistency */
 }
 
 .contact-form select {
@@ -116,26 +97,24 @@
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 1em;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .mock-captcha {
   display: flex;
   align-items: center;
-  /* border: 1px solid #ccc; */ /* Handled by Bootstrap */
   border-radius: 5px;
   padding: 10px;
-  background-color: #f8f9fa; /* Bootstrap background color for form group */
+  background-color: #f8f9fa;
   justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 0;
+  border: 1px solid #ced4da; /* Add a border to match other inputs */
 }
 
 .captcha-provider {
   font-size: 0.8rem;
-  color: #6c757d; /* Bootstrap text color */
+  color: #6c757d;
 }
 
 .captcha-provider a {
@@ -148,7 +127,7 @@
 }
 
 .contact-form button.submit-button {
-  /* background-color: #007bff; */ /* Handled by Bootstrap */
+  background-color: orange; /* Changed to orange as per common branding */
   color: white;
   padding: 12px 20px;
   border: none;
@@ -158,30 +137,52 @@
   width: 100%;
   box-sizing: border-box;
   font-weight: bold;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
 .contact-form button.submit-button:hover {
-  background-color: black;
+  background-color: black; /* Darken on hover */
 }
 
-/* Media query for mobile view adjustments - optional, Bootstrap handles most */
-@media (max-width: 768px) {
-    .why-contact-heading{
-        font-size: 2rem;
-    }
-    .contact-us-heading{
-        font-size: 2rem;
-    }
-  .contact-page-content {
-    flex-direction: column; /* Stack the left and right sections vertically on small screens */
-    align-items: center; /* Center the content horizontally on small screens */
+/* Media query for mobile view adjustments */
+@media (max-width: 767.98px) { /* Use Bootstrap's breakpoint for 'md' */
+  .academy-name,
+  .address-line,
+  .address-landmark {
+    text-align: center; /* Center address text on small screens */
   }
-  .contact-left,
-  .contact-right {
-    width: 100%; /* Make them take up full width on small screens */
-    padding: 15px;
+
+  .academy-name {
+    font-size: 1.8rem;
   }
-  .contact-reasons li {
+
+  .address-line,
+  .address-landmark {
     font-size: 1rem;
+  }
+
+  .contact-us-heading {
+    font-size: 2rem;
+    text-align: center; /* Center contact us heading on small screens */
+    margin-top: 30px; /* Add some space above the form on mobile */
+  }
+
+  .map-and-address-section {
+    align-items: center; /* Ensure map and address details are centered */
+  }
+}
+
+/* Adjustments for larger screens if needed */
+@media (min-width: 768px) {
+  .map-and-address-section {
+    align-items: flex-start; /* Align to the start on larger screens */
+  }
+  .academy-name,
+  .address-line,
+  .address-landmark {
+    text-align: left; /* Align address text left on larger screens */
+  }
+  .contact-us-heading {
+    text-align: left; /* Align contact us heading left on larger screens */
   }
 }

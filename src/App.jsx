@@ -6,6 +6,7 @@ import About from './pages/About.jsx';
 import AllCourses from './pages/All_Courses.jsx';
 import Contact from './pages/Contact.jsx';
 import Navbar from './components/Navbar.jsx'; // Import the Navbar component
+import Footer from './components/Footer.jsx';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/courses" element={<AllCourses />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

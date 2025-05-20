@@ -7,39 +7,46 @@
     padding: 20px 0;
     z-index: 10;
   }
-  
+
   .transparent-navbar ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
+    align-items: center; /* Align items vertically in the center */
   }
-  
+
   .transparent-navbar li {
     margin: 0 20px;
   }
-  
+
   .transparent-navbar a {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-decoration: none;
     color: black;
     font-weight: bold;
     font-size: 1.1em;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Add text-shadow to transition */
   }
-  
+
   .transparent-navbar a:hover {
     color:orange;
   }
 
-  .company_logo {
-  margin-top: -25px;
-  margin-right: 10px;
-  height: 90px; /* Adjust the height as needed */
-  transition: transform 0.1s ease-in-out;
-}
+  /* Active glow effect */
+  .transparent-navbar a.active {
+    color: orange; /* Change color when active */
 
-.company_logo:hover {
-  transform: scale(1.1);
-}
+  }
+
+  .company_logo {
+    margin-top: -25px;
+    margin-right: 10px;
+    height: 90px; /* Adjust the height as needed */
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .company_logo:hover {
+    transform: scale(1.1);
+  }
