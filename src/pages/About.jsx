@@ -19,7 +19,7 @@ import '../styles/About.css'; // Ensure this path is correct
 
 function About() {
     return (
-        <div className="about-page-container py-0">
+        <div className="about-page-container py-0 fade-up">
             {/* Introduction Section */}
             <Container className="py-5 ">
                 <h1 className="mt-5 text-xl mb-5 text-black robot-text display-4 text-center">About Seven Eleven Training Academy</h1>

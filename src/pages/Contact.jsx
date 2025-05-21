@@ -4,7 +4,7 @@ import '../styles/Contact.css'; // Keep your custom styles
 
 function Contact() {
   return (
-    <div className="container-fluid contact-page-wrapper"> {/* Added a wrapper for potential full-width styling */}
+    <div className="container-fluid contact-page-wrapper fade-up"> {/* Added a wrapper for potential full-width styling */}
       {/* Container for centered content and vertical padding */}
       <div className="container py-5">
         <div className=" mt-5 row justify-content-center align-items-start gx-5"> {/* Added gx-5 for more column gap */}

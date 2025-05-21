@@ -154,9 +154,9 @@ function Home() {
   const visibleItems = getVisibleItems();
 
   return (
-    <div>
+    <div className='fade-up'>
       {/* Hero Section */}
-      <div className="bg-light p-5 text-center mb-0 hero-section">
+      <div className="bg-light p-5 text-center mb-0 hero-section fade-up">
         <h1 className="display-4 mt-5 fw-bold hero-title">
           Welcome to Seven Eleven Training Academy!
         </h1>

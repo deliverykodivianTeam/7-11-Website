@@ -50,7 +50,7 @@ function All_Courses() {
   ];
 
   return (
-    <div className="all-courses-page py-5">
+    <div className="all-courses-page py-5 fade-up">
       <div className="container">
         <div className="row align-items-center mt-5 mb-5"> {/* Added mt-5 for top margin */}
           <div className="col-md-6">
