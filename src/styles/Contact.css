@@ -59,7 +59,7 @@
 
 .contact-reasons li::before {
   content: '\2713';
-  color: orange;
+  color:  #ff6f00;;
   margin-right: 10px;
   font-size: 1.2em;
 }
@@ -118,7 +118,7 @@
 }
 
 .captcha-provider a {
-  color: #007bff;
+  color: #176cdce8;
   text-decoration: none;
 }
 
@@ -127,7 +127,7 @@
 }
 
 .contact-form button.submit-button {
-  background-color: orange; /* Changed to orange as per common branding */
+  background-color:  #ff6f00;; /* Changed to orange as per common branding */
   color: white;
   padding: 12px 20px;
   border: none;

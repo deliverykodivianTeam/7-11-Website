@@ -187,7 +187,7 @@ function Home() {
                   <FontAwesomeIcon icon={faBrain} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Artificial Intelligence</h5>
                   <p className="card-text small text-muted">Master the technologies in future.</p>
-                  <a href="/course/artificial-intelligence" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
@@ -197,7 +197,7 @@ function Home() {
                   <FontAwesomeIcon icon={faDatabase} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Data Science</h5>
                   <p className="card-text small text-muted">Transform data into actionable insights.</p>
-                  <a href="/course/data-science" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
@@ -208,7 +208,7 @@ function Home() {
                   <FontAwesomeIcon icon={faShieldAlt} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Networking & Cyber Security</h5>
                   <p className="card-text small text-muted">Safeguard digital assets and infrastructure.</p>
-                  <a href="/course/networking-cybersecurity" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
@@ -219,7 +219,7 @@ function Home() {
                   <FontAwesomeIcon icon={faCode} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Software Development</h5>
                   <p className="card-text small text-muted">Build innovative solutions with code.</p>
-                  <a href="/course/software-development" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
@@ -230,7 +230,7 @@ function Home() {
                   <FontAwesomeIcon icon={faHandsHelping} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Soft Skills Training</h5>
                   <p className="card-text small text-muted">Enhance communication and professional growth.</p>
-                  <a href="/course/soft-skills" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
@@ -323,7 +323,7 @@ function Home() {
       {/* Why Choose Us Section */}
       <div className="bg-secondary py-5">
         <div className="container mb-3">
-          <h2 className="text-light fw-bold mb-5 text-center">
+          <h2 className="text-black fw-bold mb-5 text-center">
             <FontAwesomeIcon icon={faLightbulb} className="text-warning me-2" />
             Why Choose Our Academy?
           </h2>
@@ -332,8 +332,8 @@ function Home() {
               <div className="d-flex align-items-start">
                 <FontAwesomeIcon icon={faChalkboardTeacher} size="2x" className="text-warning me-3" />
                 <div>
-                  <h6 className="fw-bold mb-1 text-light">Expert Instruction</h6>
-                  <p className="text-light small mb-0">Learn from industry leaders and experienced educators.</p>
+                  <h6 className="fw-bold mb-1 text-black">Expert Instruction</h6>
+                  <p className="text-black small mb-0">Learn from industry leaders and experienced educators.</p>
                 </div>
               </div>
             </div>
@@ -341,8 +341,8 @@ function Home() {
               <div className="d-flex align-items-start">
                 <FontAwesomeIcon icon={faFire} size="2x" className="text-warning me-3" />
                 <div>
-                  <h6 className="fw-bold mb-1 text-light">Cutting-Edge Curriculum</h6>
-                  <p className="text-light small mb-0">Stay ahead with the latest technologies and trends.</p>
+                  <h6 className="fw-bold mb-1 text-black">Cutting-Edge Curriculum</h6>
+                  <p className="text-black small mb-0">Stay ahead with the latest technologies and trends.</p>
                 </div>
               </div>
             </div>
@@ -350,8 +350,8 @@ function Home() {
               <div className="d-flex align-items-start">
                 <FontAwesomeIcon icon={faBriefcase} size="2x" className="text-warning me-3" />
                 <div>
-                  <h6 className="fw-bold mb-1 text-light">Career Advancement</h6>
-                  <p className="text-light small mb-0">Gain skills that directly translate to job opportunities.</p>
+                  <h6 className="fw-bold mb-1 text-black">Career Advancement</h6>
+                  <p className="text-black small mb-0">Gain skills that directly translate to job opportunities.</p>
                 </div>
               </div>
             </div>
@@ -359,8 +359,8 @@ function Home() {
               <div className="d-flex align-items-start">
                 <FontAwesomeIcon icon={faUsers} size="2x" className="text-warning me-3" />
                 <div>
-                  <h6 className="fw-bold mb-1 text-light">Supportive Community</h6>
-                  <p className="text-light small mb-0">Connect with peers and instructors in a collaborative environment.</p>
+                  <h6 className="fw-bold mb-1 text-black">Supportive Community</h6>
+                  <p className="text-black text-start small mb-0">Connect with peers and instructors in a collaborative environment.</p>
                 </div>
               </div>
             </div>
@@ -368,8 +368,8 @@ function Home() {
               <div className="d-flex align-items-start">
                 <FontAwesomeIcon icon={faChartLine} size="2x" className="text-warning me-3" />
                 <div>
-                  <h6 className="fw-bold mb-1 text-light">Measurable Results</h6>
-                  <p className="text-light small mb-0">Track your progress and achieve your learning goals.</p>
+                  <h6 className="fw-bold mb-1 text-black">Measurable Results</h6>
+                  <p className="text-black small mb-0">Track your progress and achieve your learning goals.</p>
                 </div>
               </div>
             </div>
@@ -377,8 +377,8 @@ function Home() {
               <div className="d-flex align-items-start">
                 <FontAwesomeIcon icon={faComments} size="2x" className="text-warning me-3" />
                 <div>
-                  <h6 className="fw-bold mb-1 text-light">Interactive Learning</h6>
-                  <p className="text-light small mb-0">Engage with dynamic content and hands-on projects.</p>
+                  <h6 className="fw-bold mb-1 text-black">Interactive Learning</h6>
+                  <p className="text-black small mb-0">Engage with dynamic content and hands-on projects.</p>
                 </div>
               </div>
             </div>
@@ -390,15 +390,12 @@ function Home() {
       <div className="bg-white py-5 text-center">
         <h2 className="fw-bold mb-4 text-dark">Ready to Take the Next Step?</h2>
         <p className="lead text-muted mb-4">Your journey to a successful IT career starts here.</p>
-        <a href="/apply-now" className="btn btn-primary btn-lg rounded-pill">
+        <a href="/contact" className="btn btn-primary btn-lg rounded-pill">
           Take a Step Now <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
         </a>
       </div>
 
-      {/* Footer */}
-      <footer className="py-1 bg-dark text-light text-center">
-        <p className="mb-0 small">&copy; 2025 Seven Eleven Training Academy. All rights reserved.</p>
-      </footer>
+      
     </div>
   );
 }

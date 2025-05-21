@@ -95,7 +95,7 @@ body {
 
 /* Why Choose Us Section */
 .bg-secondary {
-  background-color: var(--primary-black) !important; /* Use primary black for this section */
+  background-color: var( --border-light) !important; /* Use primary black for this section */
 }
 
 .text-warning {

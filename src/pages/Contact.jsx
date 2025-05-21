@@ -7,7 +7,7 @@ function Contact() {
     <div className="container-fluid contact-page-wrapper"> {/* Added a wrapper for potential full-width styling */}
       {/* Container for centered content and vertical padding */}
       <div className="container py-5">
-        <div className="row justify-content-center align-items-start gx-5"> {/* Added gx-5 for more column gap */}
+        <div className=" mt-5 row justify-content-center align-items-start gx-5"> {/* Added gx-5 for more column gap */}
           {/* Left column for Map and Address */}
           <div className="col-md-6 mb-4 mb-md-0"> {/* Add margin-bottom for mobile */}
             <div className="map-and-address-section">
@@ -75,6 +75,19 @@ function Contact() {
           </div>
         </div>
       </div>
+      {/* Newsletter Section */}
+        <div className="row justify-content-center mt-1 mb-5">
+          <div className="col-lg-8">
+            <div className="newsletter-section p-4">
+              <h3 className="newsletter-heading text-center">Subscribe to Our Newsletter</h3>
+              <p className="newsletter-description text-center">Stay updated with our latest courses, events, and news.</p>
+              <form className="newsletter-form d-flex flex-column flex-sm-row justify-content-center align-items-center">
+                <input type="email" placeholder="Enter your E-Mail Id" className="form-control border newsletter-input mb-3 mb-sm-0 me-sm-3" />
+                <button type="submit" className="btn btn-primary subscribe-button">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
     </div>
   );
 }
