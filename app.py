@@ -59,6 +59,42 @@ db = SQLAlchemy(app)
 
 API_TOKEN = "mysecrettoken123"  # Your secret token
 
+# Registration model (NEW)
+class Registration(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    phone = db.Column(db.String(20))
+    email = db.Column(db.String(100))
+    course = db.Column(db.String(100))
+    whyToChoose = db.Column(db.Text)
+    courseGap = db.Column(db.Text)
+    skillLearning = db.Column(db.Text)
+
+# Create the new table
+with app.app_context():
+    db.create_all() # This will create both Contact and Registration tables if they don't exist
+
+# NEW POST API endpoint for Register form
+@app.route('/api/register', methods=['POST'])
+def register():
+    data = request.json
+    try:
+        new_registration = Registration(
+            name=data['name'],
+            phone=data['phone'],
+            email=data['email'],
+            course=data['course'],
+            whyToChoose=data.get('whyToChoose', ''), # .get() to handle optional fields
+            courseGap=data.get('courseGap', ''),
+            skillLearning=data.get('skillLearning', '')
+        )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify({'message': 'Registration saved successfully'}), 201
+    except Exception as e:
+        return jsonify({'message': str(e)}), 500
+
+
 # Contact model
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)

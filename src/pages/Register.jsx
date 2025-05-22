@@ -13,6 +13,7 @@ const Register = () => {
   });
 
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
+  const [submissionError, setSubmissionError] = useState(''); // New state for error messages
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -22,27 +23,41 @@ const Register = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Submitted:', formData);
+    setSubmissionSuccess(false); // Reset success message on new submission attempt
+    setSubmissionError(''); // Reset error message
 
-    setSubmissionSuccess(true);
+    try {
+      const res = await fetch('http://127.0.0.1:5000/api/register', { // <--- Changed endpoint
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
 
-    // Optionally, clear the form after submission
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      course: '',
-      whyToChoose: '',
-      courseGap: '',
-      skillLearning: ''
-    });
-
-    // You might want to hide the success message after a few seconds
-    // setTimeout(() => {
-    //   setSubmissionSuccess(false);
-    // }, 5000); // Hide after 5 seconds
+      const data = await res.json();
+      if (res.ok) {
+        setSubmissionSuccess(true);
+        // Optionally, clear the form after successful submission
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          course: '',
+          whyToChoose: '',
+          courseGap: '',
+          skillLearning: ''
+        });
+        // You might want to hide the success message after a few seconds
+        setTimeout(() => {
+          setSubmissionSuccess(false);
+        }, 5000);
+      } else {
+        setSubmissionError('Registration failed: ' + (data.message || 'Unknown error'));
+      }
+    } catch (err) {
+      setSubmissionError('Error during registration: ' + err.message);
+    }
   };
 
   return (
@@ -83,6 +98,11 @@ const Register = () => {
         .btn-custom-orange:active {
             color: #fff !important;
         }
+
+        /* Style for text-orange class (assuming you have one, or define it) */
+        .text-orange {
+            color: var(--accent-orange);
+        }
         `}
       </style>
 
@@ -93,6 +113,13 @@ const Register = () => {
         {submissionSuccess && (
           <div className="alert alert-success text-center" role="alert">
             Registration successful! Thank you for your submission.
+          </div>
+        )}
+
+        {/* Error Message Display */}
+        {submissionError && (
+          <div className="alert alert-danger text-center" role="alert">
+            {submissionError}
           </div>
         )}
 
@@ -200,7 +227,6 @@ const Register = () => {
           </div>
 
           <div className="d-grid gap-2">
-            {/* Using the new custom class for the button */}
             <button type="submit" className="btn btn-lg btn-custom-orange">Register Now</button>
           </div>
         </form>
