@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -12,10 +12,7 @@ const Register = () => {
     skillLearning: ''
   });
 
-  const [submissionStatus, setSubmissionStatus] = useState({
-    success: false,
-    message: ''
-  });
+  const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -25,50 +22,39 @@ const Register = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmissionStatus({ success: false, message: '' }); // Reset status
+    console.log('Form Submitted:', formData);
 
-    try {
-      const response = await fetch('http://localhost:5000/api/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          // No Authorization header needed here unless your POST endpoint requires it
-        },
-        body: JSON.stringify(formData),
-      });
+    setSubmissionSuccess(true);
 
-      const result = await response.json();
+    // Optionally, clear the form after submission
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      course: '',
+      whyToChoose: '',
+      courseGap: '',
+      skillLearning: ''
+    });
 
-      if (response.ok) {
-        setSubmissionStatus({ success: true, message: result.message || 'Registration successful!' });
-        // Optionally, clear the form after successful submission
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          course: '',
-          whyToChoose: '',
-          courseGap: '',
-          skillLearning: ''
-        });
-      } else {
-        setSubmissionStatus({ success: false, message: result.message || 'Registration failed.' });
-      }
-    } catch (error) {
-      setSubmissionStatus({ success: false, message: `Network error: ${error.message}` });
-    }
+    // You might want to hide the success message after a few seconds
+    // setTimeout(() => {
+    //   setSubmissionSuccess(false);
+    // }, 5000); // Hide after 5 seconds
   };
 
   return (
     <div className="container mt-5 mb-5">
+      {/* Custom styles for the orange accent */}
       <style>
         {`
         :root {
           --accent-orange: #ff6f00;
         }
 
+        /* Style for form-control focus/hover */
         .form-control:focus,
         .form-select:focus,
         .form-control:hover,
@@ -77,20 +63,23 @@ const Register = () => {
           box-shadow: 0 0 0 0.25rem rgba(255, 111, 0, 0.25) !important;
         }
 
+        /* Style for the button background and border */
         .btn-custom-orange {
           background-color: var(--accent-orange);
           border-color: var(--accent-orange);
-          color: #fff;
+          color: #fff; /* Ensure text is white for contrast */
         }
 
+        /* Style for the button hover/focus */
         .btn-custom-orange:hover,
         .btn-custom-orange:focus {
-          background-color: #e65c00;
+          background-color: #e65c00; /* A slightly darker orange for hover */
           border-color: #e65c00;
           color: #fff;
           box-shadow: 0 0 0 0.25rem rgba(255, 111, 0, 0.25);
         }
 
+        /* Keep text color white for active/focused state */
         .btn-custom-orange:active {
             color: #fff !important;
         }
@@ -98,16 +87,17 @@ const Register = () => {
       </style>
 
       <div className="card p-4 shadow">
-        <h2 className="mb-4 text-center" style={{ color: 'var(--accent-orange)' }}>Student Registration Form</h2>
+        <h2 className="mb-4 text-center text-orange ">Student Registration Form</h2>
 
-        {/* Submission Status Message Display */}
-        {submissionStatus.message && (
-          <div className={`alert ${submissionStatus.success ? 'alert-success' : 'alert-danger'} text-center`} role="alert">
-            {submissionStatus.message}
+        {/* Success Message Display */}
+        {submissionSuccess && (
+          <div className="alert alert-success text-center" role="alert">
+            Registration successful! Thank you for your submission.
           </div>
         )}
 
         <form onSubmit={handleSubmit}>
+          {/* Name */}
           <div className="mb-3">
             <label htmlFor="name" className="form-label">Full Name</label>
             <input
@@ -121,6 +111,7 @@ const Register = () => {
             />
           </div>
 
+          {/* Phone Number */}
           <div className="mb-3">
             <label htmlFor="phone" className="form-label">Phone Number</label>
             <input
@@ -134,6 +125,7 @@ const Register = () => {
             />
           </div>
 
+          {/* Email */}
           <div className="mb-3">
             <label htmlFor="email" className="form-label">Email Address</label>
             <input
@@ -147,6 +139,7 @@ const Register = () => {
             />
           </div>
 
+          {/* Course */}
           <div className="mb-3">
             <label htmlFor="course" className="form-label">Select Course</label>
             <select
@@ -167,6 +160,7 @@ const Register = () => {
             </select>
           </div>
 
+          {/* Why to Choose */}
           <div className="mb-3">
             <label htmlFor="whyToChoose" className="form-label">Why are you interested in this course?</label>
             <textarea
@@ -179,6 +173,7 @@ const Register = () => {
             ></textarea>
           </div>
 
+          {/* Course Gap (Optional) */}
           <div className="mb-3">
             <label htmlFor="courseGap" className="form-label">Any gaps in your academic/professional journey (optional)?</label>
             <textarea
@@ -191,6 +186,7 @@ const Register = () => {
             ></textarea>
           </div>
 
+          {/* Skill Learning */}
           <div className="mb-3">
             <label htmlFor="skillLearning" className="form-label">What specific skills are you hoping to learn from this course?</label>
             <textarea
@@ -204,6 +200,7 @@ const Register = () => {
           </div>
 
           <div className="d-grid gap-2">
+            {/* Using the new custom class for the button */}
             <button type="submit" className="btn btn-lg btn-custom-orange">Register Now</button>
           </div>
         </form>

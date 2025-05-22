@@ -272,16 +272,19 @@ function Home() {
       </div>
 
       {/* Join Us Today Section */}
-      <div className="py-4 bg-white text-center">
-        <h2 className="fw-bold mb-3 text-dark">Ready to Take the Next Step</h2>
-        <p className="lead mt-4 text-start hero-lead">
-          Embark on a transformative learning journey where every moment counts. With Seven
-          Eleven Training Academy, you don’t just gain skills—you gain the tools to shape
-          your future. Ready to take the next step We’ll be here, training 7 days a
-          week, 11 hours a day, ready to help you unlock your full potential.
-          Your success doesn’t wait. Neither do we.
-        </p>
-      </div>
+     <div className="py-4 bg-white text-center">
+  <div className="max-w-7xl mx-auto px-4">
+    <h2 className="display-4 text-3xl font-bold mb-3 text-orange">Ready to Take the Next Step</h2>
+    <p className="lead mt-4 text-start hero-lead">
+      Embark on a transformative learning journey where every moment counts. With Seven
+      Eleven Training Academy, you don’t just gain skills—you gain the tools to shape
+      your future. Ready to take the next step? We’ll be here, training 7 days a
+      week, 11 hours a day, ready to help you unlock your full potential.
+      Your success doesn’t wait. Neither do we.
+    </p>
+  </div>
+</div>
+
 
       {/* Why Choose Us Section */}
       <div className="bg-secondary py-5">
@@ -384,7 +387,7 @@ function Home() {
         <h2 className="fw-bold mb-4 text-dark">Take the Next Step</h2>
         <p className="lead text-muted mb-4">Your journey to a successful IT career starts here.</p>
         <a href="/contact" className="btn btn-primary btn-lg rounded-pill">
-          Take a Step Now <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
+          contact us <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
         </a>
       </div>
 

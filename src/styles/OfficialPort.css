@@ -1,0 +1,46 @@
+/* OfficialPort.css */
+
+.official-port-container {
+    background-color: #f8f9fa; /* Light background for the page */
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.official-port-heading {
+    color: #0056b3; /* A nice blue for headings */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.official-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures rounded corners apply to header */
+}
+
+.official-card .card-header {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.official-table th {
+    background-color: #e9ecef; /* Light grey for table headers */
+    color: #343a40;
+    font-weight: 600;
+}
+
+.official-table tbody tr:hover {
+    background-color: #f2f2f2; /* Subtle hover effect */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .official-port-heading {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .d-flex.justify-content-between.align-items-center.mb-4 {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

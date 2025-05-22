@@ -5,8 +5,8 @@ function Services() {
     <div style={{ backgroundColor: '#fff', color: '#333', padding: '40px 0' }} className="fade-up">
 
       {/* Scholarship Opportunities Section - Stays within container-fluid */}
-      <div className="container-fluid mt-5">
-        <section className="mb-5 mt-5">
+      <div className="container-fluid mt-0">
+        <section className="mb-5 mt-0">
           <h1
             className="text-center mb-5"
             style={{

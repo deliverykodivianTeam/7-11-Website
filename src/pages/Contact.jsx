@@ -49,7 +49,7 @@ function Contact() {
     <div className="container-fluid contact-page-wrapper fade-up"> {/* Added a wrapper for potential full-width styling */}
       {/* Container for centered content and vertical padding */}
       <div className="container py-5">
-        <div className=" mt-5 row justify-content-center align-items-start gx-5"> {/* Added gx-5 for more column gap */}
+        <div className=" mt-0 row justify-content-center align-items-start gx-5"> {/* Added gx-5 for more column gap */}
           {/* Left column for Map and Address */}
           <div className="col-md-6 mb-4 mb-md-0"> {/* Add margin-bottom for mobile */}
             <div className="map-and-address-section">

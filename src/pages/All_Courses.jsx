@@ -41,7 +41,7 @@ const courses = [
   return (
     <div className="all-courses-page py-5 fade-up">
       <div className="container">
-        <div className="row align-items-center mt-5 mb-5"> {/* Added mt-5 for top margin */}
+        <div className="row align-items-center mt-0 mb-5"> {/* Added mt-5 for top margin */}
           <div className="col-md-6">
             <h1 className="all-courses-heading display-4 fw-bold text-orange mb-3" style={{
               color: '#cc5500',

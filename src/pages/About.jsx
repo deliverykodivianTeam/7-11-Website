@@ -22,7 +22,7 @@ function About() {
         <div className="about-page-container py-0 fade-up">
             {/* Introduction Section */}
             <Container className="py-5 ">
-                <h1 className="mt-5 text-xl mb-5 text-'#cc5500' robot-text display-4 text-center"  
+                <h1 className="mt-0 text-xl mb-5 text-'#cc5500' robot-text display-4 text-center" 
                 style={{
               color: '#cc5500',
               fontSize: '3.5rem', /* Increased height of letter */
@@ -36,7 +36,7 @@ function About() {
                             src={intro_card}
                             alt="Dedication and Mastery in Training"
                             className="img-fluid rounded shadow-lg border border-warning border-3 float-right-wrap mb-3 ms-4"
-                            style={{ maxWidth: '400px' }}
+                            style={{ maxWidth: '600px' }} // Changed from 400px to 600px
                         />
                         <p className="lead text-black text-start mb-4 text-justify ">
                             At <span className="text-orange fw-bold">Seven Eleven Training Academy</span>, we're driven by a singular belief: true mastery
@@ -134,7 +134,7 @@ function About() {
                             </Card.Body>
                         </Card>
                     </Col>
-                   
+                    
                 </Row>
                 </Container>
 
@@ -178,7 +178,7 @@ function About() {
 
 
                 {/* Mission and Vision */}
-                 <Container>
+                   <Container>
       <Row className="mb-5">
         <Col md={6} className="mb-4">
           <Card className="h-100 bg-gradient-dark text-white mission-vision-card p-4">
@@ -207,7 +207,7 @@ function About() {
                 <hr className="my-5 border-orange" />
 
                 {/* Call to Action */}
-                 <footer className="py-0 bg-dark text-light text-center">
+                   <footer className="py-0 bg-dark text-light text-center">
 
                 <Row className="mt-5 text-center p-5 bg-orange text-white rounded shadow-lg call-to-action-section">
                     <Col>
@@ -228,8 +228,8 @@ function About() {
                         </Button>
                     </Col>
                 </Row>
-          
-             </footer>
+            
+              </footer>
 
         </div>
     );

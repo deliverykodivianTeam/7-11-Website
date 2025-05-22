@@ -1,45 +1,222 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Register from './Register'; // Adjust path if needed
-import ContactsList from './ContactsList'; // Adjust path if needed
-// Assuming you have an App.css
+// src/components/OfficialPort.jsx
+import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Officialportal() {
-  return (
-    <Router>
-      <div className="container mt-4">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
-          <div className="container-fluid">
-            <Link className="navbar-brand" to="/">Student App</Link>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/register">Register Student</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/contacts">View Registrations</Link>
-                </li>
-              </ul>
+const API_BASE_URL = 'http://localhost:5000/api'; // Your Flask backend URL
+
+const OfficialPort = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState('');
+
+  const [contacts, setContacts] = useState([]);
+  const [registrations, setRegistrations] = useState([]);
+  const [dataError, setDataError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  // Hardcoded credentials for this example (DO NOT use in production)
+  const ADMIN_EMAIL = '7eleven@info.com';
+  const ADMIN_PASSWORD = '123eleven';
+  const MOCK_API_TOKEN = 'mysecrettoken123'; // Matches your app.py
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setLoginError('');
+
+    if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+      setIsLoggedIn(true);
+      // In a real app, you'd receive a token from the backend here
+    } else {
+      setLoginError('Invalid email or password.');
+    }
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setEmail('');
+    setPassword('');
+    setContacts([]);
+    setRegistrations([]);
+    setLoginError('');
+    setDataError('');
+  };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      fetchData();
+    }
+  }, [isLoggedIn]); // Fetch data whenever login status changes to true
+
+  const fetchData = async () => {
+    setLoading(true);
+    setDataError('');
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${MOCK_API_TOKEN}` // Send the token
+    };
+
+    try {
+      // Fetch Contacts
+      const contactsResponse = await fetch(`${API_BASE_URL}/contacts`, { headers });
+      if (!contactsResponse.ok) {
+        const errorData = await contactsResponse.json();
+        throw new Error(errorData.message || 'Failed to fetch contacts');
+      }
+      const contactsData = await contactsResponse.json();
+      setContacts(contactsData);
+
+      // Fetch Registrations
+      const registrationsResponse = await fetch(`${API_BASE_URL}/registrations`, { headers });
+      if (!registrationsResponse.ok) {
+        const errorData = await registrationsResponse.json();
+        throw new Error(errorData.message || 'Failed to fetch registrations');
+      }
+      const registrationsData = await registrationsResponse.json();
+      setRegistrations(registrationsData);
+
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setDataError(`Error fetching data: ${error.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (!isLoggedIn) {
+    return (
+      <div className="container mt-5 d-flex justify-content-center align-items-center" style={{ minHeight: '70vh' }}>
+        <div className="card p-4 shadow-lg" style={{ width: '100%', maxWidth: '400px' }}>
+          <h2 className="card-title text-center mb-4" style={{ color: '#ff6f00' }}>Admin Login</h2>
+          <form onSubmit={handleLogin}>
+            {loginError && <div className="alert alert-danger text-center">{loginError}</div>}
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                placeholder="7eleven@info.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
-          </div>
-        </nav>
-
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/contacts" element={<ContactsList />} />
-          <Route path="/" element={<Home />} /> {/* Optional Home page */}
-        </Routes>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                placeholder="123eleven"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="d-grid">
+              <button type="submit" className="btn btn-lg btn-warning text-white">Login</button>
+            </div>
+          </form>
+        </div>
       </div>
-    </Router>
+    );
+  }
+
+  return (
+    <div className="container mt-5 mb-5">
+      <h1 className="text-center mb-4" style={{ color: '#ff6f00' }}>Admin Panel</h1>
+      <div className="text-end mb-3">
+        <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+      </div>
+
+      {loading && <div className="alert alert-info text-center">Loading data...</div>}
+      {dataError && <div className="alert alert-danger text-center">{dataError}</div>}
+
+      {/* Contacts Section */}
+      <div className="card shadow mb-5">
+        <div className="card-header bg-warning text-white">
+          <h3 className="mb-0">Contact Form Submissions</h3>
+        </div>
+        <div className="card-body">
+          {contacts.length === 0 ? (
+            <p className="text-center">No contact submissions yet.</p>
+          ) : (
+            <div className="table-responsive">
+              <table className="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Mode</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {contacts.map((contact) => (
+                    <tr key={contact.id}>
+                      <td>{contact.id}</td>
+                      <td>{contact.name}</td>
+                      <td>{contact.mobile}</td>
+                      <td>{contact.email}</td>
+                      <td>{contact.course}</td>
+                      <td>{contact.mode}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Registrations Section */}
+      <div className="card shadow">
+        <div className="card-header bg-warning text-white">
+          <h3 className="mb-0">Student Registrations</h3>
+        </div>
+        <div className="card-body">
+          {registrations.length === 0 ? (
+            <p className="text-center">No student registrations yet.</p>
+          ) : (
+            <div className="table-responsive">
+              <table className="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Why Choose</th>
+                    <th>Course Gap</th>
+                    <th>Skills Learning</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {registrations.map((reg) => (
+                    <tr key={reg.id}>
+                      <td>{reg.id}</td>
+                      <td>{reg.name}</td>
+                      <td>{reg.phone}</td>
+                      <td>{reg.email}</td>
+                      <td>{reg.course}</td>
+                      <td>{reg.whyToChoose || 'N/A'}</td>
+                      <td>{reg.courseGap || 'N/A'}</td>
+                      <td>{reg.skillLearning || 'N/A'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
-// Optional Home Component
-const Home = () => (
-  <div className="text-center mt-5">
-    <h1>Welcome to the Student Management Portal!</h1>
-    <p>Use the navigation above to Register a new student or View existing registrations.</p>
-  </div>
-);
-
-export default Officialportal;
+export default OfficialPort;
