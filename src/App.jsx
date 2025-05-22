@@ -13,8 +13,11 @@ import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 
 // Import the consolidated Register component
-import Register from './pages/Register.jsx'; // Assuming Register.jsx is in the src directory, or adjust path if it's in src/pages or src/components
+import Register from './pages/Register.jsx';
 import Officialportal from './pages/Officalportal.jsx';
+
+// Import the Chatbot component
+import Chatbot from './components/Chatbot.jsx'; // <--- ADD THIS LINE
 
 function App() {
   return (
@@ -33,10 +36,16 @@ function AppContent() {
   const hideNavbarPaths = ['/api'];
 
   // Define paths where Footer should be hidden
-  const hideFooterPaths = ['/api', '/register']; // Add '/register' to hide the footer on registration page
+  const hideFooterPaths = ['/api', '/register'];
+
+  // You might want to hide the chatbot on certain paths too,
+  // similar to how Navbar and Footer are hidden.
+  // For now, it will appear on all pages unless you add paths here.
+  const hideChatbotPaths = ['/api']; // Example: hide chatbot on the /api page
 
   const showNavbar = !hideNavbarPaths.includes(location.pathname);
   const showFooter = !hideFooterPaths.includes(location.pathname);
+  const showChatbot = !hideChatbotPaths.includes(location.pathname); // <--- ADD THIS LINE
 
   return (
     <>
@@ -48,12 +57,11 @@ function AppContent() {
         <Route path="/scholarship-details" element={<ScholarshipDetails />} />
         <Route path="/courses" element={<AllCourses />} />
         <Route path="/contact" element={<Contact />} />
-        {/* Route for your consolidated Register component */}
         <Route path="/register" element={<Register />} />
-        {/* Place the /api route here, it's better to have all routes within a single <Routes> block */}
         <Route path="/api" element={<Officialportal />} />
       </Routes>
       {showFooter && <Footer />} {/* Conditionally render Footer */}
+      {showChatbot && <Chatbot />} {/* <--- ADD THIS LINE TO RENDER THE CHATBOT */}
     </>
   );
 }
