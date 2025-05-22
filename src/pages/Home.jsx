@@ -32,90 +32,44 @@ import {
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState('');
+  
   const [whatsNewItems] = useState([
-{
-      title: 'New Advanced Cybersecurity Program',
-      description:
-        "We've launched an in-depth program covering the latest trends and techniques in cybersecurity. Enroll now to secure your future!",
-      link: '/new-course/cybersecurity-advanced',
-      date: 'October 26, 2023',
-      color: 'info',
-    },
-    {
-      title: 'AI and Machine Learning Workshop',
-      description:
-        'Join our upcoming workshop to get hands-on experience with the fundamentals of AI and machine learning. Limited seats available!',
-      link: '/workshop/ai-ml',
-      date: 'November 15, 2023',
-      color: 'success',
-    },
-    {
-      title: 'Cloud Computing Essentials Course',
-      description:
-        'Master the basics of cloud technologies and prepare for a future in cloud engineering.',
-      link: '/course/cloud-computing',
-      date: 'December 1, 2023',
-      color: 'primary',
-    },
-    {
-      title: 'Front-End Development Bootcamp',
-      description:
-        'Become a skilled front-end developer with our intensive bootcamp. Learn React, Angular, and Vue.js.',
-      link: '/bootcamp/front-end',
-      date: 'January 5, 2024',
-      color: 'warning',
-    },
-    {
-      title: 'Backend Development with Node.js',
-      description: 'Learn to build robust server-side applications using Node.js and Express.',
-      link: '/course/backend-nodejs',
-      date: 'February 10, 2024',
-      color: 'danger',
-    },
-    {
-      title: 'Mobile App Development with React Native',
-      description: 'Create cross-platform mobile apps with JavaScript and React Native framework.',
-      link: '/course/mobile-react-native',
-      date: 'March 1, 2024',
-      color: 'secondary',
-    },
-    // New items added below, reflecting the updated product offerings and dates
-    {
-      title: 'New Artificial Intelligence Course Launched!',
-      description: 'Explore the foundations and advanced concepts of AI, machine learning, and deep learning.',
-      link: '/course/artificial-intelligence',
-      date: 'May 10, 2025',
-      color: 'primary',
-    },
-    {
-      title: 'Data Science Program Enhanced!',
-      description: 'Dive deeper into data analysis, statistical modeling, and big data technologies.',
-      link: '/course/data-science',
-      date: 'April 25, 2025',
-      color: 'success',
-    },
-    {
-      title: 'Networking & Cyber Security Masterclass',
-      description: 'Secure your future with our comprehensive program on network security and ethical hacking.',
-      link: '/course/networking-cybersecurity',
-      date: 'March 15, 2025',
-      color: 'info',
-    },
-    {
-      title: 'New Software Development Tracks Available!',
-      description: 'Specialized paths in web, mobile, and enterprise software development.',
-      link: '/course/software-development',
-      date: 'February 20, 2025',
-      color: 'warning',
-    },
-    {
-      title: 'Soft Skills Training for Career Success',
-      description: 'Develop essential communication, leadership, and problem-solving skills for the modern workplace.',
-      link: '/course/soft-skills',
-      date: 'January 5, 2025',
-      color: 'secondary',
-    },
-  ]);
+  {
+    title: 'New Artificial Intelligence Course Launched!',
+    description: 'Explore the foundations and advanced concepts of AI, machine learning, and deep learning.',
+    link: '/course/artificial-intelligence',
+    date: 'May 10, 2025',
+    color: 'primary',
+  },
+  {
+    title: 'Data Science Program Enhanced!',
+    description: 'Dive deeper into data analysis, statistical modeling, and big data technologies.',
+    link: '/course/data-science',
+    date: 'April 25, 2025',
+    color: 'success',
+  },
+  {
+    title: 'Networking & Cyber Security Masterclass',
+    description: 'Secure your future with our comprehensive program on network security and ethical hacking.',
+    link: '/course/networking-cybersecurity',
+    date: 'March 15, 2025',
+    color: 'info',
+  },
+  {
+    title: 'New Software Development Tracks Available!',
+    description: 'Specialized paths in web, mobile, and enterprise software development.',
+    link: '/course/software-development',
+    date: 'February 20, 2025',
+    color: 'warning',
+  },
+  {
+    title: 'Soft Skills Training for Career Success',
+    description: 'Develop essential communication, leadership, and problem-solving skills for the modern workplace.',
+    link: '/course/soft-skills',
+    date: 'January 5, 2025',
+    color: 'secondary',
+  },
+]);
 
 
   const [slideIndex, setSlideIndex] = useState(0);
@@ -157,30 +111,26 @@ function Home() {
     <div className='fade-up'>
       {/* Hero Section */}
       <div className="bg-light p-5 text-center mb-0 hero-section fade-up">
-        <h1 className="display-4 mt-5 fw-bold hero-title">
-          Welcome to Seven Eleven Training Academy!
+        <h1 className="display-4 mt-0 fw-bold hero-title" style={{
+              color: '#cc5500',
+              fontSize: '3.5rem', /* Increased height of letter */
+              fontWeight: 'bold'
+            }}>
+          Welcome to Seven Eleven Training Academy
         </h1>
         <p className="lead hero-lead">
-          Where Excellence is crafted in 7 Days a Week, 11 Hours a Day!
+          Where Excellence is crafted in 7 Days a Week, 11 Hours a Day        </p>
+        <p className="lead mt-4 text-start hero-lead">
+          At Seven Eleven Academy, we strive to provide world-class education that empowers students to reach their full potential. Whether you're looking to enhance your skills or start your academic journey, we offer comprehensive programs tailored to meet your goals.
         </p>
         <p className="lead mt-4 text-start hero-lead">
-          At Seven Eleven Academy, we strive to provide world-class education that empowers students to reach their full
-          potential. Whether you're looking to enhance your skills or start your academic journey, we offer
-          comprehensive programs tailored to meet your goals.
-        </p>
-        <p className="lead mt-4 text-start hero-lead">
-          From fundamental concepts to advanced techniques, our expert trainers ensure that you have the necessary
-          tools for your professional endeavors. Our exceptional training is not the only factor that distinguishes
-          us as the best IT training institute in Chennai; we also provide unwavering support for your professional
-          development. We offer placement assistance to aid you in securing opportunities at top-tier companies,
-          thereby bridging the gap between education and employment.
-        </p>
+          From fundamental concepts to advanced techniques, our expert trainers ensure that you have the necessary tools for your professional endeavors. Our exceptional training is not the only factor that distinguishes us as the best IT training institute in Chennai; we also provide unwavering support for your professional development. We offer placement assistance to aid you in securing opportunities at top-tier companies, thereby bridging the gap between education and employment.        </p>
       </div>
       {/* Featured Courses Section */}
       <div className="py-5 bg-white">
         <div className="container">
           <h2 className="fw-bold text-center mb-4">Explore Our Leading Programs</h2>
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <div className="col">
               <div className="card h-100 border-3 shadow-sm rounded-3">
                 <div className="card-body text-center p-4">
@@ -206,7 +156,17 @@ function Home() {
               <div className="card h-100 border-3 shadow-sm rounded-3">
                 <div className="card-body text-center p-4">
                   <FontAwesomeIcon icon={faShieldAlt} size="3x" className="text-primary mb-3" />
-                  <h5 className="card-title fw-bold">Networking & Cyber Security</h5>
+                  <h5 className="card-title fw-bold">Networking</h5>
+                  <p className="card-text small text-muted">Safeguard digital assets and infrastructure.</p>
+                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                </div>
+              </div>
+            </div>
+             <div className="col">
+              <div className="card h-100 border-3 shadow-sm rounded-3">
+                <div className="card-body text-center p-4">
+                  <FontAwesomeIcon icon={faShieldAlt} size="3x" className="text-primary mb-3" />
+                  <h5 className="card-title fw-bold">Cyber Security</h5>
                   <p className="card-text small text-muted">Safeguard digital assets and infrastructure.</p>
                   <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
@@ -240,7 +200,7 @@ function Home() {
             <div className="mt-4 d-flex justify-content-center flex-wrap">
               <div className="mx-3 my-2 d-flex align-items-center">
                 <FontAwesomeIcon icon={faUserGraduate} className="text-primary me-2" size="lg" />
-                <strong className="lead mb-0">1,500+ Students</strong>
+                <strong className="lead mb-0">500+ Students</strong>
               </div>
               <div className="mx-3 my-2 d-flex align-items-center">
                 <FontAwesomeIcon icon={faBookOpen} className="text-primary me-2" size="lg" />
@@ -248,12 +208,15 @@ function Home() {
               </div>
               <div className="mx-3 my-2 d-flex align-items-center">
                 <FontAwesomeIcon icon={faCalendarCheck} className="text-primary me-2" size="lg" />
-                <strong className="lead mb-0">Established in 2020</strong>
+                <strong className="lead mb-0">Established in 2023</strong>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      
+      {/* --- END NEW SCHOLARSHIP BLOCK --- */}
 
       {/* What's New Section */}
       <div className="py-5 bg-light">
@@ -310,11 +273,11 @@ function Home() {
 
       {/* Join Us Today Section */}
       <div className="py-4 bg-white text-center">
-        <h2 className="fw-bold mb-3 text-dark">Join Us Today!</h2>
-        <p className="lead text-muted mb-5">
+        <h2 className="fw-bold mb-3 text-dark">Ready to Take the Next Step</h2>
+        <p className="lead mt-4 text-start hero-lead">
           Embark on a transformative learning journey where every moment counts. With Seven
           Eleven Training Academy, you don’t just gain skills—you gain the tools to shape
-          your future. Ready to take the next step? We’ll be here, training 7 days a
+          your future. Ready to take the next step We’ll be here, training 7 days a
           week, 11 hours a day, ready to help you unlock your full potential.
           Your success doesn’t wait. Neither do we.
         </p>
@@ -325,7 +288,7 @@ function Home() {
         <div className="container mb-3">
           <h2 className="text-black fw-bold mb-5 text-center">
             <FontAwesomeIcon icon={faLightbulb} className="text-warning me-2" />
-            Why Choose Our Academy?
+            Choose Our Academy
           </h2>
           <div className="row row-cols-1 row-cols-md-3 g-4">
             <div className="col">
@@ -386,9 +349,39 @@ function Home() {
         </div>
       </div>
 
+       {/* --- NEW SCHOLARSHIP BLOCK --- */}
+      <div className="py-5" style={{ backgroundColor: 'white' }}> {/* Using a light background to make it stand out */}
+        <div className="container">
+          <h2 className="fw-bold text-center mb-5" style={{ color: '#cc5500' }}>
+            <FontAwesomeIcon icon={faGraduationCap} className="me-2" />
+            Scholarship Opportunities
+          </h2>
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              <div className="card h-100 border-0 shadow-lg rounded-4 p-4 p-md-5"> {/* Increased padding for a more substantial look */}
+                <div className="card-body text-center">
+                  <h5 className="card-title fw-bold mb-3" style={{ color: '#333' }}>
+                    Invest in Your Future, We'll Help You Fund It
+                  </h5>
+                  <p className="lead mb-4 text-muted">
+                    At Seven Eleven Training Academy, we are committed to making quality education accessible. We offer a variety of scholarships and financial aid options to support talented and deserving students on their journey to success. Explore how you can achieve your academic and career aspirations without financial barriers.
+                  </p>
+                  <a href="/scholarship-details"
+                     className="btn btn-warning btn-lg rounded-pill"
+                     style={{ backgroundColor: '#cc5500', borderColor: '#cc5500', color: '#fff' }}
+                  >
+                    Discover Scholarships <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Call to Action Section */}
       <div className="bg-white py-5 text-center">
-        <h2 className="fw-bold mb-4 text-dark">Ready to Take the Next Step?</h2>
+        <h2 className="fw-bold mb-4 text-dark">Take the Next Step</h2>
         <p className="lead text-muted mb-4">Your journey to a successful IT career starts here.</p>
         <a href="/contact" className="btn btn-primary btn-lg rounded-pill">
           Take a Step Now <FontAwesomeIcon icon={faArrowRight} className="ms-2" />

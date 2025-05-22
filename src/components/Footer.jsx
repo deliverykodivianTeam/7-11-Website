@@ -38,7 +38,7 @@ function Footer() {
                         <h3 className="h5 text-orange text-uppercase mb-3">Locate Us</h3>
                         <div className="footer_address">
                             <h4 className="h6">T Nagar</h4>
-                            <p className="text-start">New No 13, Old No 6, Rajamannar St, T. Nagar, Chennai, Tamil Nadu 600017</p>
+                            <p className="text-start">Meenakshi Tower, No 13, Rajamannar St, T. Nagar, <br />Chennai, Tamil Nadu, India 600017</p>
                             <p className="text-start">Phone: <a href="tel:+914428151406" className="text-light text-decoration-none">044 2815 1406</a></p>
                         </div>
                     </div>
@@ -78,13 +78,13 @@ function Footer() {
                             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-light me-3">
                                 <FaTwitter size={24} />
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-light me-3">
+                            <a href="https://www.linkedin.com/company/seven-eleven-academy/" target="_blank" rel="noopener noreferrer" className="text-light me-3">
                                 <FaLinkedinIn size={24} />
                             </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-light me-3">
+                            <a href="https://www.instagram.com/seveneleven.2024?igsh=MWticWFhdWo5ODVnNg%3D%3D" target="_blank" rel="noopener noreferrer" className="text-light me-3">
                                 <FaInstagram size={24} />
                             </a>
-                            <a href="http://youtube.com/" target="_blank" rel="noopener noreferrer" className="text-light"> {/* Corrected YouTube URL */}
+                            <a href="https://www.youtube.com/@ssgroupofcompanies6978" target="_blank" rel="noopener noreferrer" className="text-light"> {/* Corrected YouTube URL */}
                                 <FaYoutube size={24} />
                             </a>
                         </div>
@@ -124,8 +124,8 @@ function Footer() {
 
                 {/* Copyright Section (as seen in the image's footer area) */}
                  <div className="row bg-black p-3 mt-5">
-                    <div className="col-12 text-center text-secondary copyright-text">
-                        <p>Copyrights © 2025 Seven Eleven Training Academy - <Link to="/privacy-policy" className="text-secondary text-decoration-none">Privacy Policy</Link> - All Rights Reserved - Made in SS Group </p>
+                    <div className="col-12 text-center text-white copyright-text">
+                        <p>Copyrights © 2025 Seven Eleven Training Academy - <Link to="/privacy-policy" className="text-white text-decoration-none">Privacy Policy</Link> - All Rights Reserved - Made in SS Group </p>
                     </div>
                 </div>
 

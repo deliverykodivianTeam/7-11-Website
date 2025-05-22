@@ -22,7 +22,13 @@ function About() {
         <div className="about-page-container py-0 fade-up">
             {/* Introduction Section */}
             <Container className="py-5 ">
-                <h1 className="mt-5 text-xl mb-5 text-black robot-text display-4 text-center">About Seven Eleven Training Academy</h1>
+                <h1 className="mt-5 text-xl mb-5 text-'#cc5500' robot-text display-4 text-center"  
+                style={{
+              color: '#cc5500',
+              fontSize: '3.5rem', /* Increased height of letter */
+              fontWeight: 'bold'
+            }}
+              >Seven Eleven Training Academy</h1>
 
                 <Row className="mb-5 align-items-center bg-white p-4 ">
                     <Col>

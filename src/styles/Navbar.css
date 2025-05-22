@@ -1,52 +1,149 @@
-.transparent-navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Custom CSS for Navbar */
+
+/* Custom colors */
+:root {
+  --accent-orange: #ff6f00;
+  --darker-orange: #e65c00;
+  --custom-green: #28a745; /* Your desired green color */
+  --darker-green: #218838;
+}
+
+/* Navbar container adjustments for no top/bottom spacing */
+.navbar-custom-bg {
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly opaque white background */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  border-bottom: 1px solid #ddd; /* The line at the bottom */
+  padding-top: 0;   /* Remove top padding */
+  padding-bottom: 0; /* Remove bottom padding */
+  min-height: 80px; /* Set a minimum height for the navbar to accommodate logo/links */
+  display: flex; /* Use flexbox for direct child alignment */
+  align-items: center; /* Vertically center content if needed, but we'll override for specific elements */
+}
+
+/* Ensure navbar is above other content when sticky */
+.sticky-top {
+  z-index: 1020;
+}
+
+/* Specific vertical alignment for content within container-fluid */
+.container-fluid {
+  align-items: center; /* Default for Bootstrap navbar content, usually centers items. */
+  height: 100%; /* Ensure container-fluid takes full height of navbar-custom-bg */
+}
+
+/* Logo Sizing and Top Alignment */
+.logo-lg {
+  height: 90px; /* Adjusted height for prominence */
+  width: auto;
+  margin-left: 30px;
+  padding: 9px;
+  /* If the logo isn't aligning perfectly to the top,
+     you might need to use absolute positioning or flex alignment on its parent.
+     For now, we'll ensure its parent 'navbar-brand' is also tightly packed. */
+}
+
+.navbar-brand {
+  padding-top: 0;    /* Remove default Bootstrap padding */
+  padding-bottom: 0; /* Remove default Bootstrap padding */
+  margin-top: 0;     /* Ensure no extra margin */
+  margin-bottom: 0;  /* Ensure no extra margin */
+  display: flex;     /* Use flex to align logo */
+  align-items: flex-start; /* Align logo to the very top */
+  height: 100%;      /* Ensure it takes full height of parent to align properly */
+}
+
+
+/* Navbar Toggler alignment (for mobile) */
+.navbar-toggler {
+    padding: 0; /* Remove default padding for toggler */
+    border: none; /* Remove default border if desired */
+    line-height: 1; /* Adjust line height */
+    /* If the icon itself needs adjustment, check Bootstrap's SVG or provide custom icon */
+    align-self: flex-start; /* Align toggler to the top */
+    height: 100%;
+}
+
+
+/* Navbar Link Styling */
+.navbar-nav .nav-link {
+  color: #000 !important; /* Black text */
+  font-weight: bold !important; /* Bold text */
+  font-size: 1.2rem !important; /* Larger text size */
+  margin-right: 50px; /* Increased space between links to "fill the navbar" */
+  transition: color 0.3s ease;
+  padding: 0; /* REMOVED ALL PADDING */
+  line-height: 1; /* Adjust line height to prevent extra vertical space */
+  display: flex; /* Use flex to align text within link */
+  align-items: center; /* Vertically center the text within its own space */
+  height: 100%; /* Make links take up full vertical space of parent for alignment */
+}
+
+/* Active NavLink Styling - Orange on Active Page */
+.navbar-nav .nav-link.active {
+  color: var(--accent-orange) !important; /* Orange accent for active link */
+  border-bottom: 2px solid var(--accent-orange); /* Underline effect */
+  padding-bottom: 3px; /* Minimal padding for the border */
+}
+
+/* NavLink Hover Styling */
+.navbar-nav .nav-link:hover {
+  color: var(--darker-orange) !important; /* Slightly darker orange on hover */
+}
+
+/* Register Button Styling (Green Color) */
+.btn-custom-green {
+  background-color: var(--custom-green); /* Green color */
+  border-color: var(--custom-green);
+  color: #fff; /* White text for contrast */
+  font-weight: bold;
+  padding: 10px 25px; /* Adjust padding for button size */
+  transition: all 0.3s ease;
+  border-radius: 5px; /* Slightly rounded corners */
+  /* No margin-left here, as ms-auto on ul handles pushing it to the right */
+  line-height: 1; /* Adjust line height */
+  height: auto; /* Allow button height to be determined by padding */
+  align-self: center; /* Center button vertically within navbar */
+}
+
+.btn-custom-green:hover,
+.btn-custom-green:focus {
+  background-color: var(--darker-green); /* Slightly darker green on hover/focus */
+  border-color: var(--darker-green);
+  color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25) !important; /* Green shadow */
+}
+
+/* Ensure text color stays white for active/focused state */
+.btn-custom-green:active {
+    color: #fff !important;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 991.98px) {
+  .navbar-custom-bg {
+    min-height: auto; /* Reset min-height for mobile */
+  }
+  .navbar-nav {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1rem !important;
+    margin-right: 0;
+    padding: 8px 0; /* Re-add some padding for touch targets on mobile */
+  }
+  .navbar-nav .nav-item {
+    margin-bottom: 5px;
+  }
+  .btn-custom-green {
+    margin-top: 15px;
+    margin-left: 0;
     width: 100%;
-    background-color: transparent;
-    padding: 20px 0;
-    z-index: 10;
   }
-
-  .transparent-navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Align items vertically in the center */
+  .navbar-toggler {
+      border-color: rgba(0,0,0,.1);
   }
-
-  .transparent-navbar li {
-    margin: 0 20px;
+  .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
-
-  .transparent-navbar a {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: color 0.3s ease, text-shadow 0.3s ease; /* Add text-shadow to transition */
-  }
-
-  .transparent-navbar a:hover {
-    color:orange;
-  }
-
-  /* Active glow effect */
-  .transparent-navbar a.active {
-    color: orange; /* Change color when active */
-
-  }
-
-  .company_logo {
-    margin-top: -25px;
-    margin-right: 10px;
-    height: 90px; /* Adjust the height as needed */
-    transition: transform 0.1s ease-in-out;
-  }
-
-  .company_logo:hover {
-    transform: scale(1.1);
-  }
+}

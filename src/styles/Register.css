@@ -1,0 +1,23 @@
+/* index.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #212529; /* Set a default dark background for the entire page */
+  color: #f8f9fa; /* Default text color for the page */
+}
+
+.register-container {
+  background-color: #f0f2f5; /* Example unique style */
+  padding: 20px;
+}
+
+.form-control-custom {
+    border-color: #6c757d;
+    color: #e9ecef;
+}
+
+/* ... other styles for Register.jsx ... */

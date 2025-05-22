@@ -1,8 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react'; // <--- **ERROR FIXED: Added useState import**
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import '../styles/Contact.css'; // Keep your custom styles
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    mobile: '',
+    email: '',
+    course: '',
+    mode: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch('http://127.0.0.1:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert('Submitted successfully!');
+        // Optionally clear the form after successful submission
+        setFormData({
+            name: '',
+            mobile: '',
+            email: '',
+            course: '',
+            mode: '',
+        });
+      } else {
+        alert('Submission failed: ' + data.message);
+      }
+    } catch (err) {
+      alert('Error: ' + err.message);
+    }
+  };
+
   return (
     <div className="container-fluid contact-page-wrapper fade-up"> {/* Added a wrapper for potential full-width styling */}
       {/* Container for centered content and vertical padding */}
@@ -27,7 +69,7 @@ function Contact() {
 
               {/* Address Details */}
               <div className="address-details text-md-start text-center"> {/* Align text left on medium screens, center on small */}
-                <h3 className="academy-name">7 Eleven Academy</h3>
+                <h3 className="academy-name">Seven Eleven Academy</h3>
                 <p className="address-line">New No 13, Old No 6, Rajamannar St, T. Nagar, Chennai, Tamil Nadu 600017</p>
                 <p className="address-landmark">Opposite to Ramakrishna Play Ground</p>
               </div>
@@ -37,40 +79,35 @@ function Contact() {
           {/* Right column for Contact Form */}
           <div className="col-md-6">
             <div className="contact-right">
-              <h2 className="contact-us-heading">Contact Us</h2>
-              <form className="contact-form">
-                <input type="text" placeholder="Name" className="form-control" />
-                <div className="input-group">
-                  <span className="input-group-text">+91</span>
-                  <input type="tel" placeholder="Mobile Number" className="form-control" />
-                </div>
-                <input type="email" placeholder="E-Mail Id" className="form-control" />
-                <select className="form-control">
-                  <option value="" disabled selected>Select Course</option>
-                  <option value="course1">Artificial Intelligence</option>
-                  <option value="course2">Data Science</option>
-                  <option value="course3">Networking</option>
-                  <option value="course4">Cyber Security</option>
-                  <option value="course5">Software Development & Soft skills</option>
-                </select>
-                <select className="form-control">
-                  <option value="" disabled selected>Mode of Training</option>
-                  <option value="online">Online</option>
-                  <option value="offline">Offline</option>
-                </select>
-                <div className="form-group">
-                  <div className="mock-captcha">
-                    <div className="form-check">
-                      <input type="checkbox" className="form-check-input" id="captchaCheck" />
-                      <label className="form-check-label" htmlFor="captchaCheck">I'm not a robot</label>
-                    </div>
-                    <div className="captcha-provider">
-                      reCAPTCHA <a href="#">Privacy</a> - <a href="#">Terms</a>
-                    </div>
-                  </div>
-                </div>
-                <button type="submit" className="btn btn-primary submit-button">Submit</button>
-              </form>
+              <h2 className="contact-us-heading" style={{
+              color: '#cc5500',
+              fontSize: '3.5rem', /* Increased height of letter */
+              fontWeight: 'bold'
+            }} >Contact Us</h2>
+             <form onSubmit={handleSubmit} className="contact-form">
+      <input name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Name" className="form-control" required />
+      <div className="input-group">
+        <span className="input-group-text">+91</span>
+        <input name="mobile" value={formData.mobile} onChange={handleChange} type="tel" placeholder="Mobile Number" className="form-control" required />
+      </div>
+      <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="E-Mail Id" className="form-control" required />
+      <select name="course" value={formData.course} onChange={handleChange} className="form-control" required>
+        <option value="" disabled>Select Course</option>
+        <option value="AI">Artificial Intelligence</option>
+        <option value="DS">Data Science</option>
+        <option value="Networking">Networking</option>
+        <option value="Cyber Security">Cyber Security</option>
+        <option value="Software Development">Software Development & Soft skills</option>
+      </select>
+      <select name="mode" value={formData.mode} onChange={handleChange} className="form-control" required>
+        <option value="" disabled>Mode of Training</option>
+        <option value="Online">Online</option>
+        <option value="Offline">Offline</option>
+      </select>
+      {/* CAPTCHA section removed as it was incomplete and not connected to state */}
+      {/* If you want to include a CAPTCHA, it needs proper integration with state or a third-party library */}
+      <button type="submit" className="btn btn-primary submit-button">Submit</button>
+    </form>
             </div>
           </div>
         </div>
@@ -82,7 +119,7 @@ function Contact() {
               <h3 className="newsletter-heading text-center">Subscribe to Our Newsletter</h3>
               <p className="newsletter-description text-center">Stay updated with our latest courses, events, and news.</p>
               <form className="newsletter-form d-flex flex-column flex-sm-row justify-content-center align-items-center">
-                <input type="email" placeholder="Enter your E-Mail Id" className="form-control border newsletter-input mb-3 mb-sm-0 me-sm-3" />
+                <input type="email" placeholder="Enter your E-Mail Id" className="form-control border-1 newsletter-input mb-3 mb-sm-0 me-sm-3" />
                 <button type="submit" className="btn btn-primary subscribe-button">Subscribe</button>
               </form>
             </div>
