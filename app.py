@@ -16,7 +16,7 @@ app.config.update(
     MAIL_USE_TLS=True,
     MAIL_USERNAME='preethi.jb@kodivian.com',
     MAIL_PASSWORD='ea99CHS6JNm7',
-    MAIL_DEFAULT_SENDER='jayashree.k@abits.co.in'
+    MAIL_DEFAULT_SENDER='preethi.jb@kodivian.com'
 )
 mail = Mail(app)
 
