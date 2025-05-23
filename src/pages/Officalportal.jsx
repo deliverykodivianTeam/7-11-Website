@@ -16,8 +16,8 @@ const OfficialPort = () => {
   const [loading, setLoading] = useState(false);
 
   // Hardcoded credentials for this example (DO NOT use in production)
-  const ADMIN_EMAIL = '7eleven@info.com';
-  const ADMIN_PASSWORD = '123eleven';
+  const ADMIN_EMAIL = 'seven11@info.com';
+  const ADMIN_PASSWORD = 'seven11';
   const MOCK_API_TOKEN = 'mysecrettoken123'; // Matches your app.py
 
   const handleLogin = (e) => {
@@ -97,7 +97,7 @@ const OfficialPort = () => {
                 type="email"
                 className="form-control"
                 id="email"
-                placeholder="7eleven@info.com"
+                placeholder="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -109,7 +109,7 @@ const OfficialPort = () => {
                 type="password"
                 className="form-control"
                 id="password"
-                placeholder="123eleven"
+                placeholder="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required

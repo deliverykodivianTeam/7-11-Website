@@ -186,7 +186,7 @@ function About() {
               <FontAwesomeIcon icon={faBullseye} size="4x" className="mb-3 text-orange animate-icon" />
               <Card.Title className="text-orange fw-bold robot-text display-6">OUR MISSION</Card.Title>
               <Card.Text className="larger-text text-start text-justify">
-                The overarching mission of <span className="fw-bold">Seven Eleven Training Academy</span> is to empower individuals with the skills and knowledge necessary for personal and professional development. The academy focuses on delivering high-quality training programs aimed at enhancing capabilities in various fields, fostering lifelong learning, and creating opportunities for career advancement.
+                The overarching mission of <span className="fw-bold">Seven Eleven Training Academy</span> To empower individuals with practical, high-quality training that fosters personal growth, professional development, and career readiness. We aim to bridge the gap between education and employment by delivering industry-relevant skills through innovative teaching methods and hands-on learning experiences.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -197,7 +197,7 @@ function About() {
               <FontAwesomeIcon icon={faEye} size="4x" className="mb-3 text-orange animate-icon" />
               <Card.Title className="text-orange fw-bold robot-text display-6">OUR VISION</Card.Title>
               <Card.Text className="larger-text text-start text-justify">
-                The visionary aim of <span className="fw-bold">Seven Eleven Training Academy</span> is to be a leading educational institution that shapes the future of learners by providing innovative and practical training. The academy envisions becoming a globally recognized platform for excellence in skill development, enabling individuals to achieve their full potential and contribute meaningfully to society.
+                The visionary aim of <span className="fw-bold">Seven Eleven Training Academy</span> To be a leading centre of excellence in training and development, shaping the future workforce by equipping learners with the skills, confidence, and mindset to succeed in a rapidly evolving global environment.
               </Card.Text>
             </Card.Body>
           </Card>

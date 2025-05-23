@@ -41,22 +41,25 @@ const courses = [
   return (
     <div className="all-courses-page py-5 fade-up">
       <div className="container">
-        <div className="row align-items-center mt-0 mb-5"> {/* Added mt-5 for top margin */}
-          <div className="col-md-6">
+        {/* Main Header Section */}
+        <div className="row align-items-center mt-0 mb-4">
+          <div className="col-12 text-center"> {/* Centered heading */}
             <h1 className="all-courses-heading display-4 fw-bold text-orange mb-3" style={{
               color: '#cc5500',
-              fontSize: '3.5rem', /* Increased height of letter */
+              fontSize: '3.5rem',
               fontWeight: 'bold'
-            }} >Courses Detail </h1>
-            {/* Added text-start for left alignment */}
-            <p className="all-courses-description lead text-black text-start">
-             Our course section is designed to offer you an immersive and flexible learning experience tailored to your pace and goals. With expert-led content, practical assignments, and real-world case studies, you'll gain the confidence and skills needed to thrive in your chosen field. Whether you're just starting out or looking to sharpen your expertise, our courses provide clear, structured guidance that’s easy to follow and apply. Each module is thoughtfully organized to take you from foundational knowledge to advanced techniques, with interactive videos, quizzes, and downloadable resources along the way. </p>
+            }}>Courses Detail</h1>
           </div>
-          <div className="col-md-6">
+        </div>
+
+        {/* Large Image Section */}
+        <div className="row mb-5">
+          <div className="col-12">
             <img
               src={courses_card}
               alt="Courses Hero"
-              className="img-fluid rounded shadow-sm"
+              className="img-fluid rounded shadow-sm w-100" // Make image full width
+              style={{ maxHeight: '900px', objectFit: 'cover' }} // Increase max height for bigger image
             />
           </div>
         </div>

@@ -72,7 +72,7 @@ function Footer() {
                     <div className="col-md-3 mb-4 mt-5 mb-md-3">
                         <h3 className="h5 text-orange  text-uppercase mb-3">Follow Us</h3>
                         <div className="social-icons mb-3">
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-light me-3">
+                            <a href="https://www.facebook.com/share/16Lv2dUike/" target="_blank" rel="noopener noreferrer" className="text-light me-3">
                                 <FaFacebookF size={24} />
                             </a>
                             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-light me-3">
@@ -84,12 +84,12 @@ function Footer() {
                             <a href="https://www.instagram.com/seveneleven.2024?igsh=MWticWFhdWo5ODVnNg%3D%3D" target="_blank" rel="noopener noreferrer" className="text-light me-3">
                                 <FaInstagram size={24} />
                             </a>
-                            <a href="https://www.youtube.com/@ssgroupofcompanies6978" target="_blank" rel="noopener noreferrer" className="text-light"> {/* Corrected YouTube URL */}
+                            <a href="https://youtube.com/@ssgroupofcompanies6978?si=kQ37siYpSq726nnX" target="_blank" rel="noopener noreferrer" className="text-light"> {/* Corrected YouTube URL */}
                                 <FaYoutube size={24} />
                             </a>
                         </div>
                         <h3 className="h5 text-uppercase mb-3">Mail Us</h3>
-                        <p className="mail-address"><a href="mailto:info@seven11academy.com" className="text-light text-decoration-none">info@seven11academy.com</a></p>
+                        <p className="mail-address"><a href="mailto:info@seven11academy.com" className="text-light text-decoration-none">info@sevenelevenacademy.com</a></p>
                     </div>
                 </div>
                  </div>

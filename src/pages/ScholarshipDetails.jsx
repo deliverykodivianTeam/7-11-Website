@@ -103,7 +103,7 @@ function ScholarshipDetails() {
             If you have any questions regarding the scholarship programs or the application process, please don't hesitate to contact our admissions and financial aid office.
           </p>
           <p style={{ color: '#555' }}>
-            Email: <a href="mailto:scholarships@example.com" style={{ color: '#cc5500', textDecoration: 'none' }}>scholarships@example.com</a><br />
+            Email: <a href="mailto:scholarships@example.com" style={{ color: '#cc5500', textDecoration: 'none' }}>info@sevenelevenacademy.com</a><br />
             Phone: <a href="tel:+911234567890" style={{ color: '#cc5500', textDecoration: 'none' }}>+91 12345 67890</a>
           </p>
         </section>
