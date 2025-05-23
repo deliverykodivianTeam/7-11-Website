@@ -1,100 +1,152 @@
 /* All_Courses.css */
 
+/* --- General Styles --- */
 .all-courses-page {
-  background-color: none; /* Black background for the entire page */
-  color: #fff; /* Default text color to white */
-}
-
-.text-orange {
-  color: #ff5722 !important; /* Orange color for specific text elements */
+    /* Add any fade-up or general page styles here */
+    background-color: #f8f9fa; /* Light background for the page */
+    text-align: center;
 }
 
 .all-courses-heading {
-  color: #ff5722; /* Orange for the main headings */
-}
-
-.all-courses-description {
-  color: #030000; /* White for the main description text */
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
 }
 
 .orange-line {
-  border-bottom: 3px solid #ff5722; /* Orange line */
-  width: 80px; /* Adjust width as needed */
-  margin-top: 10px;
-  margin-bottom: 30px;
+    width: 150px;
+    height: 4px;
+    background-color: #ff8c00; /* Orange color */
+    margin: 0 auto 40px auto;
+    border-radius: 2px;
+}
+
+/* --- Large Image Section --- */
+.img-fluid.rounded.shadow-sm.w-100 {
+    max-height: 500px; /* Adjust as needed */
+    object-fit: cover;
+}
+
+/* --- Listed Courses Section (Infinite Scroll) --- */
+
+.course-grid-wrapper {
+    overflow: hidden; /* Hide the horizontal scrollbar */
+    position: relative; /* Needed for absolute positioning if you add controls, or just for context */
+    width: 100%; /* Ensure it takes full width */
+    padding: 20px 0; /* Add some vertical padding */
 }
 
 .course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+    display: flex;
+    flex-wrap: nowrap; /* Keep cards on a single line */
+    gap: 20px; /* Space between cards */
+    will-change: transform; /* Optimize for animation */
+    animation: scrollInfinite 30s linear infinite; /* Apply the infinite scroll animation */
+    /* Adjust animation duration (30s) to control speed. Smaller = faster. */
+}
+
+.course-grid:hover {
+    animation-play-state: paused; /* Pause animation on hover */
 }
 
 .course-card {
-  background-color: #1a1a1a; /* Slightly lighter black for card background */
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease-in-out;
-}
-
-.course-card:hover {
-  transform: translateY(-5px);
+    flex: 0 0 auto; /* Do not grow or shrink, basis is auto */
+    width: 280px; /* Fixed width for each card */
+    min-width: 280px; /* Ensure minimum width */
+    background-color: #333; /* Dark background for cards */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Allow height to adjust */
+    color: white; /* Default text color for cards */
+    text-align: left;
 }
 
 .course-title {
-  font-size: 1.75rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #ff5722; /* Orange for course titles */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff8c00; /* Orange title */
 }
 
 .course-instructor {
-  font-size: 1rem;
-  color: #ccc; /* Lighter white for instructor name */
-  margin-bottom: 10px;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #ccc; /* Lighter text for instructor */
 }
 
-/* This is the key change for 'no background' on the description */
 .course-description {
-  font-size: 0.95rem;
-  color: #eee; /* Lightest white for description */
-  flex-grow: 1;
-  margin-bottom: 20px;
-  /* background-color: transparent; /* Explicitly set to transparent if inherited background is an issue */
-  /* If you remove the background-color from .course-card, this will effectively have no background */
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows description to take up available space */
 }
+
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 2000px;
+    }
 
 
 .course-link {
-  display: block;
-  background-color: #ff5722; /* Orange background for the link button */
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease-in-out;
-  text-align: center;
+    display: inline-block;
+    background-color: #ff8c00; /* Orange color */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Center the link within the card */
 }
 
 .course-link:hover {
-  background-color: #e04e1f; /* Slightly darker orange on hover */
-  color: #fff; /* Ensure text remains white on hover */
+    background-color: #e67e00; /* Darker orange on hover */
 }
 
-.fade-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.8s ease-out forwards;
-}
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+/* --- Keyframe Animation for Infinite Scroll --- */
+@keyframes scrollInfinite {
+    0% {
+        transform: translateX(0); /* Start at original position */
     }
+    100% {
+        /* This value needs to be the negative of the total width of one set of original courses
+           plus their gaps.
+           Original Courses: 5
+           Card Width: 280px
+           Gap: 20px
+           Total width of one original set: (5 * 280px) + (5 * 20px) = 1400px + 100px = 1500px
+           We move exactly one set off-screen to the left to create the loop.
+        */
+        transform: translateX(-1500px);
+    }
+}
+
+
+/* --- Beyond the Courses Section --- */
+.all-courses-page .orange-line.mx-auto {
+    width: 890px;
+}
+
+.feature-card {
+    border: 2px solid #ddd;
+    background-color: white; /* Assuming a white background for feature cards */
+    color: #000; /* Black text for feature cards */
+    text-align: center; /* Center text within feature cards */
+}
+
+.feature-card i {
+    font-size: 4rem;
+    color: #ff8c00;
+}
+
+.feature-card h3 {
+    color: #ff8c00;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #000;
+    text-align: justify;
 }
