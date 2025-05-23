@@ -44,11 +44,7 @@ const courses = [
         {/* Main Header Section */}
         <div className="row align-items-center mt-0 mb-4">
           <div className="col-12 text-center"> {/* Centered heading */}
-            <h1 className="all-courses-heading display-4 fw-bold text-orange mb-3" style={{
-              color: '#cc5500',
-              fontSize: '3.5rem',
-              fontWeight: 'bold'
-            }}>Courses Detail</h1>
+            
           </div>
         </div>
 

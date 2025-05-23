@@ -157,7 +157,7 @@ function Home() {
                 <div className="card-body text-center p-4">
                   <FontAwesomeIcon icon={faShieldAlt} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Networking</h5>
-                  <p className="card-text small text-muted">Safeguard digital assets and infrastructure.</p>
+                  <p className="card-text small text-muted">Safeguard digital assets and infrastructure against evolving threats.</p>
                   <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
@@ -167,7 +167,7 @@ function Home() {
                 <div className="card-body text-center p-4">
                   <FontAwesomeIcon icon={faShieldAlt} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Cyber Security</h5>
-                  <p className="card-text small text-muted">Safeguard digital assets and infrastructure.</p>
+                  <p className="card-text small text-muted">Build and maintain robust, high-performance digital networks.</p>
                   <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
@@ -274,7 +274,7 @@ function Home() {
       {/* Join Us Today Section */}
      <div className="py-4 bg-white text-center">
   <div className="max-w-7xl mx-auto px-4">
-    <h2 className="display-4 text-3xl font-bold mb-3 text-orange">Ready to Take the Next Step</h2>
+    <h2 className="display-4 text-3xl font-bold mb-3 text-orange">Take the Next Step</h2>
     <p className="lead mt-4 text-start hero-lead">
       Embark on a transformative learning journey where every moment counts. With Seven
       Eleven Training Academy, you don’t just gain skills—you gain the tools to shape
@@ -367,7 +367,7 @@ function Home() {
                     Invest in Your Future, We'll Help You Fund It
                   </h5>
                   <p className="lead mb-4 text-muted">
-                    At Seven Eleven Training Academy, we are committed to making quality education accessible. We offer a variety of scholarships and financial aid options to support talented and deserving students on their journey to success. Explore how you can achieve your academic and career aspirations without financial barriers.
+                    At Seven Eleven Training Academy, we are committed to making quality education accessible. We offer a variety of scholarships and financial aid options to support talented and deserving students/professionals on their journey to success. Explore how you can achieve your academic and career aspirations without financial barriers.
                   </p>
                   <a href="/scholarship-details"
                      className="btn btn-warning btn-lg rounded-pill"

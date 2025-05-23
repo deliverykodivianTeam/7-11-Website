@@ -39,7 +39,7 @@ function Footer() {
                         <div className="footer_address">
                             <h4 className="h6">T Nagar</h4>
                             <p className="text-start">Meenakshi Tower, No 13, Rajamannar St, T. Nagar, <br />Chennai, Tamil Nadu, India 600017</p>
-                            <p className="text-start">Phone: <a href="tel:+914428151406" className="text-light text-decoration-none">044 2815 1406</a></p>
+                            <p className="text-start">Phone: <a href="tel:+914428151406" className="text-light text-decoration-none">+91 9150 574201</a></p>
                         </div>
                     </div>
 
@@ -96,30 +96,31 @@ function Footer() {
 
                <div className="container2">
                  {/* Trending Courses Section */}
-                <div className="row p-5 mb-5 mt-5">
-                    <div className="col-12">
-                        <h3 className="section-title text text-orange mb-4">Trending Courses</h3>
-                        <div className="d-flex flex-wrap gap-2 course-tags-container">
-                            {trendingCourses.map((course, index) => (
-                                <Link
-                                    key={index}
-                                    to={`/courses/${course.toLowerCase().replace(/ /g, '-')}`} // Example routing
-                                    className="course-tag btn btn-outline-secondary btn-sm"
-                                >
-                                    {course}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+               <div className="row p-5 mb-5 mt-5">
+    <div className="col-12">
+        <h3 className="section-title text text-orange mb-4">Trending Courses</h3>
+        <div className="d-flex flex-wrap gap-2 course-tags-container">
+            {trendingCourses.map((course, index) => (
+                <span
+                    key={index}
+                    className="course-tag btn btn-outline-secondary btn-sm"
+                >
+                    {course}
+                </span>
+            ))}
+        </div>
+    </div>
+</div>
+
 
                 {/* Chat Widget Placeholder */}
                 {/* Note: Replace 'YOUR_WHATSAPP_NUMBER' with an actual WhatsApp number, including country code (e.g., 919876543210 for India) */}
                 <div className="chat-widget-container d-flex align-items-center justify-content-center">
                     <span className="chat-text me-2">Need Help? Chat with us</span>
-                    <a href="https://wa.me/918248879308" target="_blank" rel="noopener noreferrer" className="chat-icon">
-                        <FaWhatsapp size={32} color="#25D366" />
-                    </a>
+                   <a href="https://wa.me/919150574201" target="_blank" rel="noopener noreferrer" className="chat-icon">
+  <FaWhatsapp size={32} color="#25D366" />
+</a>
+
                 </div>
 
                 {/* Copyright Section (as seen in the image's footer area) */}

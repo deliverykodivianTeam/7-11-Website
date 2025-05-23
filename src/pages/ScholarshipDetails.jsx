@@ -82,7 +82,7 @@ function ScholarshipDetails() {
               <strong>Step 1: Online Application Form:</strong> Fill out the comprehensive online scholarship application form available on our portal.
             </li>
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
-              <strong>Step 2: Document Submission:</strong> Upload all necessary documents, including academic transcripts, income proofs, and identification.
+              <strong>Step 2: Document Submission:</strong> All the necessary documents, including academic transcripts, income proofs, and identification to be submitted.
             </li>
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
               <strong>Step 3: Personal Statement:</strong> Write a compelling personal statement outlining your academic achievements, career aspirations, and how this scholarship will impact your educational journey.
@@ -103,8 +103,8 @@ function ScholarshipDetails() {
             If you have any questions regarding the scholarship programs or the application process, please don't hesitate to contact our admissions and financial aid office.
           </p>
           <p style={{ color: '#555' }}>
-            Email: <a href="mailto:scholarships@example.com" style={{ color: '#cc5500', textDecoration: 'none' }}>info@sevenelevenacademy.com</a><br />
-            Phone: <a href="tel:+911234567890" style={{ color: '#cc5500', textDecoration: 'none' }}>+91 12345 67890</a>
+            Email: <a href="mailto:info@sevenelevenacademy.com" style={{ color: '#cc5500', textDecoration: 'none' }}>info@sevenelevenacademy.com</a><br />
+            Phone: <a href="tel:+91 9150 574201" style={{ color: '#cc5500', textDecoration: 'none' }}>+91 9150 574201</a>
           </p>
         </section>
       </div>

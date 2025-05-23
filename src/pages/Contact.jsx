@@ -70,7 +70,7 @@ function Contact() {
               {/* Address Details */}
               <div className="address-details text-md-start text-center"> {/* Align text left on medium screens, center on small */}
                 <h3 className="academy-name">Seven Eleven Academy</h3>
-                <p className="address-line">New No 13, Old No 6, Rajamannar St, T. Nagar, Chennai, Tamil Nadu 600017</p>
+                <p className="address-line">Meenakshi Tower, No 13, Rajamannar St, T. Nagar,<br />Chennai, Tamil Nadu, India 600017</p>
                 <p className="address-landmark">Opposite to Ramakrishna Play Ground</p>
               </div>
             </div>
