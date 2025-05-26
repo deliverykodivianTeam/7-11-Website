@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Chatbot.css';
 import botIcon from '../assets/bot_4712015.png'; // Your bot icon
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
@@ -10,11 +11,11 @@ const Chatbot = () => {
     const messagesEndRef = useRef(null);
 
     // State for movable icon
-    // Adjusted initial position: 'x' is set to move it further left.
-    // The exact '90' might need fine-tuning based on your preference.
     const [iconPosition, setIconPosition] = useState({ x: window.innerWidth - 90, y: window.innerHeight - 170 });
     const [isDragging, setIsDragging] = useState(false);
     const dragOffset = useRef({ x: 0, y: 0 });
+
+    const navigate = useNavigate(); // Initialize navigate
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -65,14 +66,14 @@ const Chatbot = () => {
     const toggleChatbot = () => {
         setIsOpen(!isOpen);
         if (isOpen) {
-            setIsChatStarted(false);
+            setIsChatStarted(false); // Reset chat state when closing
             setMessages([]);
         }
     };
 
     const startChat = async () => {
         console.log("Attempting to start chat...");
-        setIsChatStarted(true);
+        setIsChatStarted(true); // Transition to chat view
 
         try {
             console.log("Fetching initial message from backend...");
@@ -115,8 +116,9 @@ const Chatbot = () => {
             });
 
             if (!response.ok) {
-                const errorText = await response.text();
-                throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+                const errorData = await response.json();
+                const errorMessageText = errorData.response || `HTTP error! status: ${response.status}`;
+                throw new Error(errorMessageText);
             }
 
             const data = await response.json();
@@ -124,7 +126,7 @@ const Chatbot = () => {
             setMessages((prevMessages) => [...prevMessages, botResponse]);
         } catch (error) {
             console.error('Error sending message to bot:', error);
-            const errorMessage = { sender: 'bot', text: 'Sorry, I am having trouble connecting. Please try again later.' };
+            const errorMessage = { sender: 'bot', text: error.message || 'Sorry, I am having trouble connecting. Please try again later.' };
             setMessages((prevMessages) => [...prevMessages, errorMessage]);
         }
     };
@@ -133,6 +135,17 @@ const Chatbot = () => {
         if (event.key === 'Enter') {
             handleSendMessage();
         }
+    };
+
+    const goBackToInitialChatbotView = () => {
+        setIsChatStarted(false);
+        setMessages([]);
+    };
+
+    // New function for Join the Academy
+    const handleJoinAcademy = () => {
+        setIsOpen(false); // Optionally close the chatbot
+        navigate('/register'); // Redirect to /register
     };
 
     return (
@@ -150,6 +163,11 @@ const Chatbot = () => {
             {isOpen && (
                 <div className="chatbot-container">
                     <div className="chatbot-header">
+                        {isChatStarted && (
+                            <button className="chatbot-back-button" onClick={goBackToInitialChatbotView}>
+                                &#x2190;
+                            </button>
+                        )}
                         <span className="header-title">Seven Eleven Bot</span>
                         <button className="chatbot-minimize-button" onClick={toggleChatbot}>
                             &#x2212;
@@ -164,7 +182,8 @@ const Chatbot = () => {
                             </div>
                             <div className="initial-options">
                                 <button className="option-button primary-button" onClick={startChat}>Chat with us</button>
-                                <button className="option-button secondary-button">Join the Academy</button>
+                                {/* Modified Join the Academy button */}
+                                <button className="option-button secondary-button" onClick={handleJoinAcademy}>Join the Academy</button>
                                 <button className="option-button secondary-button">Visit Help Center</button>
                             </div>
                         </div>
