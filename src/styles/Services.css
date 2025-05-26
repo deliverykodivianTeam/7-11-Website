@@ -1,0 +1,184 @@
+/* General Body and HTML to ensure full screen coverage and no overflow */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Services Page Container */
+.services-page-container {
+    background-color: #fff; /* White background for the entire page */
+    color: #333; /* Default text color */
+    padding-top: 40px; /* Add some top padding to avoid content directly hitting the top */
+    padding-bottom: 40px; /* Add some bottom padding */
+    min-height: 100vh; /* Ensure the content fills at least the viewport height */
+}
+
+/* Color Palette */
+.text-orange {
+    color: #cc5500 !important; /* Your specific orange color */
+}
+
+.bg-orange {
+    background-color: #cc5500 !important;
+}
+
+.btn-orange-fill {
+    background-color: #cc5500;
+    border-color: #cc5500;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-orange-fill:hover {
+    background-color: #e6671a; /* Slightly lighter orange on hover */
+    border-color: #e6671a;
+    color: #fff;
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-dark {
+    color: #212529 !important; /* Dark text for headings */
+}
+
+.text-secondary-darker {
+    color: #555 !important; /* Darker secondary text */
+}
+
+.text-secondary-lighter {
+    color: #777 !important; /* Lighter secondary text */
+}
+
+.bg-light-gray {
+    background-color: #f8f9fa !important; /* Light gray background for sections */
+}
+
+.bg-light-section {
+    background-color: #f8f9fa !important; /* Another light background for sections */
+}
+
+
+/* Section Titles */
+.section-title-orange {
+    color: #cc5500;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.section-title-black {
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Card Styling */
+.scholarship-card, .service-card, .fees-card, .game-card {
+    background-color: #fff;
+    border: 1px solid #cc5500; /* Orange border for important cards */
+    color: #333;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 8px; /* Rounded corners */
+}
+
+.service-card, .game-card {
+    border: 1px solid #bbb; /* Lighter border for other cards */
+}
+
+.scholarship-card:hover, .service-card:hover, .fees-card:hover, .game-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+.card-heading {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+/* List Group Styling */
+.list-item-custom {
+    background-color: #fff;
+    border-color: black;
+    color: #cc5500;
+    padding: 1rem 1.25rem; /* Standard Bootstrap padding for list items */
+}
+
+.list-item-fee {
+    background-color: #fff;
+    border-color: #eee;
+    color: #333;
+    padding: 0.75rem 1.25rem;
+}
+
+.badge-orange {
+    background-color: #cc5500 !important; /* Orange background for badges */
+    color: #fff;
+}
+
+/* Fade-up animation */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) { /* Medium devices and smaller */
+    .section-title-orange {
+        font-size: 3rem;
+    }
+    .section-title-black {
+        font-size: 2rem;
+    }
+    .card-heading {
+        font-size: 1.5rem;
+    }
+    .lead {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 767.98px) { /* Small devices and smaller */
+    .section-title-orange {
+        font-size: 2.5rem;
+    }
+    .section-title-black {
+        font-size: 1.8rem;
+    }
+    .card-heading {
+        font-size: 1.3rem;
+    }
+    .lead {
+        font-size: 1rem;
+    }
+    .services-page-container {
+        padding: 20px 0; /* Reduce padding on small screens */
+    }
+}
+
+@media (max-width: 575.98px) { /* Extra small devices */
+    .section-title-orange {
+        font-size: 2rem;
+    }
+    .section-title-black {
+        font-size: 1.5rem;
+    }
+    .card-heading {
+        font-size: 1.2rem;
+    }
+    .lead {
+        font-size: 0.95rem;
+    }
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}

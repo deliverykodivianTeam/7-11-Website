@@ -1,5 +1,3 @@
-/* Custom CSS for Navbar */
-
 /* Custom colors */
 :root {
   --accent-orange: #ff6f00;
@@ -8,16 +6,15 @@
   --darker-green: #218838;
 }
 
-/* Navbar container adjustments for no top/bottom spacing */
+/* Navbar container adjustments */
 .navbar-custom-bg {
   background-color: rgba(255, 255, 255, 0.95); /* Slightly opaque white background */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
   border-bottom: 1px solid #ddd; /* The line at the bottom */
-  padding-top: 0;   /* Remove top padding */
-  padding-bottom: 0; /* Remove bottom padding */
-  min-height: 80px; /* Set a minimum height for the navbar to accommodate logo/links */
+  min-height: 80px; /* Set a minimum height for the navbar */
   display: flex; /* Use flexbox for direct child alignment */
-  align-items: center; /* Vertically center content if needed, but we'll override for specific elements */
+  align-items: center; /* Vertically center content */
+  padding: 0; /* Bootstrap's default padding (py-3 or py-0) is managed here */
 }
 
 /* Ensure navbar is above other content when sticky */
@@ -25,54 +22,62 @@
   z-index: 1020;
 }
 
-/* Specific vertical alignment for content within container-fluid */
-.container-fluid {
-  align-items: center; /* Default for Bootstrap navbar content, usually centers items. */
-  height: 100%; /* Ensure container-fluid takes full height of navbar-custom-bg */
+/* Wrapper for navbar content (logo, toggler, menu) */
+.container-fluid.navbar-content-wrapper { /* Be more specific for this selector */
+  display: flex;
+  align-items: center; /* Vertically center items within this wrapper for desktop */
+  width: 100%; /* Take full width */
+  height: 80px; /* Explicit height to match min-height of parent */
+  padding-left: 1rem; /* Add horizontal padding back */
+  padding-right: 1rem; /* Add horizontal padding back */
 }
 
-/* Logo Sizing and Top Alignment */
+
+/* Logo Sizing and Alignment */
 .logo-lg {
-  height: 90px; /* Adjusted height for prominence */
+  height: 70px; /* Adjusted height for better fit within 80px min-height */
   width: auto;
-  margin-left: 30px;
-  padding: 9px;
-  /* If the logo isn't aligning perfectly to the top,
-     you might need to use absolute positioning or flex alignment on its parent.
-     For now, we'll ensure its parent 'navbar-brand' is also tightly packed. */
+  padding: 5px 0; /* Add vertical padding for the logo itself */
+  margin-left: 15px; /* Adjust margin as needed */
+  display: block; /* Ensure it behaves like a block element */
 }
 
 .navbar-brand {
-  padding-top: 0;    /* Remove default Bootstrap padding */
-  padding-bottom: 0; /* Remove default Bootstrap padding */
-  margin-top: 0;     /* Ensure no extra margin */
-  margin-bottom: 0;  /* Ensure no extra margin */
-  display: flex;     /* Use flex to align logo */
-  align-items: flex-start; /* Align logo to the very top */
-  height: 100%;      /* Ensure it takes full height of parent to align properly */
+  padding: 0; /* Remove default Bootstrap padding */
+  margin: 0; /* Ensure no extra margin */
+  display: flex; /* Use flex to align logo */
+  align-items: center; /* Vertically center the logo within the brand link */
+  height: 100%; /* Ensure it takes full height of parent to align properly */
 }
 
 
 /* Navbar Toggler alignment (for mobile) */
 .navbar-toggler {
-    padding: 0; /* Remove default padding for toggler */
-    border: none; /* Remove default border if desired */
-    line-height: 1; /* Adjust line height */
-    /* If the icon itself needs adjustment, check Bootstrap's SVG or provide custom icon */
-    align-self: flex-start; /* Align toggler to the top */
-    height: 100%;
+  padding: 0.25rem 0.75rem; /* Re-add Bootstrap's default toggler padding */
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid rgba(0,0,0,.1); /* Re-add default border */
+  border-radius: 0.25rem;
+  transition: box-shadow .15s ease-in-out;
+  /* Removed align-self: flex-start; and height: 100%; to allow it to center */
 }
 
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(40,167,69,.25); /* Example green focus ring */
+}
 
-/* Navbar Link Styling */
+/* Navbar Link Styling - Desktop */
 .navbar-nav .nav-link {
   color: #000 !important; /* Black text */
   font-weight: bold !important; /* Bold text */
-  font-size: 1.2rem !important; /* Larger text size */
-  margin-right: 50px; /* Increased space between links to "fill the navbar" */
-  transition: color 0.3s ease;
-  padding: 0; /* REMOVED ALL PADDING */
-  line-height: 1; /* Adjust line height to prevent extra vertical space */
+  font-size: 1.1rem !important; /* Slightly adjusted text size */
+  margin-right: 30px; /* Space between links */
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding: 0 0 5px 0; /* Small bottom padding for the border */
+  line-height: 1; /* Adjust line height */
   display: flex; /* Use flex to align text within link */
   align-items: center; /* Vertically center the text within its own space */
   height: 100%; /* Make links take up full vertical space of parent for alignment */
@@ -96,13 +101,13 @@
   border-color: var(--custom-green);
   color: #fff; /* White text for contrast */
   font-weight: bold;
-  padding: 10px 25px; /* Adjust padding for button size */
+  padding: 8px 20px; /* Adjust padding for button size */
   transition: all 0.3s ease;
   border-radius: 5px; /* Slightly rounded corners */
-  /* No margin-left here, as ms-auto on ul handles pushing it to the right */
   line-height: 1; /* Adjust line height */
   height: auto; /* Allow button height to be determined by padding */
   align-self: center; /* Center button vertically within navbar */
+  margin-left: 20px; /* Space from last nav link */
 }
 
 .btn-custom-green:hover,
@@ -118,32 +123,92 @@
     color: #fff !important;
 }
 
-/* Adjustments for smaller screens */
+/* Adjustments for smaller screens (mobile view) */
 @media (max-width: 991.98px) {
   .navbar-custom-bg {
-    min-height: auto; /* Reset min-height for mobile */
+    min-height: auto; /* Allow height to adjust based on content */
+    padding-bottom: 0; /* Ensure no extra padding below */
   }
+
+  .container-fluid.navbar-content-wrapper { /* Target specific wrapper */
+    height: auto; /* Allow height to adjust when collapsed */
+    padding-top: 10px; /* Add some padding at top for mobile */
+    padding-bottom: 10px; /* Add some padding at bottom for mobile */
+    flex-wrap: wrap; /* Allow items to wrap when collapsed */
+    align-items: flex-start; /* Align content to the top within this wrapper on mobile */
+  }
+
+  .navbar-brand {
+    height: auto; /* Allow brand height to adjust */
+    align-items: center; /* Center logo on small screens */
+  }
+
+  .logo-lg {
+    height: 60px; /* Slightly smaller logo on mobile */
+    margin-left: 0; /* Remove left margin on mobile */
+    padding: 0; /* Remove padding here, controlled by parent */
+  }
+
+  .navbar-toggler {
+    margin-left: auto; /* Push toggler to the right on mobile */
+  }
+
+  /* This is the crucial part for vertical stacking */
+  .navbar-collapse {
+    width: 100%; /* Make collapse full width */
+    margin-top: 10px; /* Space between toggler and collapsed menu */
+    /* Ensure it behaves as a block to stack items */
+    display: block !important; /* Override any potential flex settings that might keep it horizontal */
+    flex-basis: 100%; /* Ensure it takes full available width for flex parent */
+    flex-grow: 1; /* Allow it to grow */
+  }
+
   .navbar-nav {
+    flex-direction: column !important; /* FORCE vertical stacking */
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0; /* No extra top margin here */
+    width: 100%; /* Ensure nav list takes full width */
   }
-  .navbar-nav .nav-link {
-    font-size: 1rem !important;
-    margin-right: 0;
-    padding: 8px 0; /* Re-add some padding for touch targets on mobile */
-  }
+
   .navbar-nav .nav-item {
+    width: 100%; /* Each nav item takes full width */
     margin-bottom: 5px;
   }
+
+  .navbar-nav .nav-link {
+    font-size: 1.1rem !important; /* Consistent size for mobile links */
+    margin-right: 0; /* Remove right margin */
+    padding: 10px 0; /* Ample padding for touch targets on mobile */
+    border-bottom: none; /* Remove underline on mobile nav links */
+    display: block; /* Make them block elements for full-width clicks */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .navbar-nav .nav-link.active {
+    border-bottom: none; /* Remove underline on active link for mobile */
+    color: var(--accent-orange) !important; /* Keep active color */
+  }
+
   .btn-custom-green {
     margin-top: 15px;
-    margin-left: 0;
-    width: 100%;
+    margin-left: 0; /* Remove left margin */
+    width: 100%; /* Full width button on mobile */
+    padding: 10px 0; /* Adjust padding for mobile button */
   }
-  .navbar-toggler {
-      border-color: rgba(0,0,0,.1);
-  }
-  .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
+}
+
+@media (max-width: 575.98px) { /* Extra small devices */
+    .logo-lg {
+        height: 50px; /* Even smaller logo on extra small devices */
+    }
+    .navbar-toggler {
+        font-size: 1rem; /* Smaller toggler icon */
+    }
+    .navbar-nav .nav-link {
+        font-size: 1rem !important; /* Adjust font size for very small screens */
+    }
+    .btn-custom-green {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 8px 0;
+    }
 }

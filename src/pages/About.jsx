@@ -1,4 +1,3 @@
-// About.js
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,8 +9,7 @@ import {
     faLightbulb,
     faBullseye,
     faEye,
-    faChalkboardTeacher,
-    faUsersCog,
+    faUsersCog, // Using faUsersCog for Empowerment as faChalkboardTeacher and faAward are already used
     faAward,
     faHandshake
 } from '@fortawesome/free-solid-svg-icons';
@@ -21,17 +19,16 @@ function About() {
     return (
         <div className="about-page-container py-0 fade-up">
             {/* Introduction Section */}
-            <Container className="py-5 ">
-                
-                <Row className="mb-5 align-items-center bg-white p-4 ">
+            <Container className="py-5">
+                <Row className="mb-5 intro-section-row"> {/* Custom class for the row */}
                     <Col>
+                        {/* Image element with the new 'intro-image' class */}
                         <img
                             src={intro_card}
                             alt="Dedication and Mastery in Training"
-                            className="img-fluid rounded shadow-lg border border-warning border-3 float-right-wrap mb-3 ms-4"
-                            style={{ maxWidth: '600px' }} // Changed from 400px to 600px
+                            className="img-fluid rounded shadow-lg border border-warning border-3 intro-image"
                         />
-                        <p className="lead text-black text-start mb-4 text-justify ">
+                        <p className="lead text-black text-start mb-4 text-justify">
                             At <span className="text-orange fw-bold">Seven Eleven Training Academy</span>, we're driven by a singular belief: true mastery
                             is forged through unwavering dedication, persistent effort, and cultivating an environment where potential
                             can truly flourish. This conviction is the bedrock of our unique training philosophy, which extends across the entire week—<span className="text-orange fw-bold">7 days a week, 11 hours a day</span>. Our meticulously crafted programs are designed not just to
@@ -127,81 +124,77 @@ function About() {
                             </Card.Body>
                         </Card>
                     </Col>
-                    
                 </Row>
-                </Container>
+            </Container>
 
-                {/* Our Instructors/Team */}
+            {/* Our Instructors/Team */}
             <div className="why-7-11-section py-5 text-center text-white shadow-lg">
                 <Container>
-                    <h2 className="mb-4 text-orange robot-text display-5">Meet  our Expert Instructors </h2>
+                    <h2 className="mb-4 text-orange robot-text display-5">Meet our Expert Instructors </h2>
                     <p className="lead text-start larger-text mb-4 text-justify">
                         Our strength lies in the caliber of our educators. At Seven Eleven Training Academy, you learn from the best.
-                            Our instructors are not just teachers; they are industry veterans, thought leaders, and passionate mentors
-                            with extensive real-world experience. They bring a wealth of practical knowledge and current industry insights
-                            directly into the classroom, ensuring that your learning is always relevant, practical, and cutting-edge
+                        Our instructors are not just teachers; they are industry veterans, thought leaders, and passionate mentors
+                        with extensive real-world experience. They bring a wealth of practical knowledge and current industry insights
+                        directly into the classroom, ensuring that your learning is always relevant, practical, and cutting-edge
                     </p>
                     <p className="larger-text text-start mb-0 text-justify">
                         They are committed to fostering an engaging, supportive, and challenging learning environment, guiding you
-                            through every step of your journey with personalized attention and expert guidance. Their dedication is
-                            key to unlocking your full potential.
+                        through every step of your journey with personalized attention and expert guidance. Their dedication is
+                        key to unlocking your full potential.
                     </p>
                 </Container>
             </div>
 
-                {/* Our Values */}
-                <Row className="mb-5 p-5 bg-white">
-      <Col className="text-center"> {/* This Col is already text-centered */}
-        <h2 className="text-black mb-4 robot-text display-5">Our Core Values</h2>
-        <p className="lead text-center larger-text mb-4 text-justify">
-          At Seven Eleven Training Academy, our operations are guided by a set of fundamental values that define
-          our commitment to our learners and the community:
-        </p>
-        {/* The list items within this ul should be centered due to parent's text-center */}
-        <ul className="list-unstyled mb-2 text-black larger-text values-list d-inline-block"> {/* Added d-inline-block */}
-          <li><FontAwesomeIcon icon={faAward} className="me-2 text-orange" /> Excellence: We strive for the highest standards in all our programs and services.</li>
-          <li><FontAwesomeIcon icon={faHandshake} className="me-2 text-orange" /> Integrity: We operate with transparency, honesty, and ethical conduct.</li>
-          <li><FontAwesomeIcon icon={faLightbulb} className="me-2 text-orange" /> Innovation: We continuously evolve our methods and curriculum to stay ahead.</li>
-          <li><FontAwesomeIcon icon={faUsersCog} className="me-2 text-orange" /> Empowerment: We equip individuals with the tools and confidence to succeed.</li>
-          <li><FontAwesomeIcon icon={faCalendarAlt} className="me-2 text-orange" /> Accessibility: We make high-quality education attainable for diverse schedules.</li>
-        </ul>
-      </Col>
-    </Row>
+            {/* Our Values */}
+            <Row className="mb-5 p-5 bg-white">
+                <Col className="text-center">
+                    <h2 className="text-black mb-4 robot-text display-5">Our Core Values</h2>
+                    <p className="lead text-center larger-text mb-4 text-justify">
+                        At Seven Eleven Training Academy, our operations are guided by a set of fundamental values that define
+                        our commitment to our learners and the community:
+                    </p>
+                    <ul className="list-unstyled mb-2 text-black larger-text values-list"> {/* 'd-inline-block' replaced with 'values-list' with display:table in CSS */}
+                        <li><FontAwesomeIcon icon={faAward} className="me-2 text-orange" /> Excellence: We strive for the highest standards in all our programs and services.</li>
+                        <li><FontAwesomeIcon icon={faHandshake} className="me-2 text-orange" /> Integrity: We operate with transparency, honesty, and ethical conduct.</li>
+                        <li><FontAwesomeIcon icon={faLightbulb} className="me-2 text-orange" /> Innovation: We continuously evolve our methods and curriculum to stay ahead.</li>
+                        <li><FontAwesomeIcon icon={faUsersCog} className="me-2 text-orange" /> Empowerment: We equip individuals with the tools and confidence to succeed.</li>
+                        <li><FontAwesomeIcon icon={faCalendarAlt} className="me-2 text-orange" /> Accessibility: We make high-quality education attainable for diverse schedules.</li>
+                    </ul>
+                </Col>
+            </Row>
 
 
+            {/* Mission and Vision */}
+            <Container>
+                <Row className="mb-5">
+                    <Col md={6} className="mb-4">
+                        <Card className="h-100 bg-gradient-dark text-white mission-vision-card p-4">
+                            <Card.Body className="d-flex flex-column justify-content-center align-items-center text-center">
+                                <FontAwesomeIcon icon={faBullseye} size="4x" className="mb-3 text-orange animate-icon" />
+                                <Card.Title className="text-orange fw-bold robot-text display-6">OUR MISSION</Card.Title>
+                                <Card.Text className="larger-text text-start text-justify">
+                                    The overarching mission of <span className="fw-bold">Seven Eleven Training Academy</span> To empower individuals with practical, high-quality training that fosters personal growth, professional development, and career readiness. We aim to bridge the gap between education and employment by delivering industry-relevant skills through innovative teaching methods and hands-on learning experiences.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col md={6} className="mb-4">
+                        <Card className="h-100 shadow-lg border-0 bg-gradient-dark text-white mission-vision-card p-4">
+                            <Card.Body className="d-flex flex-column justify-content-center align-items-center text-center">
+                                <FontAwesomeIcon icon={faEye} size="4x" className="mb-3 text-orange animate-icon" />
+                                <Card.Title className="text-orange fw-bold robot-text display-6">OUR VISION</Card.Title>
+                                <Card.Text className="larger-text text-start text-justify">
+                                    The visionary aim of <span className="fw-bold">Seven Eleven Training Academy</span> To be a leading centre of excellence in training and development, shaping the future workforce by equipping learners with the skills, confidence, and mindset to succeed in a rapidly evolving global environment.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
+            <hr className="my-5 border-orange" />
 
-                {/* Mission and Vision */}
-                   <Container>
-      <Row className="mb-5">
-        <Col md={6} className="mb-4">
-          <Card className="h-100 bg-gradient-dark text-white mission-vision-card p-4">
-            <Card.Body className="d-flex flex-column justify-content-center align-items-center text-center">
-              <FontAwesomeIcon icon={faBullseye} size="4x" className="mb-3 text-orange animate-icon" />
-              <Card.Title className="text-orange fw-bold robot-text display-6">OUR MISSION</Card.Title>
-              <Card.Text className="larger-text text-start text-justify">
-                The overarching mission of <span className="fw-bold">Seven Eleven Training Academy</span> To empower individuals with practical, high-quality training that fosters personal growth, professional development, and career readiness. We aim to bridge the gap between education and employment by delivering industry-relevant skills through innovative teaching methods and hands-on learning experiences.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={6} className="mb-4">
-          <Card className="h-100 shadow-lg border-0 bg-gradient-dark text-white mission-vision-card p-4">
-            <Card.Body className="d-flex flex-column justify-content-center align-items-center text-center">
-              <FontAwesomeIcon icon={faEye} size="4x" className="mb-3 text-orange animate-icon" />
-              <Card.Title className="text-orange fw-bold robot-text display-6">OUR VISION</Card.Title>
-              <Card.Text className="larger-text text-start text-justify">
-                The visionary aim of <span className="fw-bold">Seven Eleven Training Academy</span> To be a leading centre of excellence in training and development, shaping the future workforce by equipping learners with the skills, confidence, and mindset to succeed in a rapidly evolving global environment.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-                <hr className="my-5 border-orange" />
-
-                {/* Call to Action */}
-                   <footer className="py-0 bg-dark text-light text-center">
-
+            {/* Call to Action */}
+            <footer className="py-0  text-light text-center">
                 <Row className="mt-5 text-center p-5 bg-orange text-white rounded shadow-lg call-to-action-section">
                     <Col>
                         <h2 className="mb-3 robot-text display-5">Your Future Starts Now.</h2>
@@ -221,8 +214,7 @@ function About() {
                         </Button>
                     </Col>
                 </Row>
-            
-              </footer>
+            </footer>
 
         </div>
     );
