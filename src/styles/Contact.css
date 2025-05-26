@@ -1,216 +1,252 @@
-/* Contact.css */
+/* General Page Styling */
+.contact-page-wrapper {
+    background-color: #fff;
+    color: #333;
+    min-height: 100vh; /* Ensures the page takes at least full viewport height */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
 
+/* --- Map and Address Section --- */
 .map-and-address-section {
-  display: flex;
-  flex-direction: column; /* Stack map and address vertically */
-  align-items: center; /* Center horizontally on small screens */
-  text-align: center; /* Center text on small screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally on small screens */
 }
 
 .map-container {
-  margin-top: 50px;
-  width: 100%; /* Ensure map takes full width of its column */
-  /* Remove explicit height if iframe handles it, or set one if needed */
+    width: 100%;
+    margin-top: 0; /* Remove specific margin-top, rely on Bootstrap py-5 */
+    margin-bottom: 1.5rem; /* Standard Bootstrap spacing */
 }
 
 .map-container iframe {
-  border-radius: 8px; /* Slightly rounded corners for the map as seen in the image */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: none; /* Removed default iframe border */
 }
 
 .address-details {
-  margin-top: 20px; /* Space between map and address details */
-  width: 100%; /* Ensure address details take full width */
+    width: 100%;
+    margin-top: 1.5rem; /* Spacing between map and address details */
 }
 
 .academy-name {
-  font-size: 2.2rem; /* Larger font for the academy name */
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
+    font-size: 2.5rem; /* Larger font for the academy name */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
 }
 
 .address-line,
 .address-landmark {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 5px;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
 }
 
-/* Adjust contact form headings and lists */
-.why-contact-heading {
-  color: #333;
-  margin-bottom: 20px;
-  font-size: 2.5rem; /* Adjusted for better responsiveness */
-}
-
-.contact-reasons {
-  list-style-type: none;
-  padding: 0;
-}
-
-.contact-reasons li {
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  font-size: 1.1rem; /* Slightly smaller for tighter integration */
-}
-
-.contact-reasons li::before {
-  content: '\2713';
-  color: #ff6f00;
-  margin-right: 10px;
-  font-size: 1.2em;
-}
-
+/* --- Contact Form Section --- */
 .contact-right {
-  margin-top: 0px; /* No top margin needed due to Bootstrap spacing */
-  padding: 20px;
-  /* Add a default shadow to the form container */
-   /* Ensure background is white for shadow to pop */
-  }
-
-/* Hover/Focus effect for the entire form container */
-
-
+    padding: 20px;
+    border-radius: 18px;
+    background-color: none; /* Light background for the form container */
+}
 
 .contact-us-heading {
-  color: #333;
-  margin-bottom: 20px;
-  font-size: 2.5rem; /* Adjusted for consistency */
+    color: #cc5500; /* Orange heading */
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center; /* Center heading by default */
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Spacing between form elements */
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form elements */
+    width: 100%;
 }
 
-/* Input styles are largely handled by Bootstrap's form-control, but you can override */
-.contact-form .form-control {
-  
-  font-size: 1rem;
-  
-  padding: 10px 12px; /* Adjust padding for consistency */
-}
-
-.contact-form .form-control:focus {
-  border-color: #ff6f00; /* Orange border on focus */
-  box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25); /* Subtle orange glow on focus */
-}
-
-.newsletter-form .form-control:focus {
-  border-color: #ff6f00; /* Orange border on focus */
-  box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25); /* Subtle orange glow on focus */
-}
-
-.contact-form select {
-  appearance: none;
-  background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%23333" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 1em;
-}
-
-.mock-captcha {
-  display: flex;
-  align-items: center;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  justify-content: space-between;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 0;
-  border: 1px solid #ced4da; /* Add a border to match other inputs */
-}
-
-.captcha-provider {
-  font-size: 0.8rem;
-  color: #6c757d;
-}
-
-.captcha-provider a {
-  color: #176cdce8;
-  text-decoration: none;
-}
-
-.captcha-provider a:hover {
-  text-decoration: underline;
-}
-
-.contact-form button.submit-button {
-  background-color: #ff6f00; /* Changed to orange as per common branding */
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-  font-weight: bold;
-  transition: background-color 0.3s ease; /* Smooth transition on hover */
-}
-
-.contact-form button.submit-button:hover {
-  background-color: rgb(22, 182, 7); /* Darken on hover */
-}
-
-/* Media query for mobile view adjustments */
-@media (max-width: 767.98px) { /* Use Bootstrap's breakpoint for 'md' */
-  .academy-name,
-  .address-line,
-  .address-landmark {
-    text-align: center; /* Center address text on small screens */
-  }
-
-  .academy-name {
-    font-size: 1.8rem;
-  }
-
-  .address-line,
-  .address-landmark {
+.contact-form-input {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
     font-size: 1rem;
-  }
-
-  .contact-us-heading {
-    font-size: 2rem;
-    text-align: center; /* Center contact us heading on small screens */
-    margin-top: 30px; /* Add some space above the form on mobile */
-  }
-
-  .map-and-address-section {
-    align-items: center; /* Ensure map and address details are centered */
-  }
 }
 
-/* Adjustments for larger screens if needed */
-@media (min-width: 768px) {
-  .map-and-address-section {
-    align-items: flex-start; /* Align to the start on larger screens */
-  }
-  .academy-name,
-  .address-line,
-  .address-landmark {
-    text-align: left; /* Align address text left on larger screens */
-  }
-  .contact-us-heading {
-    text-align: left; /* Align contact us heading left on larger screens */
-  }
+.contact-form-input:focus {
+    border-color: #cc5500; /* Orange border on focus */
+    box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25); /* Subtle orange glow */
 }
 
+.mobile-prefix {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-right: none;
+    color: #495057;
+    font-weight: bold;
+}
+
+/* Custom styling for select dropdown arrow */
+.contact-form select.contact-form-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23343a40"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem; /* Make space for the custom arrow */
+}
+
+
+.submit-button {
+    background-color: #cc5500; /* Orange submit button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #e6671a; /* Slightly darker orange on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+    color: white; /* Ensure text remains white on hover */
+}
+
+/* --- Newsletter Section --- */
+.newsletter-section {
+    background-color: none; /* Light background for the newsletter section */
+    border-radius: 12px;
+    
+    margin-top: 3rem; /* Space from the content above */
+}
+
+.newsletter-heading {
+    color: #cc5500; /* Orange heading */
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.newsletter-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.newsletter-form {
+    gap: 15px; /* Spacing between input and button */
+}
+
+.newsletter-input {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    flex-grow: 1; /* Allows input to take available space */
+    max-width: 400px; /* Max width for the input */
+}
+
+.newsletter-input:focus {
+    border-color: #cc5500;
+    box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25);
+}
+
+.subscribe-button {
+    background-color: #cc5500;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.subscribe-button:hover {
+    background-color: #e6671a;
+    transform: translateY(-2px);
+    color: white; /* Ensure text remains white on hover */
+}
+
+/* --- Fade-up Animation (kept from previous code) --- */
 .fade-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out forwards;
 }
 
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) { /* Medium devices and smaller */
+    .academy-name {
+        font-size: 2rem;
+    }
+    .contact-us-heading {
+        font-size: 3rem;
+    }
+    .newsletter-heading {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 767.98px) { /* Small devices and smaller */
+    .address-details {
+        text-align: center; /* Center address text on small screens */
+    }
+    .academy-name {
+        font-size: 1.8rem;
+    }
+    .address-line,
+    .address-landmark {
+        font-size: 1rem;
+    }
+    .contact-us-heading {
+        font-size: 2.5rem;
+        margin-top: 2rem; /* Add some space above the form on mobile */
+    }
+    .newsletter-heading {
+        font-size: 2rem;
+    }
+    .newsletter-form {
+        flex-direction: column; /* Stack input and button vertically */
+    }
+    .newsletter-input {
+        margin-right: 0 !important; /* Remove right margin on small screens */
+        width: 100%; /* Full width for input */
+        max-width: unset; /* Remove max-width restriction */
+    }
+    .subscribe-button {
+        width: 100%; /* Full width for button */
+    }
+}
+
+@media (max-width: 575.98px) { /* Extra small devices */
+    .academy-name {
+        font-size: 1.5rem;
+    }
+    .contact-us-heading {
+        font-size: 2rem;
+    }
+    .newsletter-heading {
+        font-size: 1.8rem;
+    }
+    .address-line,
+    .address-landmark,
+    .newsletter-description {
+        font-size: 0.95rem;
+    }
 }

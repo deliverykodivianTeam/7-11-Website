@@ -1,61 +1,44 @@
 /* General Footer Styling */
 .main-footer {
-    /* Optional: Add a specific background color if 'bg-dark' isn't precise enough */
-     background-color: #343a4076; 
-    /* Optional: Add padding if py-5 isn't sufficient */
-    /* padding-top: 3rem;
-    padding-bottom: 3rem; */
+    background-color: #212529; /* Darker background, matching Bootstrap's .bg-dark but explicit */
+    color: #f8f9fa; /* Light text for readability */
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-.container2{
-    background-color: #4e555b76; 
+/* Specific Section Backgrounds */
+.trending-courses-section {
+    background-color: #343a40; /* Slightly lighter dark for this section */
 }
 
-/* Column Headings */
+.copyright-section {
+    background-color: #1a1e21; /* Even darker for the very bottom */
+}
+
+/* Headings within Footer */
 .main-footer h3,
-.main-footer h4 {
+.main-footer h4,
+.main-footer h5,
+.main-footer h6 {
     margin-top: 0;
     line-height: 1.4;
-    color: var(--bs-light); /* Ensures headings are light colored */
+    color: #f8f9fa; /* Default heading color to light */
 }
 
-/* Trending Courses Section Specific Styling */
-.course-tags-container {
-    /* Ensures vertical alignment if some buttons wrap */
-    align-items: center;
-    /* Optional: If you want to limit max width for the button container */
-    max-width: 1900px; /* Adjusted for potentially more items */
-    margin-left: 0px;
-    margin-right: 0px;
+.main-footer .text-orange {
+    color: #cc5500 !important; /* Your specific orange color for headings */
+    font-weight: bold;
 }
 
-.course-tag {
-    /* Custom styles for the course buttons */
-    padding: 0.5rem 1rem;
-    border-radius: 20px; /* More rounded pill shape */
-    font-size: 0.9rem;
-    white-space: nowrap; /* Prevent text wrapping inside button */
-    transition: all 0.3s ease;
-    color:white; /* Initial text color from Bootstrap secondary */
-    border-color: rgb(220, 83, 15); /* Initial border color from Bootstrap secondary */
-}
-
-.course-tag:hover {
-    background-color: #007bff; /* Example hover background */
-    border-color: #007bff; /* Example hover border */
-    color: #fff !important; /* Ensure text color changes to white on hover */
-    text-decoration: none; /* Remove underline on hover for links */
-}
-
-/* Address Paragraphs */
-.footer_address p {
+/* Footer Address */
+.footer-address p {
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-left: 0; /* Ensures consistent left alignment */
     margin-bottom: 0.5rem;
+    color: #ced4da; /* Lighter text for address details */
 }
 
-/* List Items (Quick Links, Tutorials) */
+/* Quick Links and Tutorials Lists */
 .main-footer ul {
     padding-left: 0;
     margin-bottom: 0;
@@ -64,27 +47,33 @@
 .main-footer ul li {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    display: flex; /* Helps align content if needed */
+    display: flex;
     align-items: center;
-    color: var(--bs-light); /* Ensures list item text is light colored */
+    color: #ced4da; /* Lighter text for list items */
 }
 
-/* Links inside lists */
 .main-footer ul li a {
     transition: color 0.3s ease;
-    text-decoration: none; /* Remove default underline */
+    text-decoration: none;
+    color: #f8f9fa; /* Ensure links are light initially */
 }
 
 .main-footer ul li a:hover {
-    color: #007bff; /* Change color on hover */
-    text-decoration: none; /* Keep underline removed on hover */
+    color: #cc5500; /* Orange on hover for links */
+    text-decoration: none;
+}
+
+.footer-tutorial-list li {
+    /* Styles for tutorial list items that are not links */
+    color: #ced4da; /* Consistent light text */
+    /* Add padding/margin as needed if different from general list items */
 }
 
 /* Social Icons */
 .social-icons {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem; /* More spacing below icons */
 }
 
 .social-icons a {
@@ -94,10 +83,10 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly more opaque background */
     transition: background-color 0.3s ease, color 0.3s ease;
-    color: var(--bs-light); /* Ensure icon color is light initially */
-    text-decoration: none; /* Remove underline for links */
+    color: #f8f9fa; /* Ensure icon color is light initially */
+    text-decoration: none;
 }
 
 .social-icons a:not(:last-child) {
@@ -105,125 +94,191 @@
 }
 
 .social-icons a:hover {
-    background-color: #007bff; /* Blue background on hover */
+    background-color: #cc5500; /* Orange background on hover */
     color: #fff; /* White icon on hover */
+    transform: translateY(-2px); /* Subtle lift */
 }
 
 /* Mail Us Section */
-.mail-us-heading {
-    margin-top: 1.5rem;
-}
-
-.mail-address a {
+.mail-address-text {
     font-size: 0.95rem;
-    margin-left: -110px; /* Corrected to remove negative margin */
-    transition: color 0.3s ease;
-    text-decoration: none; /* Remove default underline */
+    color: #ced4da; /* Lighter text for mail address */
 }
 
-.mail-address a:hover {
-    color: #007bff; /* Change color on hover */
+.mail-address-text a {
+    color: #f8f9fa; /* Ensure mail link is light initially */
+    transition: color 0.3s ease;
+}
+
+.mail-address-text a:hover {
+    color: #cc5500; /* Orange on hover */
+    text-decoration: underline; /* Add underline on hover for clarity */
+}
+
+/* Trending Courses Section Specific Styling */
+.section-title {
+    font-weight: bold;
+    font-size: 1.8rem; /* Slightly larger heading for this section */
+}
+
+.course-tags-container {
+    align-items: center;
+    max-width: 100%; /* Ensure it fits within its container */
+    margin-left: auto; /* Center items if they don't fill width */
+    margin-right: auto;
+}
+
+.course-tag {
+    padding: 0.6rem 1.2rem; /* Slightly larger padding for better touch targets */
+    border-radius: 25px; /* More rounded pill shape */
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    color: #f8f9fa; /* White text for contrast on dark background */
+    border: 1px solid #cc5500; /* Orange border */
+    background-color: transparent; /* Transparent background by default */
+}
+
+.course-tag:hover {
+    background-color: #cc5500; /* Orange fill on hover */
+    border-color: #cc5500;
+    color: #fff !important; /* Ensure text color is white on hover */
+    text-decoration: none;
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Chat Widget Positioning */
+.chat-widget-link {
+    text-decoration: none; /* Remove underline from the anchor tag */
+}
+
 .chat-widget-container {
-    /* Adjusted for better responsiveness and visibility */
-    position: fixed; /* Changed from absolute to fixed for sticky behavior */
-    right: 20px; /* Adjust as needed */
-    bottom: 20px; /* Adjust as needed */
-    background-color: rgba(255, 255, 255, 0.989); /* Slightly more opaque background */
-    padding: 10px 20px; /* Increased padding */
-    border-radius: 30px; /* More rounded */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #ffffff; /* White background */
+    padding: 10px 20px;
+    border-radius: 30px;
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Stronger shadow */
-    z-index: 1000; /* Ensure it stays on top */
-    cursor: pointer; /* Indicates it's clickable */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Stronger, more prominent shadow */
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.chat-widget-container:hover {
+    transform: translateY(-3px); /* More noticeable lift on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Even stronger shadow */
 }
 
 .chat-text {
-    font-size: 1rem; /* Slightly larger text */
-    color: #40c323d8;
+    font-size: 1.05rem; /* Slightly larger text */
+    color: #25D366; /* WhatsApp green text */
     white-space: nowrap;
-    margin-right: 10px; /* Spacing between text and icon */
+    margin-right: 10px;
+    font-weight: 500; /* A bit bolder */
 }
 
-.chat-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px; /* Larger icon container */
-    height: 48px; /* Larger icon container */
-    border-radius: 50%;
-    background-color: #fff; /* White background for WhatsApp icon */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); /* Subtle shadow for icon */
-    transition: transform 0.2s ease-in-out; /* Add a subtle hover effect */
+.chat-icon-whatsapp {
+    color: #25D366; /* Ensure the WhatsApp icon is green */
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2)); /* Small shadow for the icon itself */
 }
 
-.chat-icon:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-}
 
 /* Copyright Text */
 .copyright-text p {
-    padding: 0px;
-    font-size: 0.85rem; /* Slightly larger for readability */
+    padding: 0;
+    font-size: 0.875rem; /* Standard Bootstrap font size */
     margin-bottom: 0;
+    color: #adb5bd; /* Lighter gray for copyright text */
 }
 
 .copyright-text a {
-    color: #6c757d !important; /* Ensure secondary color for privacy policy link */
-    text-decoration: none; /* Remove default underline */
+    color: #adb5bd !important; /* Ensure link color is consistent with text */
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .copyright-text a:hover {
-    color: #ffffff !important; /* White on hover */
-    text-decoration: underline; /* Add underline on hover */
+    color: #f8f9fa !important; /* White on hover */
+    text-decoration: underline;
 }
 
 
 /* Responsive Adjustments */
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) { /* Medium devices and smaller */
     .main-footer .col-md-4,
     .main-footer .col-md-2,
     .main-footer .col-md-3 {
-        text-align: center;
+        text-align: center; /* Center align all columns on medium and smaller screens */
     }
 
     .social-icons {
-        justify-content: center; /* Center social icons on small screens */
+        justify-content: center; /* Center social icons */
     }
 
-    .footer_address p {
-        text-align: center; /* Center address text */
+    .footer-address p, .mail-address-text p {
+        text-align: center; /* Center address and mail text */
+    }
+}
+
+@media (max-width: 767.98px) { /* Small devices and smaller */
+    .main-footer .row > div {
+        margin-bottom: 2.5rem; /* More space between stacked columns */
+    }
+    .main-footer .row > div:last-child {
+        margin-bottom: 0; /* No bottom margin for the very last column */
     }
 
-    .mail-address a {
-        text-align: center;
-        display: block; /* Make the link a block to center */
+    .section-title {
+        text-align: center !important; /* Force center for trending courses on small screens */
     }
 
     .course-tags-container {
-        justify-content: center !important; /* Ensure center alignment for tags on small screens */
+        justify-content: center !important; /* Center course tags on small screens */
     }
 
     .chat-widget-container {
-        position: static; /* Remove fixed positioning on small screens */
-        margin-top: 30px; /* Add margin above copyright */
+        position: static; /* Make static on small screens */
+        margin-top: 2rem; /* Add margin above copyright */
         justify-content: center;
-        width: 100%; /* Full width */
+        width: 100%;
         padding: 10px;
-        border-radius: 0; /* Remove border radius */
-        background-color: transparent; /* Remove background */
-        box-shadow: none; /* Remove shadow */
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
     }
 
     .chat-widget-container .chat-text {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
-    .chat-icon {
-        width: 44px; /* Slightly smaller on small screens */
-        height: 44px;
+    .chat-icon-whatsapp {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 575.98px) { /* Extra small devices */
+    .main-footer h3,
+    .main-footer .section-title {
+        font-size: 1.5rem;
+    }
+
+    .main-footer h6 {
+        font-size: 0.95rem;
+    }
+
+    .footer-address p,
+    .mail-address-text p,
+    .course-tag,
+    .copyright-text p {
+        font-size: 0.85rem;
+    }
+
+    .chat-text {
+        font-size: 0.9rem;
     }
 }

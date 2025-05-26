@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'; // Make sure this CSS file exists if you use it
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 // Import your existing pages
 import Home from './pages/Home.jsx';
@@ -12,12 +14,14 @@ import Contact from './pages/Contact.jsx'; // Your existing Contact page
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 
+
 // Import the consolidated Register component
 import Register from './pages/Register.jsx';
 import Officialportal from './pages/Officalportal.jsx';
 
 // Import the Chatbot component
 import Chatbot from './components/Chatbot.jsx'; // <--- ADD THIS LINE
+import Artificial from './pages/ArtificialIntelligence.jsx';
 
 function App() {
   return (
@@ -52,6 +56,7 @@ function AppContent() {
       {showNavbar && <Navbar />} {/* Conditionally render Navbar */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/artificial" element={<Artificial />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/scholarship-details" element={<ScholarshipDetails />} />

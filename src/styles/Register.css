@@ -1,23 +1,192 @@
-/* index.css */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #212529; /* Set a default dark background for the entire page */
-  color: #f8f9fa; /* Default text color for the page */
+/* Variables for consistent theming */
+:root {
+    --accent-orange: #cc5500; /* Your specific orange color */
+    --form-bg-light: #f8f9fa; /* Light background for the form card */
+    --page-bg-dark: #212529; /* Dark background for the whole page */
+    --text-light: #f8f9fa; /* Light text color for contrast */
 }
 
-.register-container {
-  background-color: #f0f2f5; /* Example unique style */
-  padding: 20px;
+/* Overall page container for the Register component */
+.register-page-container {
+    background-color: var(--form-bg-light); /* Dark background for the page */
+    color: var(--text-light); /* Default light text color */
+    min-height: calc(100vh - var(--navbar-height, 0px) - var(--footer-height, 0px)); /* Adjust based on your header/footer heights */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the container */
+    padding-top: 3rem; /* Add some padding at the top */
+    padding-bottom: 3rem; /* Add some padding at the bottom */
 }
 
-.form-control-custom {
-    border-color: #6c757d;
-    color: #e9ecef;
+/* Style for the card containing the form */
+.register-card {
+    background-color: var(--form-bg-light); /* Light background for the card */
+    color: #343a40; /* Dark text inside the light card */
+    border-radius: 0.5rem; /* Slightly rounded corners */
+    max-width: 700px; /* Limit the width of the form for better readability */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; /* Stronger shadow */
 }
 
-/* ... other styles for Register.jsx ... */
+/* Heading style */
+.register-heading {
+    color: var(--accent-orange); /* Orange heading */
+    font-weight: bold;
+}
+
+/* Style for form-control focus/hover */
+.form-control:focus,
+.form-select:focus,
+.form-control:hover,
+.form-select:hover {
+    border-color: var(--accent-orange) !important;
+    box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25) !important; /* More specific rgba for orange */
+}
+
+/* Default state for form controls (optional, but good for consistency) */
+.form-control,
+.form-select {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+/* Custom dropdown arrow for select elements */
+.form-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23343a40"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem; /* Make space for the custom arrow */
+}
+
+
+/* Style for the custom orange button */
+.btn-custom-orange {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: #fff; /* Ensure text is white for contrast */
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style for the button hover/focus */
+.btn-custom-orange:hover,
+.btn-custom-orange:focus {
+    background-color: #e65c00; /* A slightly darker orange for hover */
+    border-color: #e65c00;
+    color: #fff;
+    box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25) !important; /* Consistent shadow */
+}
+
+/* Ensure text color remains white for active state */
+.btn-custom-orange:active {
+    color: #fff !important;
+    background-color: #e65c00 !important; /* Prevent Bootstrap from changing background on active */
+    border-color: #e65c00 !important;
+}
+
+/* Success and Error message styles */
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Responsive adjustments */
+/* Adjustments for smaller screens */
+@media (max-width: 991.98px) {
+  .navbar-custom-bg {
+    min-height: auto; /* Allow height to adjust based on content */
+    padding-bottom: 0; /* Ensure no extra padding below */
+  }
+
+  .navbar-content-wrapper {
+    height: auto; /* Allow height to adjust */
+    padding-top: 10px; /* Add some padding at top for mobile */
+    padding-bottom: 10px; /* Add some padding at bottom for mobile */
+    flex-wrap: wrap; /* Allow items to wrap when collapsed */
+  }
+
+  .navbar-brand {
+    height: auto; /* Allow brand height to adjust */
+    align-items: center; /* Center logo on small screens */
+  }
+
+  .logo-lg {
+    height: 60px; /* Slightly smaller logo on mobile */
+    margin-left: 0; /* Remove left margin on mobile */
+    padding: 0; /* Remove padding here, controlled by parent */
+  }
+
+  .navbar-toggler {
+    margin-left: auto; /* Push toggler to the right on mobile */
+    /* Removed specific height/alignment for toggler, let Bootstrap handle it */
+  }
+
+  .navbar-collapse {
+    width: 100%; /* Make collapse full width */
+    margin-top: 10px; /* Space between toggler and collapsed menu */
+    /* Ensure Bootstrap's 'flex-column' for collapsed menus is active */
+    /* You might want to add background-color if it's transparent by default */
+    background-color: var(--form-bg-light, #f8f9fa); /* Example: white background for collapsed menu */
+    padding: 10px 0; /* Add some padding inside the collapsed menu */
+    border-radius: 0.25rem; /* Optional: slight border radius for the collapsed menu */
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+  }
+
+  .navbar-nav {
+    text-align: center;
+    margin-top: 0; /* No extra top margin here */
+    width: 100%; /* Ensure nav list takes full width */
+    flex-direction: column; /* Explicitly stack items vertically */
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%; /* Each nav item takes full width */
+    margin-bottom: 5px; /* Spacing between stacked nav items */
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.1rem !important; /* Consistent size for mobile links */
+    margin-right: 0; /* Remove right margin */
+    padding: 10px 0; /* Ample padding for touch targets on mobile */
+    border-bottom: none; /* Remove underline on mobile nav links */
+    display: block; /* Make them block elements for full-width clicks */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .navbar-nav .nav-link.active {
+    border-bottom: none; /* Remove underline on active link for mobile */
+    color: var(--accent-orange) !important; /* Keep active color */
+    /* Add a background color for active on mobile if desired */
+    background-color: rgba(var(--accent-orange), 0.1); /* Light orange background for active link */
+  }
+
+  .btn-custom-green {
+    margin-top: 15px;
+    margin-left: 0; /* Remove left margin */
+    width: 100%; /* Full width button on mobile */
+    padding: 10px 0; /* Adjust padding for mobile button */
+  }
+}
+
+/* Add a definition for --form-bg-light in your :root or a global CSS file */
+:root {
+    --accent-orange: #ff6f00;
+    --darker-orange: #e65c00;
+    --custom-green: #28a745;
+    --darker-green: #218838;
+    --form-bg-light: #f8f9fa; /* Ensure this variable is defined */
+}

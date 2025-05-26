@@ -1,0 +1,268 @@
+/* ArtificialIntelligence.css */
+
+/* General Page Styling */
+.ai-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* Default text color */
+}
+
+/* Primary Color Palette */
+:root {
+  --ai-primary-color: #cc5500; /* Orange */
+  --ai-secondary-color: #f8f9fa; /* Light grey for sections */
+  --ai-dark-color: #212529; /* Dark for backgrounds */
+  --ai-light-text-color: #e9ecef; /* Light text on dark backgrounds */
+  --ai-white-color: #ffffff; /* Explicit white color */
+}
+
+.ai-primary-color {
+  color: var(--ai-primary-color) !important;
+}
+
+.ai-text-dark {
+  color: var(--ai-dark-color) !important;
+}
+
+/* Original Hero Section (kept for reference, but new one is ai-hero-alt) */
+.ai-hero {
+  background-color: var(--ai-dark-color);
+  color: var(--ai-light-text-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-hero .display-3 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+.ai-hero .lead {
+  font-size: 1.25rem;
+}
+
+.ai-hero-icon {
+  font-size: 8rem; /* Large icon */
+  color: rgba(204, 85, 0, 0.2); /* Semi-transparent orange */
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 0;
+  opacity: 0.1;
+  display: none; /* Hidden by default on small screens */
+}
+
+/* NEW: Alternative Hero Section - White Background */
+.ai-hero-alt {
+  background-color: var(--ai-white-color); /* White background */
+  color: var(--ai-dark-color); /* Dark text color for contrast */
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-hero-alt .h2 { /* Specific styling for the main heading */
+  font-size: 2.8rem; /* Smaller than display-5 */
+  line-height: 1.2;
+}
+
+.ai-hero-alt .h5 { /* Styling for the new content heading */
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #6c757d; /* Muted text color for content heading */
+}
+
+/* NEW: Hero Icon for the alternative hero section */
+.ai-hero-icon-alt {
+  font-size: 8rem; /* Large icon */
+  color: rgba(204, 85, 0, 0.1); /* Semi-transparent orange, slightly lighter for white background */
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 0;
+  opacity: 0.1;
+  display: none; /* Hidden by default on small screens */
+}
+
+@media (min-width: 992px) {
+  .ai-hero-icon-alt { /* Show on large screens for the alt hero */
+    display: block;
+  }
+}
+
+
+/* Rest of your CSS remains the same */
+
+@media (min-width: 992px) {
+  /* You might want to ensure the original .ai-hero-icon is still hidden if you keep .ai-hero */
+  .ai-hero-icon {
+    display: none; /* Ensure original hero icon is hidden if not using .ai-hero */
+  }
+}
+
+.ai-hero .container,
+.ai-hero-alt .container { /* Apply z-index to both hero containers */
+  position: relative;
+  z-index: 1; /* Ensure content is above icon */
+}
+
+/* Buttons */
+.ai-btn-primary {
+  background-color: var(--ai-primary-color);
+  border-color: var(--ai-primary-color);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.ai-btn-primary:hover {
+  background-color: #e66710; /* Slightly darker orange */
+  border-color: #e66710;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ai-btn-outline {
+  border: 2px solid var(--ai-primary-color);
+  color: var(--ai-primary-color);
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.ai-btn-outline:hover {
+  background-color: var(--ai-primary-color);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Course Overview Cards */
+.card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.ai-checklist li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.ai-checklist li .fa-icon {
+  margin-right: 0.5rem;
+}
+
+/* Why Important Section */
+.ai-why-important {
+  background-color: var(--ai-dark-color);
+  color: var(--ai-light-text-color);
+}
+
+.ai-benefits-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.ai-benefits-list li {
+  flex-basis: 30%;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .ai-benefits-list li {
+    flex-basis: 48%;
+  }
+}
+
+@media (max-width: 576px) {
+  .ai-benefits-list li {
+    flex-basis: 90%;
+  }
+}
+
+
+/* Syllabus Accordion */
+.accordion-item {
+  border: none;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.ai-accordion-button {
+  color: var(--ai-dark-color);
+  background-color: #fff;
+  font-size: 1.15rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.5rem !important;
+}
+
+.ai-accordion-button:not(.collapsed) {
+  color: #fff;
+  background-color: var(--ai-primary-color);
+  border-color: var(--ai-primary-color);
+}
+
+.ai-accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25);
+}
+
+.accordion-body ul {
+  padding-left: 1.5rem;
+}
+
+.accordion-body li {
+  margin-bottom: 0.4rem;
+}
+
+/* Projects, Tasks, and Exercises Section */
+.ai-projects-section {
+  background-color: var(--ai-dark-color);
+  color: var(--ai-light-text-color);
+}
+
+.ai-card-black {
+  background-color: #343a40; /* Slightly lighter black for cards */
+  color: var(--ai-light-text-color);
+}
+
+.ai-card-black .card-title {
+  color: var(--ai-primary-color);
+}
+
+.ai-card-black .card-text {
+  color: #adb5bd !important; /* Lighter text for description */
+}
+
+.ai-checklist-dark li {
+  text-align: left; /* Align list items to the left */
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: #ced4da !important;
+}
+
+.ai-checklist-dark li .fa-icon {
+  margin-right: 0.5rem;
+}
+
+/* Fade-in animation for the entire page */
+.fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
