@@ -1,13 +1,11 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from langchain_openai import ChatOpenAI # Or any other LLM you are using
 from langchain.prompts import ChatPromptTemplate
-from langchain.chat_models import ChatOpenAI
-
 from langchain.schema.runnable import RunnablePassthrough, RunnableLambda
 from langchain.schema import StrOutputParser
 from dotenv import load_dotenv
 import os
-
 
 load_dotenv() # Load environment variables from .env file
 
@@ -93,9 +91,7 @@ specific_qa_numbered = {
         "answer": "You can contact us via WhatsApp at +91 9150 574201" # Added a placeholder number
     }
 }
-@app.get("/")
-async def read_root():
-    return {"Hello": "World"}
+
 
 @app.post("/chat")
 async def chat_endpoint(request: ChatRequest):
