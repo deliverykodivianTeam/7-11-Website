@@ -77,7 +77,7 @@ const Chatbot = () => {
 
         try {
             console.log("Fetching initial message from backend...");
-            const response = await fetch('http://localhost:8000/initial_message');
+            const response = await fetch('https://seven-11-website-5.onrender.com/initial_message');
             console.log("Response status:", response.status);
 
             if (!response.ok) {
@@ -107,7 +107,7 @@ const Chatbot = () => {
         setInput('');
 
         try {
-            const response = await fetch('http://localhost:8000/chat', {
+            const response = await fetch('https://seven-11-website-5.onrender.com/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
