@@ -121,7 +121,7 @@ def register():
         # Send registration email
         msg = Message(
             subject="📋 New Registration Submission",
-            recipients=['preethi.jb@kodivian.com'],
+            recipients=['jayashree.k@abits.co.in'],
             body=f"""
 Name: {data['name']}
 Phone: {data['phone']}
