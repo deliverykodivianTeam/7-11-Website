@@ -30,11 +30,21 @@ function ScholarshipDetails() {
           </p>
           <ul className="list-group list-group-flush">
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
-              <strong>Academic Potential:</strong>
+              <strong>Academic Performance:</strong>
               <ul style={{ listStyleType: 'circle', marginLeft: '20px', marginTop: '10px' }}>
-                <li>Strong academic performance in your 10th, 11th, and 12th-grade examinations. We consider your **best overall marks** to evaluate your potential.</li>
-                <li>Consistent commitment to your studies throughout your previous educational journey.</li>
+                <li>Merit-based scholarships usually require a **minimum percentage in the latest qualifying examination** (e.g., 80% to 90%+).</li>
+                <li>Entrance or scholarship exams will be held to assess merit.</li>
               </ul>
+            </li>
+            <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
+              <strong>Financial Need (Means-Based):</strong>
+              <ul style={{ listStyleType: 'circle', marginLeft: '20px', marginTop: '10px' }}>
+                <li>Family income limits apply.</li>
+                <li>Must provide income certificates or other proof of economic background.</li>
+              </ul>
+            </li>
+            <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
+              <strong>Attendance & Conduct:</strong> Continued scholarship eligibility requires maintaining good attendance and discipline during the course.
             </li>
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
               <strong>Genuine Interest & Drive:</strong> Demonstrated passion and enthusiasm for your chosen field of study. This can be evidenced through personal statements, extracurricular activities, previous projects, or a clear desire to learn new skills.
@@ -55,21 +65,22 @@ function ScholarshipDetails() {
             Our scholarships are primarily need-based, aiming to support students from diverse financial backgrounds.
             A thorough assessment of your financial situation is a crucial part of the application process.
           </p>
+          <p className="mb-2" style={{ color: '#333', fontWeight: 'bold' }}>Common Assessment Criteria:</p>
           <ul className="list-group list-group-flush">
-            <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
-              <strong>Document Requirements:</strong>
-              <ul style={{ listStyleType: 'circle', marginLeft: '20px', marginTop: '10px' }}>
-                <li>Proof of income for parents/guardians.</li>
-                <li>Relevant financial statements or documents that accurately reflect your household's financial standing.</li>
-              </ul>
-            </li>
-            <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
-              <strong>Assessment Process:</strong> Our dedicated committee will confidentially review your financial documents to determine the appropriate level of assistance.
-            </li>
-            <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
-              <strong>Transparency:</strong> We are committed to a fair and transparent assessment process. All information provided will be handled with utmost confidentiality.
-            </li>
+            <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>Annual Family Income</li>
+            <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>Parental Occupation</li>
+            <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>Orphan or Single Parent Status</li>
+            <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>Residential Status</li>
           </ul>
+          <p className="mt-4" style={{ color: '#333', fontWeight: 'bold' }}>Assessment Process:</p>
+          <p className="mb-2 text-start" style={{ color: '#555' }}>
+            Our dedicated committee will review your financial documents confidentially to determine the level of financial assistance required.
+            We may request an interview to discuss your situation further.
+          </p>
+          <p className="mt-3" style={{ color: '#333', fontWeight: 'bold' }}>Transparency:</p>
+          <p className="mb-0 text-start" style={{ color: '#555' }}>
+            We are committed to a fair and transparent assessment process. All information provided will be handled with utmost confidentiality.
+          </p>
         </section>
 
         {/* Application Process and Deadlines */}
