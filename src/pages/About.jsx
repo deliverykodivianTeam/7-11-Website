@@ -29,7 +29,7 @@ function About() {
                             className="img-fluid rounded shadow-lg border border-warning border-3 intro-image"
                         />
                         <p className="lead text-black text-start mb-4 text-justify">
-                             <span className="text-orange fw-bold">Seven Eleven Training Academy</span>, we're driven by a singular belief: true mastery
+                            At <span className="text-orange fw-bold">Seven Eleven Training Academy</span>, we're driven by a singular belief: true mastery
                             is forged through unwavering dedication, persistent effort, and cultivating an environment where potential
                             can truly flourish. This conviction is the bedrock of our unique training philosophy, which extends across the entire week—<span className="text-orange fw-bold">7 days a week, 11 hours a day</span>. Our meticulously crafted programs are designed not just to
                             impart knowledge, but to equip you with unparalleled, industry-relevant skills and profound expertise.
