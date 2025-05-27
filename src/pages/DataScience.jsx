@@ -1,9 +1,9 @@
-// ArtificialIntelligence.jsx
+// DataScience.jsx
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faBrain,
+  faChartSimple, // Data Science related icon for hero
   faRocket,
   faChalkboardTeacher,
   faHandsHelping,
@@ -20,30 +20,33 @@ import {
   faBookOpen,
   faCode,
   faArrowRight,
+  faDatabase, // New icon for data
+  faMagnifyingGlassChart, // New icon for analysis
+  faRobot, // Can also be used for ML within DS
 } from '@fortawesome/free-solid-svg-icons';
 import '../styles/master.css'; // Changed CSS import
 
-function ArtificialIntelligence() {
+function DataScience() {
   return (
-    <div className="ai-page fade-in">
+    <div className="ds-page fade-in">
       {/* Hero Section - NOW WHITE Background, Orange Accents */}
-      <div className="ai-hero-alt py-5 text-dark d-flex align-items-center" style={{ minHeight: '100vh' }}>
+      <div className="ds-hero-alt py-5 text-dark d-flex align-items-center" style={{ minHeight: '0vh' }}>
         <div className="container">
           <div className="row justify-content-center align-items-center text-center">
             <div className="col-lg-10">
               {/* Main Heading */}
               <h1 className="h2 fw-bold mb-2 text-dark-theme"> {/* Updated class */}
-                Artificial Intelligence Masterclass
+                Data Science Masterclass
               </h1>
 
               {/* Smaller Subheading */}
               <h3 className="h5 fw-normal mb-4 text-muted">
-                Dive deep into the core concepts and advanced applications of AI.
+                Uncover insights, build predictive models, and drive data-driven decisions.
               </h3>
 
               {/* Description */}
               <p className="lead mb-4">
-                Unlock the power of intelligent systems and shape the future with our comprehensive Artificial Intelligence program.
+                Master the art of extracting knowledge from data with our comprehensive Data Science program.
               </p>
 
               {/* Buttons */}
@@ -56,13 +59,12 @@ function ArtificialIntelligence() {
 
               {/* Icon (Optional - centered below content) */}
               <div className="mt-4">
-                <FontAwesomeIcon icon={faBrain} className="ai-hero-icon-alt" />
+                <FontAwesomeIcon icon={faChartSimple} className="ds-hero-icon-alt" />
               </div>
             </div>
           </div>
         </div>
       </div>
-
 
       {/* Course Overview Section - White Background */}
       <div className="py-5 bg-light">
@@ -74,12 +76,12 @@ function ArtificialIntelligence() {
                 <div className="card-body p-4">
                   <h5 className="card-title fw-bold mb-3 primary-color">What You'll Learn</h5> {/* Updated class */}
                   <ul className="list-unstyled checklist"> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faLightbulb} className="me-2 primary-color" /> Foundations of AI and Machine Learning</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faLightbulb} className="me-2 primary-color" /> Deep Learning Architectures (CNNs, RNNs, Transformers)</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faLightbulb} className="me-2 primary-color" /> Natural Language Processing (NLP)</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faLightbulb} className="me-2 primary-color" /> Computer Vision techniques</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faLightbulb} className="me-2 primary-color" /> Reinforcement Learning concepts</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faLightbulb} className="me-2 primary-color" /> Ethical considerations in AI</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faDatabase} className="me-2 primary-color" /> Data Collection, Cleaning, and Preprocessing</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faChartLine} className="me-2 primary-color" /> Exploratory Data Analysis (EDA) and Visualization</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faChalkboardTeacher} className="me-2 primary-color" /> Statistical Modeling and Hypothesis Testing</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faRobot} className="me-2 primary-color" /> Machine Learning Algorithms for Prediction</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faCode} className="me-2 primary-color" /> Big Data Technologies (Spark, Hadoop)</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faLightbulb} className="me-2 primary-color" /> Data Storytelling and Communication</li> {/* Updated class */}
                   </ul>
                 </div>
               </div>
@@ -92,10 +94,10 @@ function ArtificialIntelligence() {
                     This course is ideal for:
                   </p>
                   <ul className="list-unstyled checklist"> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faUserGraduate} className="me-2 primary-color" /> Students aspiring to enter the AI/ML field</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faBriefcase} className="me-2 primary-color" /> Developers looking to integrate AI into their applications</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faChartLine} className="me-2 primary-color" /> Data Scientists wanting to deepen their AI knowledge</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faPuzzlePiece} className="me-2 primary-color" /> Professionals interested in the future of AI</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faUserGraduate} className="me-2 primary-color" /> Students looking to kickstart a career in Data Science</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faBriefcase} className="me-2 primary-color" /> Analysts and Researchers seeking advanced data skills</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faChartLine} className="me-2 primary-color" /> Business Professionals aiming to make data-driven decisions</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faPuzzlePiece} className="me-2 primary-color" /> Anyone passionate about extracting insights from data</li> {/* Updated class */}
                   </ul>
                 </div>
               </div>
@@ -107,27 +109,27 @@ function ArtificialIntelligence() {
       {/* Why This Is Important Section - Black Background */}
       <div className="py-5 why-important-section text-white"> {/* Updated class */}
         <div className="container">
-          <h2 className="text-center fw-bold mb-5">Why Artificial Intelligence Matters</h2>
+          <h2 className="text-center fw-bold mb-5">Why Data Science Matters</h2>
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <p className="lead text-center mb-4">
-                Artificial Intelligence is transforming every industry, from healthcare and finance to entertainment and manufacturing. Understanding AI is no longer a niche skill but a fundamental requirement for innovation and career growth in the digital age.
+                Data Science is at the forefront of innovation, enabling businesses and organizations to make informed decisions, optimize operations, and discover new opportunities. A strong understanding of data science is crucial for success in today's data-rich world.
               </p>
               <ul className="list-unstyled text-center benefits-list"> {/* Updated class */}
                 <li>
-                  <FontAwesomeIcon icon={faRocket} size="2x" className="mb-2 primary-color" /> {/* Updated class */}
-                  <h6 className="fw-bold">Career Advancement</h6>
-                  <p className="small">High demand for AI professionals globally.</p>
+                  <FontAwesomeIcon icon={faChartLine} size="2x" className="mb-2 primary-color" /> {/* Updated class */}
+                  <h6 className="fw-bold">Strategic Decision Making</h6>
+                  <p className="small">Leverage data to make informed business choices.</p>
                 </li>
                 <li>
-                  <FontAwesomeIcon icon={faLightbulb} size="2x" className="mb-2 primary-color" /> {/* Updated class */}
-                  <h6 className="fw-bold">Innovation & Problem Solving</h6>
-                  <p className="small">Develop solutions for complex real-world challenges.</p>
+                  <FontAwesomeIcon icon={faMagnifyingGlassChart} size="2x" className="mb-2 primary-color" /> {/* Updated class */}
+                  <h6 className="fw-bold">Problem Solving & Optimization</h6>
+                  <p className="small">Solve complex problems and improve efficiency.</p>
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faCodeBranch} size="2x" className="mb-2 primary-color" /> {/* Updated class */}
-                  <h6 className="fw-bold">Future-Proof Your Skills</h6>
-                  <p className="small">Stay relevant in a rapidly evolving technological landscape.</p>
+                  <h6 className="fw-bold">High Demand & Career Growth</h6>
+                  <p className="small">Enter a rapidly growing field with diverse opportunities.</p>
                 </li>
               </ul>
             </div>
@@ -139,33 +141,33 @@ function ArtificialIntelligence() {
       <div id="syllabus" className="py-5 bg-white">
         <div className="container">
           <h2 className="text-center fw-bold mb-5 text-dark-theme">Detailed Syllabus</h2> {/* Updated class */}
-          <div className="accordion" id="aiSyllabusAccordion">
+          <div className="accordion" id="dsSyllabusAccordion">
             {/* Module 1 */}
             <div className="accordion-item shadow-sm mb-3 rounded-3">
-              <h2 className="accordion-header" id="headingOne">
+              <h2 className="accordion-header" id="dsHeadingOne">
                 <button
                   className="accordion-button fw-bold accordion-button-theme collapsed" /* Updated class */
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
+                  data-bs-target="#dsCollapseOne"
                   aria-expanded="false"
-                  aria-controls="collapseOne"
+                  aria-controls="dsCollapseOne"
                 >
-                  <FontAwesomeIcon icon={faBookOpen} className="me-2 primary-color" /> Module 1: Introduction to AI & Python for AI {/* Updated class */}
+                  <FontAwesomeIcon icon={faBookOpen} className="me-2 primary-color" /> Module 1: Introduction to Data Science & Python {/* Updated class */}
                 </button>
               </h2>
               <div
-                id="collapseOne"
+                id="dsCollapseOne"
                 className="accordion-collapse collapse"
-                aria-labelledby="headingOne"
-                data-bs-parent="#aiSyllabusAccordion"
+                aria-labelledby="dsHeadingOne"
+                data-bs-parent="#dsSyllabusAccordion"
               >
                 <div className="accordion-body text-muted">
                   <ul>
-                    <li>What is AI? History and Applications</li>
-                    <li>AI vs. Machine Learning vs. Deep Learning</li>
-                    <li>Python Fundamentals for AI (NumPy, Pandas, Matplotlib)</li>
-                    <li>Setting up your AI development environment</li>
+                    <li>What is Data Science? Roles and Applications</li>
+                    <li>The Data Science Life Cycle</li>
+                    <li>Python for Data Science (NumPy, Pandas, Matplotlib, Seaborn)</li>
+                    <li>Setting up your Data Science environment</li>
                   </ul>
                 </div>
               </div>
@@ -173,30 +175,31 @@ function ArtificialIntelligence() {
 
             {/* Module 2 */}
             <div className="accordion-item shadow-sm mb-3 rounded-3">
-              <h2 className="accordion-header" id="headingTwo">
+              <h2 className="accordion-header" id="dsHeadingTwo">
                 <button
                   className="accordion-button fw-bold accordion-button-theme collapsed" /* Updated class */
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
+                  data-bs-target="#dsCollapseTwo"
                   aria-expanded="false"
-                  aria-controls="collapseTwo"
+                  aria-controls="dsCollapseTwo"
                 >
-                  <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2 primary-color" /> Module 2: Machine Learning Fundamentals {/* Updated class */}
+                  <FontAwesomeIcon icon={faDatabase} className="me-2 primary-color" /> Module 2: Data Preprocessing & EDA {/* Updated class */}
                 </button>
               </h2>
               <div
-                id="collapseTwo"
+                id="dsCollapseTwo"
                 className="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#aiSyllabusAccordion"
+                aria-labelledby="dsHeadingTwo"
+                data-bs-parent="#dsSyllabusAccordion"
               >
                 <div className="accordion-body text-muted">
                   <ul>
-                    <li>Supervised Learning (Regression, Classification)</li>
-                    <li>Unsupervised Learning (Clustering, Dimensionality Reduction)</li>
-                    <li>Model Evaluation and Hyperparameter Tuning</li>
-                    <li>Ensemble Methods (Random Forests, Gradient Boosting)</li>
+                    <li>Data Collection and Data Sources</li>
+                    <li>Handling Missing Data, Outliers, and Duplicates</li>
+                    <li>Feature Engineering and Selection</li>
+                    <li>Univariate, Bivariate, and Multivariate Analysis</li>
+                    <li>Data Visualization techniques</li>
                   </ul>
                 </div>
               </div>
@@ -204,32 +207,32 @@ function ArtificialIntelligence() {
 
             {/* Module 3 */}
             <div className="accordion-item shadow-sm mb-3 rounded-3">
-              <h2 className="accordion-header" id="headingThree">
+              <h2 className="accordion-header" id="dsHeadingThree">
                 <button
                   className="accordion-button fw-bold accordion-button-theme collapsed" /* Updated class */
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
+                  data-bs-target="#dsCollapseThree"
                   aria-expanded="false"
-                  aria-controls="collapseThree"
+                  aria-controls="dsCollapseThree"
                 >
-                  <FontAwesomeIcon icon={faLightbulb} className="me-2 primary-color" /> Module 3: Deep Learning and Neural Networks {/* Updated class */}
+                  <FontAwesomeIcon icon={faChalkboardTeacher} className="me-2 primary-color" /> Module 3: Statistical Foundations & Machine Learning {/* Updated class */}
                 </button>
               </h2>
               <div
-                id="collapseThree"
+                id="dsCollapseThree"
                 className="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#aiSyllabusAccordion"
+                aria-labelledby="dsHeadingThree"
+                data-bs-parent="#dsSyllabusAccordion"
               >
                 <div className="accordion-body text-muted">
                   <ul>
-                    <li>Introduction to Neural Networks</li>
-                    <li>Forward and Backward Propagation</li>
-                    <li>Convolutional Neural Networks (CNNs) for Image Processing</li>
-                    <li>Recurrent Neural Networks (RNNs) for Sequential Data</li>
-                    <li>Introduction to Transformers</li>
-                    <li>Frameworks: TensorFlow and Keras / PyTorch</li>
+                    <li>Descriptive and Inferential Statistics</li>
+                    <li>Hypothesis Testing and A/B Testing</li>
+                    <li>Introduction to Machine Learning (Supervised vs. Unsupervised)</li>
+                    <li>Regression Models (Linear, Logistic)</li>
+                    <li>Classification Algorithms (Decision Trees, SVM, K-NN)</li>
+                    <li>Model Evaluation Metrics</li>
                   </ul>
                 </div>
               </div>
@@ -237,31 +240,31 @@ function ArtificialIntelligence() {
 
             {/* Module 4 */}
             <div className="accordion-item shadow-sm mb-3 rounded-3">
-              <h2 className="accordion-header" id="headingFour">
+              <h2 className="accordion-header" id="dsHeadingFour">
                 <button
                   className="accordion-button fw-bold accordion-button-theme collapsed" /* Updated class */
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
+                  data-bs-target="#dsCollapseFour"
                   aria-expanded="false"
-                  aria-controls="collapseFour"
+                  aria-controls="dsCollapseFour"
                 >
-                  <FontAwesomeIcon icon={faComments} className="me-2 primary-color" /> Module 4: Natural Language Processing (NLP) {/* Updated class */}
+                  <FontAwesomeIcon icon={faRobot} className="me-2 primary-color" /> Module 4: Advanced Machine Learning & Deep Learning Basics {/* Updated class */}
                 </button>
               </h2>
               <div
-                id="collapseFour"
+                id="dsCollapseFour"
                 className="accordion-collapse collapse"
-                aria-labelledby="headingFour"
-                data-bs-parent="#aiSyllabusAccordion"
+                aria-labelledby="dsHeadingFour"
+                data-bs-parent="#dsSyllabusAccordion"
               >
                 <div className="accordion-body text-muted">
                   <ul>
-                    <li>Text Preprocessing and Tokenization</li>
-                    <li>Word Embeddings (Word2Vec, GloVe)</li>
-                    <li>Sentiment Analysis and Text Classification</li>
-                    <li>Introduction to Large Language Models (LLMs)</li>
-                    <li>Applications: Chatbots, Machine Translation</li>
+                    <li>Ensemble Methods (Random Forests, Gradient Boosting)</li>
+                    <li>Clustering Techniques (K-Means, Hierarchical)</li>
+                    <li>Dimensionality Reduction (PCA)</li>
+                    <li>Introduction to Neural Networks and Deep Learning</li>
+                    <li>Time Series Analysis basics</li>
                   </ul>
                 </div>
               </div>
@@ -269,31 +272,31 @@ function ArtificialIntelligence() {
 
             {/* Module 5 */}
             <div className="accordion-item shadow-sm mb-3 rounded-3">
-              <h2 className="accordion-header" id="headingFive">
+              <h2 className="accordion-header" id="dsHeadingFive">
                 <button
                   className="accordion-button fw-bold accordion-button-theme collapsed" /* Updated class */
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseFive"
+                  data-bs-target="#dsCollapseFive"
                   aria-expanded="false"
-                  aria-controls="collapseFive"
+                  aria-controls="dsCollapseFive"
                 >
-                  <FontAwesomeIcon icon={faLaptopCode} className="me-2 primary-color" /> Module 5: Computer Vision {/* Updated class */}
+                  <FontAwesomeIcon icon={faLaptopCode} className="me-2 primary-color" /> Module 5: Big Data & Deployment {/* Updated class */}
                 </button>
               </h2>
               <div
-                id="collapseFive"
+                id="dsCollapseFive"
                 className="accordion-collapse collapse"
-                aria-labelledby="headingFive"
-                data-bs-parent="#aiSyllabusAccordion"
+                aria-labelledby="dsHeadingFive"
+                data-bs-parent="#dsSyllabusAccordion"
               >
                 <div className="accordion-body text-muted">
                   <ul>
-                    <li>Image Fundamentals and Preprocessing</li>
-                    <li>Object Detection and Recognition</li>
-                    <li>Image Segmentation</li>
-                    <li>Generative Adversarial Networks (GANs)</li>
-                    <li>Applications: Facial Recognition, Autonomous Driving</li>
+                    <li>Introduction to Big Data Ecosystem (Hadoop, Spark)</li>
+                    <li>SQL for Data Science</li>
+                    <li>NoSQL Databases (MongoDB basics)</li>
+                    <li>Introduction to Cloud Platforms (AWS, Azure, GCP for DS)</li>
+                    <li>Deploying Machine Learning Models</li>
                   </ul>
                 </div>
               </div>
@@ -301,31 +304,31 @@ function ArtificialIntelligence() {
 
             {/* Module 6 */}
             <div className="accordion-item shadow-sm mb-3 rounded-3">
-              <h2 className="accordion-header" id="headingSix">
+              <h2 className="accordion-header" id="dsHeadingSix">
                 <button
                   className="accordion-button fw-bold accordion-button-theme collapsed" /* Updated class */
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseSix"
+                  data-bs-target="#dsCollapseSix"
                   aria-expanded="false"
-                  aria-controls="collapseSix"
+                  aria-controls="dsCollapseSix"
                 >
-                  <FontAwesomeIcon icon={faRocket} className="me-2 primary-color" /> Module 6: Reinforcement Learning & Ethics in AI {/* Updated class */}
+                  <FontAwesomeIcon icon={faFlask} className="me-2 primary-color" /> Module 6: Data Storytelling & Ethics {/* Updated class */}
                 </button>
               </h2>
               <div
-                id="collapseSix"
+                id="dsCollapseSix"
                 className="accordion-collapse collapse"
-                aria-labelledby="headingSix"
-                data-bs-parent="#aiSyllabusAccordion"
+                aria-labelledby="dsHeadingSix"
+                data-bs-parent="#dsSyllabusAccordion"
               >
                 <div className="accordion-body text-muted">
                   <ul>
-                    <li>Introduction to Reinforcement Learning</li>
-                    <li>Markov Decision Processes (MDPs)</li>
-                    <li>Q-Learning and Deep Q-Networks (DQNs)</li>
-                    <li>Ethical considerations, bias, and fairness in AI</li>
-                    <li>Future trends and research in AI</li>
+                    <li>Effective Data Visualization and Infographics</li>
+                    <li>Communicating Data Insights to Stakeholders</li>
+                    <li>Ethics in Data Science: Bias, Privacy, and Fairness</li>
+                    <li>Case Studies and Real-World Applications</li>
+                    <li>Future Trends in Data Science</li>
                   </ul>
                 </div>
               </div>
@@ -345,13 +348,13 @@ function ArtificialIntelligence() {
                   <FontAwesomeIcon icon={faFlask} size="3x" className="mb-3 primary-color" /> {/* Updated class */}
                   <h5 className="card-title fw-bold mb-3">Real-World Projects</h5>
                   <p className="card-text text-muted">
-                    Apply your knowledge by building end-to-end AI applications. Projects include:
+                    Apply your knowledge by building end-to-end Data Science solutions. Projects include:
                   </p>
                   <ul className="list-unstyled text-muted small checklist-dark"> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Predictive House Price Regression</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Image Classifier for Medical Diagnosis</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Sentiment Analyzer for Social Media Data</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Chatbot for Customer Support</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Customer Churn Prediction Model</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Sales Forecasting for Retail</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Sentiment Analysis of Product Reviews</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Credit Card Fraud Detection</li> {/* Updated class */}
                   </ul>
                 </div>
               </div>
@@ -365,10 +368,10 @@ function ArtificialIntelligence() {
                     Engage in practical tasks that solidify your understanding:
                   </p>
                   <ul className="list-unstyled text-muted small checklist-dark"> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Data Preprocessing and Feature Engineering</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Model Training and Optimization</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Hyperparameter Tuning Challenges</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Deploying Simple ML Models</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Data Cleaning and Transformation ETL Pipelines</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Advanced SQL Queries for Data Extraction</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> A/B Testing Experiment Design</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Interactive Data Visualization Dashboards</li> {/* Updated class */}
                   </ul>
                 </div>
               </div>
@@ -377,15 +380,15 @@ function ArtificialIntelligence() {
               <div className="card h-100 shadow-sm border-0 rounded-3 card-dark-theme"> {/* Updated class */}
                 <div className="card-body p-4 text-center">
                   <FontAwesomeIcon icon={faQuestionCircle} size="3x" className="mb-3 primary-color" /> {/* Updated class */}
-                  <h5 className="card-title fw-bold mb-3">Challenging Exercises</h5>
+                  <h5 className="card-title fw-bold mb-3">Challenging Exercises</h5> {/* CORRECTED LINE */}
                   <p className="card-text text-muted">
                     Reinforce learning with challenging exercises:
                   </p>
                   <ul className="list-unstyled text-muted small checklist-dark"> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Kaggle-style Machine Learning Competitions</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Debugging and Troubleshooting AI Models</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Implementing AI Algorithms from Scratch</li> {/* Updated class */}
-                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Case Study Analysis of AI Applications</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Kaggle Data Analysis Competitions</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Optimizing Machine Learning Model Performance</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> Designing and Interpreting Complex Statistical Tests</li> {/* Updated class */}
+                    <li><FontAwesomeIcon icon={faArrowRight} className="me-2 primary-color" /> End-to-End Data Science Case Studies</li> {/* Updated class */}
                   </ul>
                 </div>
               </div>
@@ -397,8 +400,8 @@ function ArtificialIntelligence() {
       {/* Call to Action Section - White Background */}
       <div className="py-5 bg-white text-center">
         <div className="container">
-          <h2 className="fw-bold mb-4 text-dark-theme">Ready to Master Artificial Intelligence?</h2> {/* Updated class */}
-          <p className="lead text-muted mb-4">Join our expert-led program and become an AI innovator.</p>
+          <h2 className="fw-bold mb-4 text-dark-theme">Ready to Become a Data Science Expert?</h2> {/* Updated class */}
+          <p className="lead text-muted mb-4">Transform data into actionable insights with our expert-led program.</p>
           <a href="/contact" className="btn btn-lg btn-primary-theme rounded-pill"> {/* Updated class */}
             Get Started Today <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
           </a>
@@ -408,4 +411,4 @@ function ArtificialIntelligence() {
   );
 }
 
-export default ArtificialIntelligence;
+export default DataScience;

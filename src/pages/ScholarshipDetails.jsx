@@ -26,18 +26,21 @@ function ScholarshipDetails() {
         <section className="mb-5 p-4 border rounded shadow-sm" style={{ backgroundColor: '#f8f9fa', borderColor: '#ddd' }}>
           <h2 className="mb-4" style={{ color: '#cc5500' }}>Eligibility Criteria</h2>
           <p className="mb-4 text-start" style={{ color: '#555' }}>
-            To be considered for our scholarship programs, applicants must meet the following academic and general requirements:
+            To be considered for our scholarship programs, applicants should demonstrate a strong commitment to learning and meet the following requirements:
           </p>
           <ul className="list-group list-group-flush">
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
-              <strong>Academic Performance:</strong>
+              <strong>Academic Potential:</strong>
               <ul style={{ listStyleType: 'circle', marginLeft: '20px', marginTop: '10px' }}>
-                <li>Minimum of <strong>80% marks</strong> in both 10th and 12th grade examinations.</li>
-                <li>Consistent strong academic records throughout your previous educational journey.</li>
+                <li>Strong academic performance in your 10th, 11th, and 12th-grade examinations. We consider your **best overall marks** to evaluate your potential.</li>
+                <li>Consistent commitment to your studies throughout your previous educational journey.</li>
               </ul>
             </li>
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
-              <strong>Interest in Learning:</strong> Demonstrated passion and enthusiasm for your chosen field of study. This can be evidenced through personal statements, extracurricular activities, or previous projects.
+              <strong>Genuine Interest & Drive:</strong> Demonstrated passion and enthusiasm for your chosen field of study. This can be evidenced through personal statements, extracurricular activities, previous projects, or a clear desire to learn new skills.
+            </li>
+            <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
+              <strong>Course/Career Gap Consideration:</strong> We encourage applications from individuals with a course or career gap who are eager to re-skill, up-skill, or transition into a new field. Your willingness to learn and adapt is highly valued.
             </li>
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
               <strong>Enrollment:</strong> Must be accepted into and enrolled in one of our academic programs.
@@ -54,16 +57,14 @@ function ScholarshipDetails() {
           </p>
           <ul className="list-group list-group-flush">
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
-              <strong>Required Documents:</strong>
+              <strong>Document Requirements:</strong>
               <ul style={{ listStyleType: 'circle', marginLeft: '20px', marginTop: '10px' }}>
-                <li>Income certificates of parents/guardians.</li>
-                <li>Bank statements for the past 6-12 months.</li>
-                <li>Proof of any outstanding loans or financial burdens.</li>
-                <li>Details of family assets and liabilities.</li>
+                <li>Proof of income for parents/guardians.</li>
+                <li>Relevant financial statements or documents that accurately reflect your household's financial standing.</li>
               </ul>
             </li>
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
-              <strong>Assessment Process:</strong> Our dedicated committee will review your financial documents confidentially to determine the level of financial assistance required. We may request an interview to discuss your situation further.
+              <strong>Assessment Process:</strong> Our dedicated committee will confidentially review your financial documents to determine the appropriate level of assistance.
             </li>
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
               <strong>Transparency:</strong> We are committed to a fair and transparent assessment process. All information provided will be handled with utmost confidentiality.
@@ -82,7 +83,7 @@ function ScholarshipDetails() {
               <strong>Step 1: Online Application Form:</strong> Fill out the comprehensive online scholarship application form available on our portal.
             </li>
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
-              <strong>Step 2: Document Submission:</strong> All the necessary documents, including academic transcripts, income proofs, and identification to be submitted.
+              <strong>Step 2: Document Submission:</strong> All the necessary documents, including academic transcripts, income proofs, and identification, must be submitted.
             </li>
             <li className="list-group-item" style={{ backgroundColor: 'transparent', borderColor: '#eee', color: '#333' }}>
               <strong>Step 3: Personal Statement:</strong> Write a compelling personal statement outlining your academic achievements, career aspirations, and how this scholarship will impact your educational journey.
@@ -103,8 +104,8 @@ function ScholarshipDetails() {
             If you have any questions regarding the scholarship programs or the application process, please don't hesitate to contact our admissions and financial aid office.
           </p>
           <p style={{ color: '#555' }}>
-            Email: <a href="mailto:info@sevenelevenacademy.com" style={{ color: '#cc5500', textDecoration: 'none' }}>info@sevenelevenacademy.com</a><br />
-            Phone: <a href="tel:+91 9150 574201" style={{ color: '#cc5500', textDecoration: 'none' }}>+91 9150 574201</a>
+            Email: <a className="text-start" href="mailto:info@sevenelevenacademy.com" style={{ color: '#cc5500', textDecoration: 'none' }}>info@sevenelevenacademy.com</a><br />
+            Phone: <a className="text-start" href="tel:+91 9150 574201" style={{ color: '#cc5500', textDecoration: 'none' }}>+91 9150 574201</a>
           </p>
         </section>
       </div>

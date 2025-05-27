@@ -129,7 +129,7 @@ function Footer() {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 text-center text-white copyright-text">
-                            <p>Copyrights &copy; 2025 Seven Eleven Training Academy - <Link to="/privacy-policy" className="text-white text-decoration-none">Privacy Policy</Link> - All Rights Reserved - Made in SS Group </p>
+                            <p>Copyrights &copy; 2025 Seven Eleven Training Academy - <Link to="/privacy-policy" className="text-white text-decoration-none">Privacy Policy</Link> - All Rights Reserved - Made in SS Group of companies .</p>
                         </div>
                     </div>
                 </div>

@@ -32,24 +32,33 @@
   padding-right: 1rem; /* Add horizontal padding back */
 }
 
-
 /* Logo Sizing and Alignment */
 .logo-lg {
   height: 70px; /* Adjusted height for better fit within 80px min-height */
   width: auto;
   padding: 5px 0; /* Add vertical padding for the logo itself */
-  margin-left: 15px; /* Adjust margin as needed */
+  /* margin-left: 15px; Removed to allow better flex control */
   display: block; /* Ensure it behaves like a block element */
 }
 
 .navbar-brand {
   padding: 0; /* Remove default Bootstrap padding */
-  margin: 0; /* Ensure no extra margin */
-  display: flex; /* Use flex to align logo */
-  align-items: center; /* Vertically center the logo within the brand link */
+  margin: 0 0 0 15px; /* Adjust margin as needed, applies to the whole brand container */
+  display: flex; /* Use flex to align logo and new text */
+  flex-direction: column; /* Stack logo and text vertically */
+  align-items: flex-start; /* Align content to the start (left) */
+  justify-content: center; /* Center vertically if space allows */
   height: 100%; /* Ensure it takes full height of parent to align properly */
 }
 
+/* SS Group Text Styling */
+.ss-group-text {
+  font-size: 0.75rem; /* Smaller font size */
+  color: #555; /* Slightly muted color */
+  margin-top: -8px; /* Adjust to bring it closer to the logo */
+  font-weight: normal; /* Make it regular weight */
+  padding-left: 5px; /* Align with the start of the logo visually */
+}
 
 /* Navbar Toggler alignment (for mobile) */
 .navbar-toggler {
@@ -140,13 +149,21 @@
 
   .navbar-brand {
     height: auto; /* Allow brand height to adjust */
-    align-items: center; /* Center logo on small screens */
+    align-items: center; /* Center logo and text on small screens horizontally */
+    flex-direction: row; /* Keep logo and text in a row on mobile */
+    margin: 0; /* Remove left margin for mobile */
   }
 
   .logo-lg {
     height: 60px; /* Slightly smaller logo on mobile */
     margin-left: 0; /* Remove left margin on mobile */
     padding: 0; /* Remove padding here, controlled by parent */
+  }
+
+  .ss-group-text {
+    font-size: 0.7rem; /* Even smaller on mobile */
+    margin-top: 0; /* Reset margin-top for horizontal alignment */
+    margin-left: 5px; /* Add a small left margin to separate from logo */
   }
 
   .navbar-toggler {
@@ -197,18 +214,58 @@
   }
 }
 
+/* Add this to your Navbar.css */
+.ss-group-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent (or set a specific color) */
+  /* You can add more styles here if needed */
+}
+
+/* Ensure the text itself still has its desired appearance */
+.ss-group-link .ss-group-text {
+  font-size: 0.75rem; /* Smaller font size */
+  color: #555; /* Slightly muted color */
+  margin-top: -8px; /* Adjust to bring it closer to the logo */
+  font-weight: normal; /* Make it regular weight */
+  padding-left: 5px; /* Align with the start of the logo visually */
+  display: block; /* Important for alignment within a flex column */
+}
+
+/* Add hover effect if desired */
+.ss-group-link:hover .ss-group-text {
+    color: var(--accent-orange); /* Example: change color on hover */
+}
+
+/* And for mobile media queries, adjust as well */
+@media (max-width: 991.98px) {
+    .ss-group-link .ss-group-text {
+        font-size: 0.7rem; /* Even smaller on mobile */
+        margin-top: 0; /* Reset margin-top for horizontal alignment */
+        margin-left: 5px; /* Add a small left margin to separate from logo */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .ss-group-link .ss-group-text {
+        font-size: 0.65rem; /* Even smaller on extra small devices */
+    }
+}
+
 @media (max-width: 575.98px) { /* Extra small devices */
     .logo-lg {
-        height: 50px; /* Even smaller logo on extra small devices */
+      height: 50px; /* Even smaller logo on extra small devices */
+    }
+    .ss-group-text {
+      font-size: 0.65rem; /* Even smaller on extra small devices */
     }
     .navbar-toggler {
-        font-size: 1rem; /* Smaller toggler icon */
+      font-size: 1rem; /* Smaller toggler icon */
     }
     .navbar-nav .nav-link {
-        font-size: 1rem !important; /* Adjust font size for very small screens */
+      font-size: 1rem !important; /* Adjust font size for very small screens */
     }
     .btn-custom-green {
-        font-size: 0.9rem; /* Adjust button font size */
-        padding: 8px 0;
+      font-size: 0.9rem; /* Adjust button font size */
+      padding: 8px 0;
     }
 }

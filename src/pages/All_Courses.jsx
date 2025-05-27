@@ -10,31 +10,31 @@ const originalCourses = [
     title: 'Artificial Intelligence Essentials',
     instructor: 'Mr.',
     description: 'Understand the core concepts of AI, including machine learning, neural networks, and real-world applications.',
-    link: '/courses',
+    link: '/artificial',
   },
   {
     title: 'Data Science with Python',
     instructor: 'mr.',
     description: 'Learn how to analyze data, visualize insights, and build predictive models using Python.',
-    link: '/courses',
+    link: '/datscience',
   },
   {
     title: 'Networking & Cyber Security',
     instructor: 'mr.',
     description: 'Gain hands-on experience with network protocols, security threats, ethical hacking, and protection strategies.',
-    link: '/courses',
+    link: '/network',
   },
   {
     title: 'Full Stack Software Development',
     instructor: 'mr.',
     description: 'Master full stack development using modern tools like React, Node.js, and MongoDB.',
-    link: '/courses',
+    link: '/software',
   },
   {
     title: 'Soft Skills for Career Success',
     instructor: 'mr.',
     description: 'Enhance your communication, leadership, and problem-solving skills for a professional edge.',
-    link: '/courses',
+    link: '/softskill',
   },
 ];
 

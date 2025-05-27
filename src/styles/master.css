@@ -1,0 +1,235 @@
+/* masterclass.css (or program.css) */
+
+/* General Page Styling */
+.ai-page,
+.ds-page { /* Apply to both page containers */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* Default text color */
+}
+
+/* Primary Color Palette (Same for both) */
+:root {
+  --primary-color: #cc5500; /* Orange */
+  --secondary-color: #f8f9fa; /* Light grey for sections */
+  --dark-color: #212529; /* Dark for backgrounds */
+  --light-text-color: #e9ecef; /* Light text on dark backgrounds */
+  --white-color: #ffffff; /* Explicit white color */
+}
+
+/* Generic classes using the primary color */
+.primary-color {
+  color: var(--primary-color) !important;
+}
+
+.text-dark-theme { /* A more generic name for text-dark */
+  color: var(--dark-color) !important;
+}
+
+/* Hero Section - White Background, Orange Accents */
+.ai-hero-alt,
+.ds-hero-alt { /* Apply to both hero sections */
+  background-color: var(--white-color);
+  color: var(--dark-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-hero-alt .h2,
+.ds-hero-alt .h2 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.ai-hero-alt .h5,
+.ds-hero-alt .h5 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #6c757d;
+}
+
+/* Hero Icon */
+.ai-hero-icon-alt,
+.ds-hero-icon-alt {
+  font-size: 8rem;
+  color: rgba(204, 85, 0, 0.1); /* Semi-transparent orange */
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 0;
+  opacity: 0.1;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .ai-hero-icon-alt,
+  .ds-hero-icon-alt {
+    display: block;
+  }
+}
+
+.ai-hero-alt .container,
+.ds-hero-alt .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Buttons */
+.btn-primary-theme { /* Generic primary button */
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-theme:hover {
+  background-color: #e66710; /* Slightly darker orange */
+  border-color: #e66710;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-theme { /* Generic outline button */
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-theme:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Course Overview Cards */
+.card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.checklist li { /* Generic checklist */
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.checklist li .fa-icon {
+  margin-right: 0.5rem;
+}
+
+/* Why Important Section */
+.why-important-section { /* Generic section */
+  background-color: var(--dark-color);
+  color: var(--light-text-color);
+}
+
+.benefits-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.benefits-list li {
+  flex-basis: 30%;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .benefits-list li {
+    flex-basis: 48%;
+  }
+}
+
+@media (max-width: 576px) {
+  .benefits-list li {
+    flex-basis: 90%;
+  }
+}
+
+/* Syllabus Accordion */
+.accordion-item {
+  border: none;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.accordion-button-theme { /* Generic accordion button */
+  color: var(--dark-color);
+  background-color: #fff;
+  font-size: 1.15rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.5rem !important;
+}
+
+.accordion-button-theme:not(.collapsed) {
+  color: #fff;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.accordion-button-theme:focus {
+  box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25); /* Orange focus ring */
+}
+
+.accordion-body ul {
+  padding-left: 1.5rem;
+}
+
+.accordion-body li {
+  margin-bottom: 0.4rem;
+}
+
+/* Projects, Tasks, and Exercises Section */
+.projects-section-dark { /* Generic section */
+  background-color: var(--dark-color);
+  color: var(--light-text-color);
+}
+
+.card-dark-theme { /* Generic dark card */
+  background-color: #343a40; /* Slightly lighter black for cards */
+  color: var(--light-text-color);
+}
+
+.card-dark-theme .card-title {
+  color: var(--primary-color);
+}
+
+.card-dark-theme .card-text {
+  color: #adb5bd !important; /* Lighter text for description */
+}
+
+.checklist-dark li { /* Generic checklist for dark background */
+  text-align: left;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: #ced4da !important;
+}
+
+.checklist-dark li .fa-icon {
+  margin-right: 0.5rem;
+}
+
+/* Fade-in animation for the entire page */
+.fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

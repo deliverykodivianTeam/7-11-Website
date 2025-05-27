@@ -1,68 +1,96 @@
-import React, { useRef, useEffect } from 'react'; // Import useEffect
+// Navbar.jsx
+import React, { useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Keep CSS import here
 import '../styles/Navbar.css';
 import logo from "../assets/Logo - Seven Eleven Academy.png";
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+// REMOVED: import 'bootstrap/dist/js/bootstrap.bundle.min'; // Now imported globally in App.js
 
 function Navbar() {
-  const navbarCollapseRef = useRef(null); // Create a ref
+  const navbarCollapseRef = useRef(null);
+  const bsCollapseInstanceRef = useRef(null); // To store the Bootstrap Collapse instance
+
+  // Effect to initialize Bootstrap Collapse instance once on mount
+  useEffect(() => {
+    if (navbarCollapseRef.current && window.bootstrap && window.bootstrap.Collapse) {
+      // Create the Bootstrap Collapse instance only once
+      if (!bsCollapseInstanceRef.current) {
+        bsCollapseInstanceRef.current = new window.bootstrap.Collapse(navbarCollapseRef.current, {
+          toggle: false // Do not toggle on initialization; keep it closed by default
+        });
+        console.log("Navbar: Bootstrap Collapse instance initialized.");
+      }
+    } else {
+      console.error("Navbar: Critical Error! window.bootstrap.Collapse not found. Ensure bootstrap.bundle.min is loaded globally in App.js/index.js.");
+    }
+
+    // Cleanup: Dispose the Bootstrap instance when component unmounts
+    return () => {
+      if (bsCollapseInstanceRef.current) {
+        bsCollapseInstanceRef.current.dispose();
+        bsCollapseInstanceRef.current = null;
+        console.log("Navbar: Bootstrap Collapse instance disposed.");
+      }
+    };
+  }, []); // Empty dependency array: runs only once on mount
 
   // Function to close the navbar when a NavLink is clicked
   const handleNavLinkClick = () => {
-    if (navbarCollapseRef.current) {
-      // Check if the navbar is currently open (has the 'show' class)
-      if (navbarCollapseRef.current.classList.contains('show')) {
-        // Use Bootstrap's native JS method to hide the collapse
-        const bsCollapse = new window.bootstrap.Collapse(navbarCollapseRef.current, {
-          toggle: false
-        });
-        bsCollapse.hide();
-      }
+    console.log("Navbar: NavLink clicked. Attempting to close...");
+    if (bsCollapseInstanceRef.current && navbarCollapseRef.current.classList.contains('show')) {
+      bsCollapseInstanceRef.current.hide();
+      console.log("Navbar: Hide method called via NavLink click.");
+    } else {
+      console.log("Navbar: Not open or instance not ready for NavLink click.");
     }
   };
 
   // Effect to handle closing navbar on scroll for small screens
   useEffect(() => {
     const handleScroll = () => {
-      // Check if the navbar is open and if it's a small screen
-      if (window.innerWidth < 992 && navbarCollapseRef.current && navbarCollapseRef.current.classList.contains('show')) {
-        const bsCollapse = new window.bootstrap.Collapse(navbarCollapseRef.current, {
-          toggle: false
-        });
-        bsCollapse.hide();
+      // Ensure instance exists and navbar is currently open on small screens
+      if (bsCollapseInstanceRef.current && window.innerWidth < 992 && navbarCollapseRef.current.classList.contains('show')) {
+        bsCollapseInstanceRef.current.hide();
+        console.log("Navbar: Hide method called via scroll event.");
       }
     };
 
-    // Add the scroll event listener
     window.addEventListener('scroll', handleScroll);
+    console.log("Navbar: Scroll event listener added.");
 
-    // Clean up the event listener when the component unmounts
+    // Cleanup: Remove event listener
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      console.log("Navbar: Scroll event listener removed.");
     };
-  }, []); // Empty dependency array means this effect runs once on mount and cleans up on unmount
+  }, []); // Empty dependency array: runs only once on mount
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light sticky-top navbar-custom-bg">
       <div className="container-fluid navbar-content-wrapper">
         <NavLink to="/" className="navbar-brand">
-          <img src={logo} alt="Your Logo" className="company_logo logo-lg" />
+          <img src={logo} alt="Seven Eleven Academy Logo" className="company_logo logo-lg" />
+          {/* Wrapped SS Group text with a NavLink to the specified URL */}
+         <NavLink to="https://www.ssgroup.biz/" target="_blank" rel="noopener noreferrer" className="ss-group-link">
+            <span className="ss-group-text">SS Group</span>
+          </NavLink>
         </NavLink>
+         
 
         <button
-  className="navbar-toggler"
-  type="button"
-  data-bs-toggle="collapse"
-  data-bs-target="#navbarNav"
-  aria-controls="navbarNav"
-  aria-expanded="false"
-  aria-label="Toggle navigation"
->
-  <span className="navbar-toggler-icon"></span>
-</button>
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-   <div className="collapse navbar-collapse" id="navbarNav" ref={navbarCollapseRef}>
+        <div className="collapse navbar-collapse" id="navbarNav" ref={navbarCollapseRef}>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink to="/" className="nav-link" activeclassname="active" onClick={handleNavLinkClick}>Home</NavLink>

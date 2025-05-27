@@ -4,6 +4,10 @@ import './App.css'; // Make sure this CSS file exists if you use it
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+import 'bootstrap/dist/css/bootstrap.min.css'; // Always import CSS
+import 'bootstrap/dist/js/bootstrap.bundle.min'; // Import JS bundle ONCE
+import ScrollTop from './components/ScrollTop';
+
 // Import your existing pages
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -22,7 +26,11 @@ import Officialportal from './pages/Officalportal.jsx';
 // Import the Chatbot component
 import Chatbot from './components/Chatbot.jsx'; // <--- ADD THIS LINE
 import Artificial from './pages/ArtificialIntelligence.jsx';
-
+import DataScience from './pages/DataScience.jsx';
+import Networking from './pages/Networking.jsx';
+import CyberSecurity from './pages/CyberSecurity.jsx'
+import SoftwareDevelopment from './pages/SoftwareDevelopment.jsx';
+import SoftSkill from './pages/SoftSkill.jsx';
 function App() {
   return (
     <Router>
@@ -54,9 +62,16 @@ function AppContent() {
   return (
     <>
       {showNavbar && <Navbar />} {/* Conditionally render Navbar */}
+      <ScrollTop></ScrollTop>
       <Routes>
+        
         <Route path="/" element={<Home />} />
         <Route path="/artificial" element={<Artificial />} />
+        <Route path="/datscience" element={<DataScience />} />
+        <Route path="/network" element={<Networking />} />
+        <Route path="/cyber" element={<CyberSecurity />} />
+        <Route path="/software" element={<SoftwareDevelopment />} />
+        <Route path="/softskill" element={<SoftSkill />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/scholarship-details" element={<ScholarshipDetails />} />

@@ -147,7 +147,7 @@ function Home() {
                   <FontAwesomeIcon icon={faDatabase} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Data Science</h5>
                   <p className="card-text small text-muted">Transform data into actionable insights.</p>
-                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                  <a href="/datscience" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
@@ -158,7 +158,7 @@ function Home() {
                   <FontAwesomeIcon icon={faShieldAlt} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Networking</h5>
                   <p className="card-text small text-muted">Safeguard digital assets and infrastructure against evolving threats.</p>
-                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                  <a href="/network" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@ function Home() {
                   <FontAwesomeIcon icon={faShieldAlt} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Cyber Security</h5>
                   <p className="card-text small text-muted">Build and maintain robust, high-performance digital networks.</p>
-                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                  <a href="/cyber" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
@@ -179,7 +179,7 @@ function Home() {
                   <FontAwesomeIcon icon={faCode} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Software Development</h5>
                   <p className="card-text small text-muted">Build innovative solutions with code.</p>
-                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                  <a href="/software" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
@@ -190,7 +190,7 @@ function Home() {
                   <FontAwesomeIcon icon={faHandsHelping} size="3x" className="text-primary mb-3" />
                   <h5 className="card-title fw-bold">Soft Skills Training</h5>
                   <p className="card-text small text-muted">Enhance communication and professional growth.</p>
-                  <a href="/courses" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
+                  <a href="/softskill" className="btn btn-outline-primary btn-sm rounded-pill">Learn More</a>
                 </div>
               </div>
             </div>
