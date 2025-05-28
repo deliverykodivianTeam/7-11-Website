@@ -72,34 +72,34 @@ const Chatbot = () => {
     };
 
     const startChat = async () => {
-        console.log("Attempting to start chat...");
-        setIsChatStarted(true); // Transition to chat view
+    console.log("Attempting to start chat...");
+    setIsChatStarted(true); // Transition to chat view
 
-        try {
-            console.log("Fetching initial message from backend...");
-            const response = await fetch('https://seven-11-website-chatbot.onrender.com/initial_message');
-            console.log("Response status:", response.status);
+    try {
+      console.log("Fetching initial message from backend...");
+      const response = await fetch('https://seven-11-website-chatbot.onrender.com/initial_message');
+      console.log("Response status:", response.status);
 
-            if (!response.ok) {
-                const errorText = await response.text();
-                console.error("Server Error Response:", errorText);
-                throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
-            }
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Server Error Response:", errorText);
+        throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+      }
 
-            const data = await response.json();
-            console.log("Received data from backend:", data);
+      const data = await response.json();
+      console.log("Received data from backend:", data);
 
-            const initialBotMessage = { sender: 'bot', text: data.message };
-            setMessages([initialBotMessage]);
-            console.log("Messages state updated with initial bot message.");
+      const initialBotMessage = { sender: 'bot', text: data.message };
+      setMessages([initialBotMessage]);
+      console.log("Messages state updated with initial bot message.");
 
-       } catch (error) {
-    console.error("Caught error:", error.message); // Corrected
-    console.error('Error fetching initial message:', error);
-    const errorMessage = { sender: 'bot', text: 'Sorry, I could not load the initial greeting. Please check console for errors.' };
-    setMessages([errorMessage]);
-}
-    };
+    } catch (error) { // Changed 'err' to 'error' here
+      console.error("Caught error:", error.message); // Corrected
+      console.error('Error fetching initial message:', error);
+      const errorMessage = { sender: 'bot', text: 'Sorry, I could not load the initial greeting. Please check console for errors.' };
+      setMessages([errorMessage]);
+    }
+  };
 
     const handleSendMessage = async () => {
         if (input.trim() === '') return;
