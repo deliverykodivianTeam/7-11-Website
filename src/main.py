@@ -153,7 +153,7 @@ from fastapi.middleware.cors import CORSMiddleware
 origins = [
     "http://localhost:3000",  # Your React app's development server
     "http://localhost:5173",  # If you're using Vite's default port
-    "https://seven-11-website-chatbot.onrender.com" # Add your production domain here when you deploy
+    "https://seven-eleven-chatbot-backend.onrender.com" # Add your production domain here when you deploy
 ]
 
 app.add_middleware(
