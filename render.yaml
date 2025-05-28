@@ -1,0 +1,11 @@
+# render.yaml (This file must be at the root of your Git repository)
+services:
+  - type: web
+    name: seven-eleven-chatbot-backend # Your service name on Render
+    env: python
+    buildCommand: pip install -r src/requirements.txt # Correctly points to requirements.txt inside src/
+    startCommand: uvicorn src.main:app --host 0.0.0.0 --port 10000 # Correctly points to main.py inside src/
+    envVars:
+      - key: OPENAI_API_KEY
+        value: your_openai_api_key_here # IMPORTANT: Replace with your actual key or set in Render dashboard
+    autoDeploy: true
