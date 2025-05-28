@@ -93,12 +93,12 @@ const Chatbot = () => {
             setMessages([initialBotMessage]);
             console.log("Messages state updated with initial bot message.");
 
-        } catch (error) {
-            console.error("Caught error:", err.message);
-            console.error('Error fetching initial message:', error);
-            const errorMessage = { sender: 'bot', text: 'Sorry, I could not load the initial greeting. Please check console for errors.' };
-            setMessages([errorMessage]);
-        }
+       } catch (error) {
+    console.error("Caught error:", error.message); // Corrected
+    console.error('Error fetching initial message:', error);
+    const errorMessage = { sender: 'bot', text: 'Sorry, I could not load the initial greeting. Please check console for errors.' };
+    setMessages([errorMessage]);
+}
     };
 
     const handleSendMessage = async () => {
