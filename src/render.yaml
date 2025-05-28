@@ -3,8 +3,7 @@ services:
     name: your-langchain-fastapi
     env: python
     buildCommand: pip install -r src/requirements.txt
-    # Keep only one startCommand and ensure it points to the correct module path
-    startCommand: uvicorn src.main:app --host 0.0.0.0 --port 10000 
+    startCommand: uvicorn src.main:app --host 0.0.0.0 --port 10000 # Only one startCommand
     envVars:
       - key: OPENAI_API_KEY
         value: your_openai_api_key_here
